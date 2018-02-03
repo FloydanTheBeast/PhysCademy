@@ -1,2 +1,3 @@
-# physcademy
-HSE Lyceum project
+# Physcademy
+> ### Абдельсалам Шади, 10МИ5
+> #### Лицей НИУ ВШЭ
