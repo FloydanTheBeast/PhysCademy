@@ -1,0 +1,34 @@
+{
+  "name": "physcademy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clear": "rm -rf dist ",
+    "clear-cache": "rm -rf .cache",
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --out-dir build --public-url ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FloydanTheBeast/physcademy.git"
+  },
+  "keywords": [],
+  "author": "Abdelsalam Shadi <floydanthebeast@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FloydanTheBeast/physcademy/issues"
+  },
+  "homepage": "https://github.com/FloydanTheBeast/physcademy#readme",
+  "dependencies": {
+    "components": "^0.1.0",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1"
+  }
+}
