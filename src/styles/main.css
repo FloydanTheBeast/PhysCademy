@@ -8,6 +8,14 @@ body {
     text-align: center;    
     color: #fff;
     font: 3rem "Ubuntu", sans-serif;
+    margin-bottom: 4rem;
+}
+
+.label {
+    text-align: center;    
+    color: #fff;
+    font: 2rem sans-serif;
+    margin-bottom: 50px;
 }
 
 .button {
@@ -18,5 +26,20 @@ body {
     padding: 0.5rem 0;
     width: 100px;
     text-align: center;
-    margin: 0 auto;
+    margin: 0 auto 4rem;
+}
+
+.button:hover {
+    color: #34495e;
+    background-color: #fff;
+}
+
+.control-buttons {
+    display: flex;
+    justify-content: center;
+    justify-items: stretch;
+}
+
+.control-buttons > .button {
+    margin: 0 2rem;
 }
