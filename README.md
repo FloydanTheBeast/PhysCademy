@@ -1,8 +1,8 @@
 # Physcademy
 Для старта:
-```
-npm install
-npm start
+``` bash
+> yarn install
+> yarn start
 ```
 ***Или***
 Откройте ***index.html*** в папке ***build***

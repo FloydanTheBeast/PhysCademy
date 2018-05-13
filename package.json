@@ -1,34 +1,31 @@
 {
-  "name": "physcademy",
+  "name": "test",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clear": "rm -rf dist ",
-    "clear-cache": "rm -rf .cache",
-    "start": "parcel src/index.html",
-    "build": "parcel build src/index.html --out-dir build --public-url ./",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode production"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FloydanTheBeast/physcademy.git"
-  },
-  "keywords": [],
   "author": "Abdelsalam Shadi <floydanthebeast@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/FloydanTheBeast/physcademy/issues"
-  },
-  "homepage": "https://github.com/FloydanTheBeast/physcademy#readme",
-  "dependencies": {
-    "components": "^0.1.0",
-    "react": "^16.3.0",
-    "react-dom": "^16.3.0"
-  },
+  "license": "ISC",
   "devDependencies": {
-    "babel-core": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1"
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.0",
+    "webpack": "^4.8.0",
+    "webpack-cli": "^2.1.3",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "katex": "^0.9.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
   }
 }
