@@ -13,7 +13,8 @@ import Formula from './components/formula';
 const title = "Lorem ipsum dolor sit amet.";
 const text = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem atque expedita, esse assumenda, recusandae vitae commodi reprehenderit illum quia natus eaque ad at sit, mollitia ut earum numquam temporibus nam. Voluptatibus dolores, officiis numquam quisquam quibusdam enim a deleniti inventore aperiam maiores placeat hic pariatur, suscipit optio cupiditate, modi illo.";
 
-import './main.css';
+import 'normalize.css';
+import './main.scss';
 
 class App extends React.Component {
     render() {

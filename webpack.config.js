@@ -25,14 +25,25 @@ module.exports = {
             use: [MiniCssExtractPlugin.loader, "css-loader"]
         },
         {
+            test: /\.scss$/,
+            use: [
+                // fallback to style-loader in development
+                process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
+                "css-loader",
+                "sass-loader"
+            ]
+        },
+        {
             test: /\.(woff|woff2|ttf)$/,
             use: [
-              {
-                loader: 'file-loader',
-                options: {}
-              }
+                {
+                    loader: 'file-loader',
+                    options: {
+                        outputPath: 'static/fonts/katex'
+                    }
+                }
             ]
-          }
+        }
     ]
     },
     resolve: {
