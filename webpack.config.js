@@ -1,50 +1,56 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require('webpack');
 
 module.exports = {
+    output: {
+        path: __dirname,
+        publicPath: '/',
+        filename: 'bundle.js'
+    },
     module: {
-    rules: [
-        {
-            test: /\.js$/,
-            exclude: /node_modules/,
-            use: {
-                loader: "babel-loader"
-            }
-        },
-        {
-            test: /\.html$/,
-            use: [
-                {
-                    loader: "html-loader",
-                    options: { minimize: true }
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader"
                 }
-            ]
-        },
-        {
-            test: /\.css$/,
-            use: [MiniCssExtractPlugin.loader, "css-loader"]
-        },
-        {
-            test: /\.scss$/,
-            use: [
-                // fallback to style-loader in development
-                process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
-                "css-loader",
-                "sass-loader"
-            ]
-        },
-        {
-            test: /\.(woff|woff2|ttf)$/,
-            use: [
-                {
-                    loader: 'file-loader',
-                    options: {
-                        outputPath: 'static/fonts/katex'
+            },
+            {
+                test: /\.html$/,
+                use: [
+                    {
+                        loader: "html-loader",
+                        options: { minimize: true }
                     }
-                }
-            ]
-        }
-    ]
+                ]
+            },
+            {
+                test: /\.css$/,
+                use: [MiniCssExtractPlugin.loader, "css-loader"]
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    // fallback to style-loader in development
+                    process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
+                    "css-loader",
+                    "sass-loader"
+                ]
+            },
+            {
+                test: /\.(woff|woff2|ttf)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            outputPath: 'static/fonts/katex'
+                        }
+                    }
+                ]
+            }
+        ]
     },
     resolve: {
         extensions: ['.js'],
@@ -58,6 +64,7 @@ module.exports = {
     new MiniCssExtractPlugin({
         filename: "[name].css",
         chunkFilename: "[id].css"
-      })
+      }),
+    new webpack.HotModuleReplacementPlugin()
     ]
 };

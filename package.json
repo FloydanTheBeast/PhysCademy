@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "electron": "electron ."
   },
   "author": "Abdelsalam Shadi <floydanthebeast@gmail.com>",
   "license": "ISC",
@@ -26,6 +27,7 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
+    "electron": "^2.0.2",
     "katex": "^0.9.0",
     "normalize.css": "^8.0.0",
     "react": "^16.3.2",
