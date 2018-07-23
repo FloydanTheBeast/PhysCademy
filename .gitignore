@@ -2,6 +2,7 @@
 .cache
 dist
 TODO.md
+.vscode
 
 # Logs
 logs

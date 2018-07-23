@@ -1,3 +1,4 @@
+// TODO: Попробовать добавить этот файл в index.html чтобы он загружался в Electron
 import 'katex/dist/katex.css';
 
 import React from 'react';
