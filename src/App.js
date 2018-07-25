@@ -19,7 +19,9 @@ import './main.scss';
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { modalOpened: false };
+        this.state = {
+            modalOpened: false,
+        };
     };
 
     render() {
