@@ -26,10 +26,14 @@ app.get('/lessons', (req, res) => {
 });
 
 app.get('/list', (req, res) => {
-    let fileNames = glob.sync(path.join(__dirname, '../lessons/*.md'));
-    if (fileNames) {
-        fileNames = fileNames.map(fileName => path.basename(fileName));
-        res.send(fileNames);
+    let filePaths = glob.sync(path.join(__dirname, '../lessons/*/*.md'));
+    if (filePaths) {
+        filePaths = filePaths.map(filePath => {
+            let pathDirs = path.dirname(filePath).split(path.sep);
+            let dirName = pathDirs[pathDirs.length - 1];
+            return path.join(dirName, path.basename(filePath));
+        });
+        res.send(filePaths);
     } else {
 
     }
