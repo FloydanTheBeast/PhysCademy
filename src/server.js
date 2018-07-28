@@ -12,9 +12,10 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get('/lessons', (req, res) => {
+app.get('/lessons/:section/:name', (req, res) => {
     try {
-        let file = fs.readFileSync(path.join(__dirname, `../lessons/${req.query.name}.md`), (err, data) => {
+        let file = fs.readFileSync(path.join(__dirname, `../lessons/${req.params.section}/${req.params.name}.md`),
+        (err, data) => {
             if (err) console.log('Error while reading the file');
             else console.log(data);
         });
@@ -25,17 +26,17 @@ app.get('/lessons', (req, res) => {
     }
 });
 
-app.get('/list', (req, res) => {
+app.get('/lessonsList', (req, res) => {
     let filePaths = glob.sync(path.join(__dirname, '../lessons/*/*.md'));
     if (filePaths) {
         filePaths = filePaths.map(filePath => {
             let pathDirs = path.dirname(filePath).split(path.sep);
             let dirName = pathDirs[pathDirs.length - 1];
-            return path.join(dirName, path.basename(filePath));
+            return {'section': dirName, 'lesson': path.basename(filePath)};
         });
         res.send(filePaths);
     } else {
-
+        res.send('No files were found');
     }
 });
 
