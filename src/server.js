@@ -32,7 +32,10 @@ app.get('/lessonsList', (req, res) => {
         filePaths = filePaths.map(filePath => {
             let pathDirs = path.dirname(filePath).split(path.sep);
             let dirName = pathDirs[pathDirs.length - 1];
-            return {'section': dirName, 'lesson': path.basename(filePath)};
+            return {'section': dirName, 
+                    'name': path.basename(filePath).split('.')[0],
+                    'fileName': path.basename(filePath)
+            };
         });
         res.send(filePaths);
     } else {

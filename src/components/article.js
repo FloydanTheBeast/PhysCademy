@@ -10,6 +10,7 @@ class Article extends Component {
     }
 
     componentDidMount() {
+        // FIXME: Запрос должен выполняться по переданному в props имени
         axios.get('http://localhost:8081/lessons?name=test')
             .then(res => this.setState(
                 {

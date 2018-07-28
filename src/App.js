@@ -2,6 +2,7 @@
 import 'katex/dist/katex.css';
 
 import React from 'react';
+import axios from 'axios';
 
 import Button from './components/button';
 import Logo from './components/logo';
@@ -9,19 +10,31 @@ import ArrowButtons from './components/arrowButtons';
 import Article from './components/article';
 import Formula from './components/formula';
 import Modal from './components/modalWindow';
+import lessonsList from './components/lessonsList';
 
 const title = "Lorem ipsum dolor sit amet.";
 const text = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem atque expedita, esse assumenda, recusandae vitae commodi reprehenderit illum quia natus eaque ad at sit, mollitia ut earum numquam temporibus nam. Voluptatibus dolores, officiis numquam quisquam quibusdam enim a deleniti inventore aperiam maiores placeat hic pariatur, suscipit optio cupiditate, modi illo.";
 
 import 'normalize.css';
 import './main.scss';
+import LessonsList from './components/lessonsList';
 
 class App extends React.Component {
     constructor(props) {
-        super(props);
+        super(props); 
+        this.axiosSource = axios.CancelToken.source();
         this.state = {
             modalOpened: false,
+            lessonsList: [],
         };
+    };
+
+    componentDidMount() {
+        this.setState({isMounted: true}, this.getLessonsList);
+    };
+
+    componentWillUnmount() {
+        this.axiosSource.cancel('Operation canceled due component being unmounted.');
     };
 
     render() {
@@ -40,16 +53,25 @@ class App extends React.Component {
                 <Modal isOpened={this.state.modalOpened} onClose={this.closeModal.bind(this)}>
                     <Article title="Lorem ispum">{text}</Article>
                 </Modal>
+                <LessonsList lessons={this.state.lessonsList} />
             </div>
         )
     };
 
     openModal() {
-        this.setState( {modalOpened: true} );
+        this.setState({modalOpened: true});
     };
 
     closeModal() {
-        this.setState( {modalOpened: false} );
+        this.setState({modalOpened: false});
+    };
+
+    getLessonsList() {
+        axios.get('http://localhost:8081/lessonsList', {cancelToken: this.axiosSource.token})
+            .then(res => {
+                this.setState({lessonsList: res.data});
+            })
+            .catch(err => console.log('Error: ', err));
     };
 }
 
