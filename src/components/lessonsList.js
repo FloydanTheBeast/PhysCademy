@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class LessonsList extends Component {
     constructor(props) {
@@ -7,21 +8,30 @@ class LessonsList extends Component {
 
     render() {
         return(
-            <ul>
+            <div className='lessons-list'>
                 {this.fetchLessonsList()}
-            </ul>
+            </div>
         );
     };
 
     fetchLessonsList() {
-        return this.props.lessons.map((lesson, index) => {
-            return (
-                <div className="article" key={index}>
-                    <h1>{lesson.name}</h1>
-                    <p>Test content</p>
-                </div>
-            )
-        });
+        if (this.props.lessons)
+            return Object.keys(this.props.lessons).map((section, sectionIndex) => {
+                return (
+                    <div className='lessons-section' key={`section${sectionIndex}`}>
+                        <h1>{section}</h1>
+                        {
+                            this.props.lessons[section].map((lesson, lessonIndex) => {
+                                return (
+                                    <Link key={`lesson${lessonIndex}`} to={`/lessons/${section}/${lesson.name}`}>
+                                        <h2>{lesson.name}</h2>
+                                    </Link>
+                                )
+                            })
+                        }
+                    </div>
+                )
+            });
     };
 }
 

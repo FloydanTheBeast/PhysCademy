@@ -29,16 +29,31 @@ app.get('/lessons/:section/:name', (req, res) => {
 app.get('/lessonsList', (req, res) => {
     let filePaths = glob.sync(path.join(__dirname, '../lessons/*/*.md'));
     if (filePaths) {
-        filePaths = filePaths.map(filePath => {
+        let fileStructure = {};
+        
+        for (let filePath of filePaths) {
             let pathDirs = path.dirname(filePath).split(path.sep);
             let dirName = pathDirs[pathDirs.length - 1];
-            return {'section': dirName, 
-                    'name': path.basename(filePath).split('.')[0],
-                    'fileName': path.basename(filePath)
-            };
-        });
-        res.send(filePaths);
+
+            if (fileStructure[dirName]) {
+                fileStructure[dirName].push(
+                    {
+                        'name': path.basename(filePath).split('.')[0],
+                        'fileName': path.basename(filePath)
+                    }
+                );
+            } else {
+                fileStructure[dirName] = [
+                    {
+                        'name': path.basename(filePath).split('.')[0],
+                        'fileName': path.basename(filePath)
+                    }
+                ];
+            }
+        }
+        res.send(fileStructure);
     } else {
+        res.status(404);
         res.send('No files were found');
     }
 });
