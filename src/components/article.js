@@ -1,10 +1,22 @@
 import React, {Component, createElement} from 'react';
 import axios from 'axios';
 import marksy from 'marksy/components';
+import { InlineMath, BlockMath } from 'react-katex';
+import Modal from './modalWindow';
 
-const compileMarkdown = marksy({createElement,
+const compileMarkdown = marksy({
+    createElement,
     components: {
         // TODO: Добавить все кастомные компоненты
+        InlineMath(props) {
+            return <InlineMath>{props.children}</InlineMath>
+        },
+        BlockMath(props) {
+            return <BlockMath>{String.raw`${props.children}`}</BlockMath>
+        },
+        // ModalWindow(props) {
+        //     return <ModalWindow>{props.children}</ModalWindow>
+        // }
     }
 });
 

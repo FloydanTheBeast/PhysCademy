@@ -11,6 +11,7 @@ class Formula extends React.Component {
     }
 
     render () {
+        // FIXME: Использовать String.raw()
         return(
             <div dangerouslySetInnerHTML = {{__html: this.renderKatex(this.props.children)}}></div>
         );
