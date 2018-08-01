@@ -5,7 +5,7 @@ class MenuBar extends Component {
     render() {
         return (
             <div className='menu-bar'>
-                    <Link className='menu-bar-item' to='lessonsList'>
+                    <Link className='menu-bar-item' to='/lessonsList'>
                         <div className='menu-bar-button'>Lessons</div>
                     </Link>
             </div>

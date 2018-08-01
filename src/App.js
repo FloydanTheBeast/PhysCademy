@@ -3,7 +3,7 @@ import 'katex/dist/katex.css';
 
 import React from 'react';
 import axios from 'axios';
-import { Route, Link, BrowserRouter, Switch} from 'react-router-dom';
+import { Route, Link, HashRouter, Switch} from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
 
 import Button from './components/button';
@@ -40,7 +40,7 @@ class App extends React.Component {
 
     render() {
         return(
-            <BrowserRouter>
+            <HashRouter basename='/'>
                 <div className='container'>
                     <MenuBar />
                     <div className='content'>    
@@ -60,7 +60,7 @@ class App extends React.Component {
                     </div>
                     <LessonsList lessons={this.state.lessonsList} />
                 </div>
-            </BrowserRouter>
+            </HashRouter>
         )
     };
 
