@@ -2,7 +2,7 @@ import React, {Component, createElement} from 'react';
 import axios from 'axios';
 import marksy from 'marksy/components';
 import { InlineMath, BlockMath } from 'react-katex';
-import Modal from './modalWindow';
+import Modal from './modalLauncher';
 
 const compileMarkdown = marksy({
     createElement,
@@ -14,9 +14,9 @@ const compileMarkdown = marksy({
         BlockMath(props) {
             return <BlockMath>{String.raw`${props.children}`}</BlockMath>
         },
-        // ModalWindow(props) {
-        //     return <ModalWindow>{props.children}</ModalWindow>
-        // }
+        Modal(props) {
+            return <Modal buttonLabel={props.buttonLabel}>{props.children}</Modal>
+        }
     }
 });
 
@@ -26,7 +26,9 @@ class Article extends Component {
         this.state = {
             text: ''
         };
-        this.getTextFromApi();
+        this.getTextFromApi = this.getTextFromApi.bind(this);
+        this.getTextFromApi(props.section, props.name);
+        
     }
 
     render() {
@@ -39,15 +41,16 @@ class Article extends Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        if (this.state.text != nextState.text) {
-            return true;
+        if (this.props.name == nextProps.name &&
+            this.props.section == nextProps.section) {
+            return false;
         }
-        this.getTextFromApi();
-        return false;
+        this.getTextFromApi(nextProps.section, nextProps.name);
+        return true;
     }
 
-    getTextFromApi() {
-        axios.get(`http://localhost:8081/lessons/${this.props.section}/${this.props.name}`)
+    getTextFromApi(section, name) {
+        axios.get(`http://localhost:8081/lessons/${section}/${name}`)
             .then(res => {
                     this.setState({text: res.data});
                     this.forceUpdate();

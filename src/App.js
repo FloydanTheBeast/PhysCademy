@@ -11,9 +11,9 @@ import Logo from './components/logo';
 import ArrowButtons from './components/arrowButtons';
 import Article from './components/article';
 import Formula from './components/formula';
-import Modal from './components/modalWindow';
 import LessonsList from './components/lessonsList';
 import MenuBar from './components/menuBar.js'
+import Modal from './components/modalLauncher';
 
 import 'normalize.css';
 import './main.scss';
@@ -52,7 +52,7 @@ class App extends React.Component {
                             }/>
                             <Route path='/' render={props => (
                                     <div className='content'>
-                                        <Link to='/'>Home</Link>
+                                        
                                     </div>
                                 )
                             } />
