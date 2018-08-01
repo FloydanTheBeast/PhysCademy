@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
 $font-color: #fff;
+$background-color: #34495e;
 
 a {
     color: $font-color;
@@ -8,14 +9,14 @@ a {
 }
 
 body {
-    background-color: #34495e;
+    background-color: $background-color;
 }
 
 .container {
     display: grid;
     grid-template-areas:
-        "list content";
-    grid-template-columns: 1fr 3fr;
+        "menu list content";
+    grid-template-columns: auto 1fr 4fr;
 }
 
 .content {
@@ -115,6 +116,31 @@ body {
 //     left: 0;
 //     background-color: rgba(0, 0, 0, 0.3);
 // }
+
+.menu-bar {
+    grid-area: menu;
+    border-right: 2px solid #fff;
+}
+
+.menu-bar-item {
+    display: block;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    &:hover {
+        background-color: darken($background-color, 10%);
+        cursor: pointer;
+    }
+}
+
+.menu-bar-button {
+    display: inline;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
 
 .lessons-list {
     grid-area: list;

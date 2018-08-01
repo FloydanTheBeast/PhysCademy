@@ -13,6 +13,7 @@ import Article from './components/article';
 import Formula from './components/formula';
 import Modal from './components/modalWindow';
 import LessonsList from './components/lessonsList';
+import MenuBar from './components/menuBar.js'
 
 import 'normalize.css';
 import './main.scss';
@@ -41,7 +42,8 @@ class App extends React.Component {
         return(
             <BrowserRouter>
                 <div className='container'>
-                    <div className='content'>
+                    <MenuBar />
+                    <div className='content'>    
                         <Logo />
                         <Switch>
                             <Route path='/lessons/:section/:name' render={({ match }, props) => (
