@@ -14,6 +14,7 @@ import Formula from './components/formula';
 import LessonsList from './components/lessonsList';
 import MenuBar from './components/menuBar.js'
 import Modal from './components/modalLauncher';
+import ExpandableText from './components/expandableText';
 
 import 'normalize.css';
 import './main.scss';
@@ -52,7 +53,6 @@ class App extends React.Component {
                             }/>
                             <Route path='/' render={props => (
                                     <div className='content'>
-                                        
                                     </div>
                                 )
                             } />
