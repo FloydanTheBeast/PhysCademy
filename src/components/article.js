@@ -1,24 +1,15 @@
 import React, {Component, createElement} from 'react';
 import axios from 'axios';
-import marksy from 'marksy/components';
+//TODO: написать свои компоненты для katex'a
 import { InlineMath, BlockMath } from 'react-katex';
 import Modal from './modalLauncher';
+import Paragraph from './paragraph';
+import Markdown, { compiler } from 'markdown-to-jsx';
 
-const compileMarkdown = marksy({
-    createElement,
-    components: {
-        // TODO: Добавить все кастомные компоненты
-        InlineMath(props) {
-            return <InlineMath>{props.children}</InlineMath>
-        },
-        BlockMath(props) {
-            return <BlockMath>{String.raw`${props.children}`}</BlockMath>
-        },
-        Modal(props) {
-            return <Modal buttonLabel={props.buttonLabel}>{props.children}</Modal>
-        }
-    }
-});
+const CustomComponents = {
+    InlineMath,
+    Modal
+};
 
 class Article extends Component {
     constructor(props) {
@@ -28,17 +19,20 @@ class Article extends Component {
         };
         this.getTextFromApi = this.getTextFromApi.bind(this);
         this.getTextFromApi(props.section, props.name);
-        
-    }
+    };
 
     render() {
         return (
             <div className='article'>
                 <h1 className='article-title'>{this.props.name}</h1>
-                <div>{compileMarkdown(this.state.text).tree}</div>
+                <Markdown options={{
+                    overrides: CustomComponents,
+                }}>
+                    {this.state.text}
+                </Markdown>
             </div>
         );
-    }
+    };
 
     shouldComponentUpdate(nextProps, nextState) {
         if (this.props.name == nextProps.name &&
@@ -47,7 +41,7 @@ class Article extends Component {
         }
         this.getTextFromApi(nextProps.section, nextProps.name);
         return true;
-    }
+    };
 
     getTextFromApi(section, name) {
         axios.get(`http://localhost:8081/lessons/${section}/${name}`)
@@ -57,7 +51,8 @@ class Article extends Component {
                 }
             )
             .catch(err => console.error(err.response.data));
-    }
+        
+    };
 };
 
 export default Article;

@@ -26,8 +26,6 @@ class Modal extends Component {
             classes
         } = this.props;
 
-        console.log('RENDER MODAL');
-
         return (
             <div className={classes.modalContainer}>
                 <div className={classes.modal} ref={node => (this.modal = node)}>
