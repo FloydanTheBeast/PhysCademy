@@ -10,7 +10,6 @@ import Button from './components/button';
 import Logo from './components/logo';
 import ArrowButtons from './components/arrowButtons';
 import Article from './components/article';
-import Formula from './components/formula';
 import LessonsList from './components/lessonsList';
 import MenuBar from './components/menuBar.js'
 import Modal from './components/modalLauncher';

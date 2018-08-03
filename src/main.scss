@@ -68,29 +68,13 @@ body {
     width: 80%;
     margin: 0 auto;
     color: $font-color;
-    font: 1.25rem "Ubuntu", sans-serif; 
+    font: 1.25rem sans-serif; 
 }
 
 .article-title {
     padding-left: 1rem;
     border-left: 0.5rem solid #fff;
 }
-
-// .modal-window {
-//     position: fixed;
-//     z-index: 9999;
-//     top: 50%;
-//     left: 50%;
-//     min-width: 300px;
-//     min-height: 250px;
-//     padding: 1rem;
-//     background-color: rgba(0, 0, 0, 0.8);
-//     transform: translate(-50%, -50%)
-// }
-
-// .modal-window {
-//     margin-bottom: 1.5rem; 
-// }
 
 .modal-window {
     position: fixed;

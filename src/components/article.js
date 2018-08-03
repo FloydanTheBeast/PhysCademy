@@ -1,13 +1,14 @@
 import React, {Component, createElement} from 'react';
 import axios from 'axios';
 //TODO: написать свои компоненты для katex'a
-import { InlineMath, BlockMath } from 'react-katex';
 import Modal from './modalLauncher';
 import Paragraph from './paragraph';
 import Markdown, { compiler } from 'markdown-to-jsx';
+import { InlineMath, BlockMath } from './math';
 
 const CustomComponents = {
     InlineMath,
+    BlockMath,
     Modal
 };
 
@@ -26,7 +27,7 @@ class Article extends Component {
             <div className='article'>
                 <h1 className='article-title'>{this.props.name}</h1>
                 <Markdown options={{
-                    overrides: CustomComponents,
+                    overrides: CustomComponents
                 }}>
                     {this.state.text}
                 </Markdown>
