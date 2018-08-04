@@ -1,19 +1,22 @@
-import React from 'react'
-import { InlineMath as InlineFormula, BlockMath as BlockFormula } from 'react-katex';
+import React from 'react';
+import katex from 'katex';
+
+const renderTex = (raw) => {
+    return {
+        __html: ` ${katex.renderToString(raw)} `
+    }
+}
 
 const InlineMath = (props) => {
     return(
-        <InlineFormula>
-            {String.raw`${props.children}`}
-        </InlineFormula>
+        <span dangerouslySetInnerHTML={renderTex(String.raw`${props.math}`)}></span>
     );
 };
 
 const BlockMath = (props) => {
+    const html = renderTex(String.raw`${props.math}`);
     return(
-        <BlockFormula>
-            {String.raw`${props.children}`}
-        </BlockFormula>
+        <div dangerouslySetInnerHTML={renderTex(String.raw`${props.math}`)}></div>
     );
 };
 

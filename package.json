@@ -35,12 +35,12 @@
     "electron": "^2.0.2",
     "express": "^4.16.3",
     "glob": "^7.1.2",
+    "katex": "^0.10.0-beta",
     "markdown-to-jsx": "^6.7.0",
     "normalize.css": "^8.0.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-jss": "^8.6.1",
-    "react-katex": "^2.0.2",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1"
   }
