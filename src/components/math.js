@@ -9,16 +9,18 @@ const renderTex = (raw) => {
 
 const InlineMath = (props) => {
     return(
-        <span dangerouslySetInnerHTML={renderTex(String.raw`${props.math}`)}></span>
+        <span dangerouslySetInnerHTML={
+            renderTex(String.raw`${props.math}`)
+        }></span>
     );
 };
 
 const BlockMath = (props) => {
-    const html = renderTex(String.raw`${props.math}`);
     return(
-        <div dangerouslySetInnerHTML={renderTex(String.raw`${props.math}`)}></div>
+        <div dangerouslySetInnerHTML={
+            renderTex(String.raw`${props.math}`)
+        }></div>
     );
 };
-
 
 export { InlineMath, BlockMath };

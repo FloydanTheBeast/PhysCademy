@@ -1,5 +1,10 @@
 export default {
+    expandableText: {
+        
+    },
+
     expandableTextContainer: {
+        color: '#333',
         width: '80%',
         margin: '0 auto',
         backgroundColor: '#fff',
@@ -7,6 +12,7 @@ export default {
     },
 
     expandableTextContent: {
+        color: '#333',
         display: 'none',
         '&.open': {
             display: 'block'
