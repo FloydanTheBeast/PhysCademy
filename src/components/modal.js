@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import injectSheet from 'react-jss';
-import styles from './modalStyles';
+import styles from './ModalStyles';
 
 class Modal extends Component {
     constructor(props) {

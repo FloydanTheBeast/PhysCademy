@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './button';
+import Button from './Button';
 
 const ArrowButtons = (props) => {
     return (

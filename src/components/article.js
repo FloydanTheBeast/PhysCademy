@@ -1,10 +1,9 @@
 import React, {Component, createElement} from 'react';
 import axios from 'axios';
-//TODO: написать свои компоненты для katex'a
-import Modal from './modalLauncher';
+import Modal from './ModalLauncher';
 import Markdown, { compiler } from 'markdown-to-jsx';
-import ExpandableText from './expandableText';
-import { InlineMath, BlockMath } from './math';
+import ExpandableText from './ExpandableText';
+import { InlineMath, BlockMath } from './Math';
 
 const CustomComponents = {
     InlineMath,

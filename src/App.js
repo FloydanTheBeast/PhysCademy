@@ -6,14 +6,14 @@ import axios from 'axios';
 import { Route, Link, HashRouter, Switch} from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
 
-import Button from './components/button';
-import Logo from './components/logo';
-import ArrowButtons from './components/arrowButtons';
-import Article from './components/article';
-import LessonsList from './components/lessonsList';
-import MenuBar from './components/menuBar.js'
-import Modal from './components/modalLauncher';
-import ExpandableText from './components/expandableText';
+import Button from './components/Button';
+import Logo from './components/AppLogo';
+import ArrowButtons from './components/ArrowButtons';
+import Article from './components/Article';
+import LessonsList from './components/LessonsList';
+import MenuBar from './components/MenuBar'
+import Modal from './components/ModalLauncher';
+import ExpandableText from './components/ExpandableText';
 
 import 'normalize.css';
 import './main.scss';

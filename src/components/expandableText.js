@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import injectStyles from 'react-jss';
-import styles from './expandableTextStyles';
+import styles from './ExpandableTextStyles';
 
 class ExpandableText extends Component {
     constructor(props) {

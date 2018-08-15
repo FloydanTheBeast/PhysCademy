@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Modal from './modal';
+import Modal from './Modal';
 import injectStyles from 'react-jss';
-import styles from './modalLauncherStyles';
+import styles from './ModalLauncherStyles';
 
 class ModalLauncher extends Component {
     constructor(props) {

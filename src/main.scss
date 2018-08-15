@@ -106,11 +106,25 @@ body {
     border-right: 2px solid #fff;
 }
 
+.lessons-logo >  {
+    & svg {
+        width: 145px;
+        height: 145px;
+        fill: #fff;
+        & line, & path {
+            stroke: #fff !important;
+            fill: #fff !important;
+        }
+    }
+
+}
+
 .menu-bar-item {
     display: block;
     position: relative;
     width: 150px;
     height: 150px;
+    border-bottom: 1px solid #fff;
     &:hover {
         background-color: darken($background-color, 10%);
         cursor: pointer;
