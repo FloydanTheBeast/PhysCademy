@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import injectStyles from 'react-jss';
+import styles from './LessonsListStyles';
 
 class LessonsList extends Component {
     constructor(props) {
@@ -7,8 +9,10 @@ class LessonsList extends Component {
     };
 
     render() {
+        const { classes } = this.props;
+
         return(
-            <div className='lessons-list'>
+            <div className={classes.LessonsList}>
                 {this.fetchLessonsList()}
             </div>
         );
@@ -35,4 +39,4 @@ class LessonsList extends Component {
     };
 }
 
-export default LessonsList;
+export default injectStyles(styles)(LessonsList);

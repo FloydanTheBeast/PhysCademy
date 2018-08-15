@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Modal from './Modal';
+import Modal from '../Modal/Modal';
 import injectStyles from 'react-jss';
 import styles from './ModalLauncherStyles';
 

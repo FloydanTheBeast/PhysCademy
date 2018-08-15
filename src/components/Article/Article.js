@@ -1,9 +1,12 @@
 import React, {Component, createElement} from 'react';
 import axios from 'axios';
-import Modal from './ModalLauncher';
-import Markdown, { compiler } from 'markdown-to-jsx';
-import ExpandableText from './ExpandableText';
-import { InlineMath, BlockMath } from './Math';
+import Markdown from 'markdown-to-jsx';
+import injectStyles from 'react-jss';
+
+import Modal from '../ModalLauncher/ModalLauncher';
+import ExpandableText from '../ExpandableText';
+import { InlineMath, BlockMath } from '../Math';
+import styles from './ArticleStyles';
 
 const CustomComponents = {
     InlineMath,
@@ -18,14 +21,16 @@ class Article extends Component {
         this.state = {
             text: ''
         };
-        this.getTextFromApi = this.getTextFromApi.bind(this);
-        this.getTextFromApi(props.section, props.name);
+        this.fetchTextFromApi = this.fetchTextFromApi.bind(this);
+        this.fetchTextFromApi(props.section, props.name);
     };
 
     render() {
+        const { classes } = this.props;
+
         return (
-            <div className='article'>
-                <h1 className='article-title'>{this.props.name}</h1>
+            <div className={classes.Article}>
+                <h1 className={classes.ArticleTitle}>{this.props.name}</h1>
                 <Markdown options={{
                     overrides: CustomComponents,
                     forceBlock: true
@@ -41,11 +46,11 @@ class Article extends Component {
             this.props.section == nextProps.section) {
             return false;
         }
-        this.getTextFromApi(nextProps.section, nextProps.name);
+        this.fetchTextFromApi(nextProps.section, nextProps.name);
         return true;
     };
 
-    getTextFromApi(section, name) {
+    fetchTextFromApi(section, name) {
         axios.get(`http://localhost:8081/lessons/${section}/${name}`)
             .then(res => {
                     this.setState({text: res.data});
@@ -56,4 +61,4 @@ class Article extends Component {
     };
 };
 
-export default Article;
+export default injectStyles(styles)(Article);

@@ -5,17 +5,18 @@ import React from 'react';
 import axios from 'axios';
 import { Route, Link, HashRouter, Switch} from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
+import injectStyles from 'react-jss';
 
-import Logo from './components/AppLogo';
+import Logo from './components/Logo/AppLogo';
 import ArrowButtons from './components/ArrowButtons';
-import Article from './components/Article';
-import LessonsList from './components/LessonsList';
-import MenuBar from './components/MenuBar'
-import Modal from './components/ModalLauncher';
+import Article from './components/Article/Article';
+import LessonsList from './components/LessonsList/LessonsList';
+import MenuBar from './components/MenuBar/MenuBar'
+import Modal from './components/ModalLauncher/ModalLauncher';
 import ExpandableText from './components/ExpandableText';
+import styles from './AppStyles';
 
 import 'normalize.css';
-import './main.scss';
 
 const history = createBrowserHistory();
 
@@ -38,9 +39,11 @@ class App extends React.Component {
     };
 
     render() {
+        const { classes } = this.props;
+
         return(
             <HashRouter basename='/'>
-                <div className='container'>
+                <div className={`${classes.App} container`}>
                     <MenuBar />
                     <div className='content'>    
                         <Logo />
@@ -79,4 +82,4 @@ class App extends React.Component {
     };
 }
 
-export default App;
+export default injectStyles(styles)(App);
