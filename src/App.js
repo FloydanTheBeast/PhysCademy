@@ -6,7 +6,6 @@ import axios from 'axios';
 import { Route, Link, HashRouter, Switch} from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
 
-import Button from './components/Button';
 import Logo from './components/AppLogo';
 import ArrowButtons from './components/ArrowButtons';
 import Article from './components/Article';
