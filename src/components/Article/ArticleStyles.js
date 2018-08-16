@@ -1,12 +1,10 @@
 export default {
-    '@font-face': [{
-        fontFamily: ''
-    }],
     Article: {
-        width: '80%',
+        width: '90%',
         margin: '0 auto',
         color: '#fff',
-        font: '1.25rem sans-serif'
+        font: '1.25rem "Montserrat", sans-serif',
+        gridArea: 'content'
     },
     ArticleTitle: {
         borderLeft: '0.5rem solid #fff',

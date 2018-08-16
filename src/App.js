@@ -7,7 +7,7 @@ import { Route, Link, HashRouter, Switch} from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
 import injectStyles from 'react-jss';
 
-import Logo from './components/Logo/AppLogo';
+import Logo from './components/AppLogo/AppLogo';
 import ArrowButtons from './components/ArrowButtons';
 import Article from './components/Article/Article';
 import LessonsList from './components/LessonsList/LessonsList';
@@ -45,21 +45,22 @@ class App extends React.Component {
             <HashRouter basename='/'>
                 <div className={`${classes.App} container`}>
                     <MenuBar />
-                    <div className='content'>    
-                        <Logo />
-                        <Switch>
-                            <Route path='/lessons/:section/:name' render={({ match }, props) => (
-                                    <Article section={match.params.section} name={match.params.name} />
-                                )
-                            }/>
-                            <Route path='/' render={props => (
-                                    <div className='content'>
-                                    </div>
-                                )
-                            } />
-                        </Switch>
-                    </div>
-                    <LessonsList lessons={this.state.lessonsList} />
+                    <Switch>
+                        <Route path='/lessons/:section/:name' render={({ match }, props) => (
+                                [
+                                    <Article section={match.params.section} name={match.params.name} />,
+                                    <LessonsList lessons={this.state.lessonsList} />
+                                ]
+                            )
+                        }/>
+                        <Route path='/' render={props => (
+                                <div className={classes.ContentList}>
+                                    <Logo />
+                                    <LessonsList extended lessons={this.state.lessonsList} />
+                                </div>
+                            )
+                        } />
+                    </Switch>
                 </div>
             </HashRouter>
         )

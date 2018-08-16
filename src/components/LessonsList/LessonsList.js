@@ -12,23 +12,25 @@ class LessonsList extends Component {
         const { classes } = this.props;
 
         return(
-            <div className={classes.LessonsList}>
+            <div className={`${this.props.extended ? classes.ExtendedLessonsList: classes.LessonsList}`}>
                 {this.fetchLessonsList()}
             </div>
         );
     };
 
     fetchLessonsList() {
+        const { classes } = this.props;
+
         if (this.props.lessons)
             return Object.keys(this.props.lessons).map((section, sectionIndex) => {
                 return (
-                    <div className='lessons-section' key={`section${sectionIndex}`}>
+                    <div className={classes.LessonsSection} key={`section${sectionIndex}`}>
                         <h1>{section}</h1>
                         {
                             this.props.lessons[section].map((lesson, lessonIndex) => {
                                 return (
                                     <Link key={`lesson${lessonIndex}`} to={`/lessons/${section}/${lesson.name}`}>
-                                        <h2>{lesson.name}</h2>
+                                        <p>{lesson.name}</p>
                                     </Link>
                                 )
                             })

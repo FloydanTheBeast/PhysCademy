@@ -37,7 +37,7 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            outputPath: 'static/fonts/katex'
+                            outputPath: 'assets/Fonts'
                         }
                     }
                 ]

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import InlineSVG from 'svg-inline-react';
 import injectStyles from 'react-jss';
 import styles from './MenuBarStyles';
-import MenuBarStyles from './MenuBarStyles';
 
 class MenuBar extends Component {
     constructor(props) {
@@ -24,4 +23,4 @@ class MenuBar extends Component {
     }
 }
 
-export default injectStyles(MenuBarStyles)(MenuBar);
+export default injectStyles(styles)(MenuBar);

@@ -2,17 +2,22 @@ import LightenDarkenColor from '../../utils/LightenDarkenColor'
 
 export default {
     MenuBar: {
+        backgroundColor: LightenDarkenColor('#2C3A47', -15),
         gridArea: 'menu',
-        borderRight: '2px solid #fff'
+        borderRight: '2px solid #222',
+        position: 'sticky',
+        height: '100vh',
+        overflowY: 'auto',
+        top: '0',
+        width: '150px'
     },
     MenuBarItem: {
         display: 'block',
         position: 'relative',
         width: '150px',
         height: '150px',
-        borderBottom: '1px solid #fff',
         '&:hover': {
-            backgroundColor: LightenDarkenColor('#34495e', -15),
+            backgroundColor: LightenDarkenColor('#2C3A47', -40),
             cursor: 'pointer'
         }
     },
