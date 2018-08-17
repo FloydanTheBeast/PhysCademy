@@ -46,6 +46,10 @@ export default {
         width: '100%'
     },
     '@global': {
+        'html': {
+            overflowY: 'scroll', // Решение бага при котором меню становилось чуть шире из-за появившегося скроллбара
+            backgroundColor: '#2C3A47'
+        },
         'html::-webkit-scrollbar': {
             width: '10px'
         },

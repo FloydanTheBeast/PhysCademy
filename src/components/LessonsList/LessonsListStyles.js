@@ -3,7 +3,7 @@ import LightenDarkenColor from '../../utils/LightenDarkenColor'
 const LessonsListStyles = {
     '& h1': {
         color: '#fff',
-        fontFamily: '"Montseratt", sans-serif'
+        fontFamily: '"Montserrat", sans-serif'
     },
     '& a': {
         '&:hover': {
@@ -21,6 +21,8 @@ export default {
         gridArea: 'list',
         textAlign: 'center',
         minWidth: '250px',
+        maxWidth: '350px',
+        width: '20vw',
         borderRight: '2px solid #222',
         backgroundColor: LightenDarkenColor('#2C3A47', -15),
         overflowY: 'auto',
@@ -36,7 +38,6 @@ export default {
         '& a': {
             '& p': {
                 fontSize: '1.25rem',
-                width: '90%',
                 margin: '0 auto',
                 paddingBottom: '12px'
             }
@@ -63,7 +64,7 @@ export default {
     },
     LessonsSection: {
         '& a:last-child p': {
-            borderBottom: '2px solid #111'
+            borderBottom: '2px solid #222'
         }
     },
     

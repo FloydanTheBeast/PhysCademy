@@ -18,7 +18,7 @@ class ModalLauncher extends Component {
             <div>
                 <button
                     type='button'
-                    className={classes.modalOpenBtn}
+                    className={classes.ModalOpenBtn}
                     onClick={this.toggleModal.bind(this)}
                 >
                     {this.props.buttonLabel}

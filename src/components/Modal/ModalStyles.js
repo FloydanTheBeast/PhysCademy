@@ -3,7 +3,7 @@ export default {
         'body': { overflow: 'hidden' }
     },
 
-    modalContainer: {
+    ModalContainer: {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -20,7 +20,7 @@ export default {
         overflowY: 'auto',
     },
 
-    modal: {
+    Modal: {
         color: '#000',
         width: '60%',
         backgroundColor: '#fff',
@@ -28,7 +28,7 @@ export default {
         borderRadius: '0.5rem'
     },
 
-    modalCloseBtn: {
+    ModalCloseBtn: {
         position: 'fixed',
         top: 0,
         right: 0,

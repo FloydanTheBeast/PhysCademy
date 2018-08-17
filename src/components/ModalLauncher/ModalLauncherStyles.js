@@ -1,5 +1,5 @@
 export default {
-  modalOpenBtn: {
+  ModalOpenBtn: {
     padding: ['0.7rem', '1.8rem'],
     backgroundColor: '#568db2',
     border: 0,

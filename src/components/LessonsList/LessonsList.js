@@ -29,7 +29,7 @@ class LessonsList extends Component {
                         {
                             this.props.lessons[section].map((lesson, lessonIndex) => {
                                 return (
-                                    <Link key={`lesson${lessonIndex}`} to={`/lessons/${section}/${lesson.name}`}>
+                                    <Link onClick={this.handleLinkClick} key={`lesson${lessonIndex}`} to={`/lessons/${section}/${lesson.name}`}>
                                         <p>{lesson.name}</p>
                                     </Link>
                                 )
@@ -39,6 +39,11 @@ class LessonsList extends Component {
                 )
             });
     };
-}
+
+    handleLinkClick() {
+        // Скролл вверх документа при обновлении контента
+        document.documentElement.scrollTop = 0;
+    };
+};
 
 export default injectStyles(styles)(LessonsList);

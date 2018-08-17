@@ -4,8 +4,8 @@ import Markdown from 'markdown-to-jsx';
 import injectStyles from 'react-jss';
 
 import Modal from '../ModalLauncher/ModalLauncher';
-import ExpandableText from '../ExpandableText';
-import { InlineMath, BlockMath } from '../Math';
+import ExpandableText from '../ExpandableText/ExpandableText';
+import { InlineMath, BlockMath } from '../Math/Math';
 import styles from './ArticleStyles';
 
 const CustomComponents = {

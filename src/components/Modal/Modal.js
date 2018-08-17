@@ -27,16 +27,16 @@ class Modal extends Component {
         } = this.props;
 
         return (
-            <div className={classes.modalContainer}>
-                <div className={classes.modal} ref={node => (this.modal = node)}>
-                    <div className={classes.modalContent}>
+            <div className={classes.ModalContainer}>
+                <div className={classes.Modal} ref={node => (this.modal = node)}>
+                    <div className={classes.ModalContent}>
                         {this.props.children}
                     </div>
                 </div>
 
                 <button 
                     type='button'
-                    className={classes.modalCloseBtn}
+                    className={classes.ModalCloseBtn}
                     onClick={onClose}
                 />
             </div>

@@ -13,12 +13,10 @@ import Article from './components/Article/Article';
 import LessonsList from './components/LessonsList/LessonsList';
 import MenuBar from './components/MenuBar/MenuBar'
 import Modal from './components/ModalLauncher/ModalLauncher';
-import ExpandableText from './components/ExpandableText';
+import ExpandableText from './components/ExpandableText/ExpandableText';
 import styles from './AppStyles';
 
 import 'normalize.css';
-
-const history = createBrowserHistory();
 
 class App extends React.Component {
     constructor(props) {
@@ -35,7 +33,7 @@ class App extends React.Component {
     };
 
     componentWillUnmount() {
-        this.axiosSource.cancel('Operation canceled due component being unmounted.');
+        this.axiosSource.cancel('Operation canceled due to component being unmounted.');
     };
 
     render() {
@@ -48,8 +46,8 @@ class App extends React.Component {
                     <Switch>
                         <Route path='/lessons/:section/:name' render={({ match }, props) => (
                                 [
-                                    <Article section={match.params.section} name={match.params.name} />,
-                                    <LessonsList lessons={this.state.lessonsList} />
+                                    <Article key='article' section={match.params.section} name={match.params.name} />,
+                                    <LessonsList key='lessons-list' lessons={this.state.lessonsList} />
                                 ]
                             )
                         }/>

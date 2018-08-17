@@ -16,13 +16,13 @@ class ExpandableText extends Component {
         const openClass = this.state.isExpanded ? 'open' : '';
 
         return (
-            <div className={classes.expandableTextContainer}>
-                <div className={classes.expandableTextPreview} onClick={this.toggleExtension}>
+            <div className={classes.ExpandableTextContainer}>
+                <div className={classes.ExpandableTextPreview} onClick={this.toggleExtension}>
                     <h2>{this.props.title || 'Дополнительная информация'}</h2>
-                    <i className={classes.expandableTextIcon}></i>
+                    <i className={classes.ExpandableTextIcon}></i>
                 </div>
 
-                <div className={`${classes.expandableTextContent} ${openClass}`}>
+                <div className={`${classes.ExpandableTextContent} ${openClass}`}>
                     {this.props.children}
                 </div>
             </div>
