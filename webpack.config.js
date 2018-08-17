@@ -7,7 +7,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, './build'),
         publicPath: '/',
-        filename: 'bundle.js'
+        filename: 'bundle.js',
     },
     module: {
         rules: [
@@ -35,7 +35,7 @@ module.exports = {
                 test: /\.(woff|woff2|ttf)$/,
                 use: [
                     {
-                        loader: 'file-loader',
+                        loader: 'url-loader',
                         options: {
                             outputPath: 'assets/Fonts'
                         }
@@ -50,6 +50,9 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js'],
+        alias: {
+            Fonts: path.join(__dirname, 'assets/Fonts/')
+        }
     },
     plugins: [
     new HtmlWebPackPlugin({

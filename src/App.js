@@ -4,7 +4,6 @@ import 'katex/dist/katex.css';
 import React from 'react';
 import axios from 'axios';
 import { Route, Link, HashRouter, Switch} from 'react-router-dom';
-import createBrowserHistory from 'history/createBrowserHistory';
 import injectStyles from 'react-jss';
 
 import Logo from './components/AppLogo/AppLogo';

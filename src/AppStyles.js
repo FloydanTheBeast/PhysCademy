@@ -1,14 +1,17 @@
+import MontserratNormal from 'Fonts/Montserrat/Montserrat-Regular.ttf';
+import MontserratBold from 'Fonts/Montserrat/Montserrat-Bold.ttf';
+
 export default {
     // Import all fonts
     '@font-face': [
         {
             fontFamily: 'Montserrat',
-            src: 'url(assets/Fonts/Montserrat/Montserrat-Bold.ttf)',
+            src: `url(${MontserratBold})`,
             fontWeight: 'bold'
         },
         {
             fontFamily: 'Montserrat',
-            src: 'url(assets/Fonts/Montserrat/Montserrat-Regular.ttf)',
+            src: `url(${MontserratNormal})`,
             fontWeight: 'normal'
         },   
     ],

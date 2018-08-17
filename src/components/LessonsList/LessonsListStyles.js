@@ -11,7 +11,7 @@ const LessonsListStyles = {
             transition: 'color 0.3s'
         },
         '& p': {
-            fontFamily: '"Montseratt", sans-serif',
+            fontFamily: '"Montserrat", sans-serif',
         }
     }
 }

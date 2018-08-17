@@ -20,7 +20,7 @@ app.get('/lessons/:section/:name', (req, res) => {
             else console.log(data);
         });
         res.send(file);
-    } catch {
+    } catch(e) {
         res.status(404);
         res.send('This file doesn\'t exist');
     }
@@ -58,4 +58,4 @@ app.get('/lessonsList', (req, res) => {
     }
 });
 
-app.listen(8081);
+app.listen(8081, () => console.log('Server is running on port 8081'));

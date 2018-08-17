@@ -1,16 +1,26 @@
 {
-  "name": "test",
+  "name": "physcademy",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "",
   "scripts": {
     "dev": "concurrently --kill-others \"webpack-dev-server --mode development --open\" \"yarn start:server\" ",
     "start:server": "node src/server.js",
     "build": "webpack --mode production --progress",
     "electron": "wait-on http://localhost:8080 && electron .",
-    "dev:electron": "concurrently --kill-others \"yarn start:server\" \"webpack-dev-server --mode development\" \"yarn electron\" "
+    "dev:electron": "concurrently --kill-others \"webpack-dev-server --mode development\" \"yarn electron\" ",
+    "build:electron": "electron-builder"
   },
   "author": "Abdelsalam Shadi <floydanthebeast@gmail.com>",
+  "homepage": "./",
+  "build": {
+    "appId": "com.example.electron-cra",
+    "files": [
+      "./build/**/*",
+      "./src/server.js",
+      "./index.js"
+    ]
+  },
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -18,12 +28,16 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "concurrently": "^3.6.0",
-    "css-loader": "^0.28.11",
+    "css-loader": "^1.0.0",
+    "electron": "^2.0.2",
+    "electron-builder": "^20.28.1",
     "file-loader": "^1.1.11",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.0",
+    "resolve-url-loader": "^2.3.0",
     "svg-inline-loader": "^0.8.0",
+    "url-loader": "^1.1.1",
     "wait-on": "^2.1.0",
     "webpack": "^4.10.2",
     "webpack-cli": "^2.1.3",
@@ -31,7 +45,6 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "electron": "^2.0.2",
     "express": "^4.16.3",
     "glob": "^7.1.2",
     "jss-global": "^3.0.0",
