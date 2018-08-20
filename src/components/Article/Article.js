@@ -51,7 +51,7 @@ class Article extends Component {
     };
 
     fetchTextFromApi(section, name) {
-        axios.get(`http://localhost:8081/lessons/${section}/${name}`)
+        axios.get(`http://localhost:8081/lessons/${encodeURI(section)}/${encodeURI(name)}`)
             .then(res => {
                     this.setState({text: res.data});
                     this.forceUpdate();

@@ -29,8 +29,8 @@ class LessonsList extends Component {
                         {
                             this.props.lessons[section].map((lesson, lessonIndex) => {
                                 return (
-                                    <Link onClick={this.handleLinkClick} key={`lesson${lessonIndex}`} to={`/lessons/${section}/${lesson.name}`}>
-                                        <p>{lesson.name}</p>
+                                    <Link onClick={this.handleLinkClick} key={`lesson${lessonIndex}`} to={`/lessons/${section}/${lesson}`}>
+                                        <p>{lesson}</p>
                                     </Link>
                                 )
                             })
