@@ -57,6 +57,7 @@
     "react-jss": "^8.6.1",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
+    "smoothscroll-for-websites": "^1.4.6",
     "svg-inline-react": "^3.1.0"
   }
 }

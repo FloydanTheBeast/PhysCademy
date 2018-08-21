@@ -16,6 +16,7 @@ import ExpandableText from './components/ExpandableText/ExpandableText';
 import styles from './AppStyles';
 
 import 'normalize.css';
+import 'smoothscroll-for-websites';
 
 class App extends React.Component {
     constructor(props) {
