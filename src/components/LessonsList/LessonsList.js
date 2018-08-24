@@ -1,11 +1,24 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import injectStyles from 'react-jss';
 import styles from './LessonsListStyles';
 
 class LessonsList extends Component {
     constructor(props) {
         super(props);
+        this.axiosSource = axios.CancelToken.source();
+        this.state = {
+            lessonsList: {}
+        }
+    };
+
+    componentDidMount() {
+        this.getLessonsList();
+    };
+
+    componentWillUnmount() {
+        this.axiosSource.cancel('Operation canceled due to component being unmounted.');
     };
 
     render() {
@@ -18,16 +31,24 @@ class LessonsList extends Component {
         );
     };
 
+    getLessonsList() {
+        axios.get('http://localhost:8081/lessonsList', {cancelToken: this.axiosSource.token})
+            .then(res => {
+                this.setState({lessonsList: res.data});
+            })
+            .catch(err => console.log('Error: ', err));
+    };
+
     fetchLessonsList() {
         const { classes } = this.props;
 
-        if (this.props.lessons)
-            return Object.keys(this.props.lessons).map((section, sectionIndex) => {
+        if (this.state.lessonsList) {
+            return Object.keys(this.state.lessonsList).map((section, sectionIndex) => {
                 return (
                     <div className={classes.LessonsSection} key={`section${sectionIndex}`}>
                         <h1>{section}</h1>
                         {
-                            this.props.lessons[section].map((lesson, lessonIndex) => {
+                            this.state.lessonsList[section].map((lesson, lessonIndex) => {
                                 return (
                                     <Link onClick={this.handleLinkClick} key={`lesson${lessonIndex}`} to={`/lessons/${section}/${lesson}`}>
                                         <p>{lesson}</p>
@@ -38,6 +59,7 @@ class LessonsList extends Component {
                     </div>
                 )
             });
+        }
     };
 
     handleLinkClick() {

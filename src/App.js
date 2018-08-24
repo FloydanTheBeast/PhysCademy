@@ -13,6 +13,7 @@ import LessonsList from './components/LessonsList/LessonsList';
 import MenuBar from './components/MenuBar/MenuBar'
 import Modal from './components/ModalLauncher/ModalLauncher';
 import ExpandableText from './components/ExpandableText/ExpandableText';
+import PersonsList from './components/PersonsList/PersonsList';
 import styles from './AppStyles';
 
 import 'normalize.css';
@@ -23,17 +24,8 @@ class App extends React.Component {
         super(props); 
         this.axiosSource = axios.CancelToken.source();
         this.state = {
-            modalOpened: false,
-            lessonsList: [],
+            modalOpened: false
         };
-    };
-
-    componentDidMount() {
-        this.setState({isMounted: true}, this.getLessonsList);
-    };
-
-    componentWillUnmount() {
-        this.axiosSource.cancel('Operation canceled due to component being unmounted.');
     };
 
     render() {
@@ -47,10 +39,14 @@ class App extends React.Component {
                         <Route path='/lessons/:section/:name' render={({ match }, props) => (
                                 [
                                     <Article key='article' section={match.params.section} name={match.params.name} />,
-                                    <LessonsList key='lessons-list' lessons={this.state.lessonsList} />
+                                    <LessonsList key='lessons-list' />
                                 ]
                             )
                         }/>
+                        <Route path='/persons' render={({ match }, props) => (
+                                <PersonsList />
+                            )   
+                        } />
                         <Route path='/' render={props => (
                                 <div className={classes.ContentList}>
                                     <Logo />
@@ -70,14 +66,6 @@ class App extends React.Component {
 
     closeModal() {
         this.setState({modalOpened: false});
-    };
-
-    getLessonsList() {
-        axios.get('http://localhost:8081/lessonsList', {cancelToken: this.axiosSource.token})
-            .then(res => {
-                this.setState({lessonsList: res.data});
-            })
-            .catch(err => console.log('Error: ', err));
     };
 }
 

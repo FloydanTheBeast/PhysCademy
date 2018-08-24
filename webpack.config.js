@@ -5,8 +5,8 @@ const path = require('path');
 
 module.exports = {
     output: {
-        path: path.join(__dirname, './build'),
-        publicPath: '/',
+        path: path.join(__dirname, '/build'),
+        // publicPath: '/',
         filename: 'bundle.js',
     },
     module: {
@@ -43,6 +43,14 @@ module.exports = {
                 ]
             },
             {
+                test: /\.(jpeg|png)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                    }
+                ]
+            },
+            {
                 test: /\.svg$/,
                 loader: 'svg-inline-loader'
             }
@@ -51,7 +59,7 @@ module.exports = {
     resolve: {
         extensions: ['.js'],
         alias: {
-            Fonts: path.join(__dirname, 'assets/Fonts/')
+            Fonts: path.join(__dirname, 'assets/Fonts/'),
         }
     },
     plugins: [

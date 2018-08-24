@@ -28,7 +28,6 @@ app.get('/lessonsList', (req, res) => {
 
     if (filePaths) {
         let fileStructure = {};
-        
         for (let filePath of filePaths) {
             let pathDirs = path.dirname(filePath).split(path.sep);
             let dirName = pathDirs[pathDirs.length - 1];
@@ -63,12 +62,19 @@ app.get('/persons/:name', (req, res) => {
 });
 
 app.get('/personsList', (req, res) => {
-    const filePaths = glob.sync(path.join(__dirname, '/data/persons/*/*.json'));
+    const personDirs = glob.sync(path.join(__dirname, '/data/persons/*'));
     let listOfPersons = {};
 
-    for (let filePath of filePaths) {
-        const personsData = JSON.parse(fs.readFileSync(filePath));
-        const pathDirs = path.dirname(filePath).split(path.sep);
+    for (let personDir of personDirs) {
+        const personsDataPath = path.join(personDir, 'data.json');
+        const personsData = JSON.parse(fs.readFileSync(personsDataPath));
+        const imagePath = glob.sync(path.join(personDir, 'image.*'))
+        if (imagePath)
+            personsData['image'] = path.relative(__dirname, imagePath[0]);
+        else
+            personsData['image'] = false;
+
+        const pathDirs = personDir.split(path.sep);
         const personsName = pathDirs[pathDirs.length - 1];
 
         listOfPersons[personsName] = personsData;
@@ -84,12 +90,10 @@ app.get('/books/:name', (req, res) => {
 
 app.get('/booksList', (req, res) => {
     const filePaths = glob.sync(path.join(__dirname, 'data/books/*.json'));
-    console.log(filePaths)
     let listOfBooks = []
 
     for (filePath of filePaths) {
         const bookName = path.basename(filePath);
-
         listOfBooks.push(bookName);
     }
 
@@ -97,7 +101,7 @@ app.get('/booksList', (req, res) => {
 });
 
 const sortLessons = (fileStructure, config) => {
-    Array.prototype.contains = element => {
+    Array.prototype.contains = function(element){
         return this.indexOf(element) > -1;
     };
 
