@@ -27,7 +27,7 @@ class PersonsList extends Component {
 
         return(
             <div className={classes.PersonsList}>
-                {this.fetchPersonsList()}
+                {this.handlePersonsList()}
             </div>
         )
     }
@@ -42,7 +42,7 @@ class PersonsList extends Component {
             .catch(err => console.log('Error: ', err))
     }
 
-    fetchPersonsList() {
+    handlePersonsList() {
         const { classes } = this.props;
 
         if (this.state.personsList) {

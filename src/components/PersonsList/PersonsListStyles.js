@@ -14,6 +14,8 @@ export default {
         border: '3px solid #222',
         borderRadius: '10px',
         textAlign: 'center',
+        transition: 'all 0.2s ease-in-out',
+        opacity: '0.7',
         '& img': {
             width: '250px',
             height: '250px',
@@ -26,6 +28,10 @@ export default {
         '& p': {
             font: '1rem sans-serif',
             fontWeight: '200'
+        },
+        '&:hover': {
+            transform: 'scale(1.05, 1.05)',
+            opacity: '1'
         }
     },
 }

@@ -69,7 +69,7 @@ app.get('/personsList', (req, res) => {
         const personsDataPath = path.join(personDir, 'data.json');
         const personsData = JSON.parse(fs.readFileSync(personsDataPath));
         const imagePath = glob.sync(path.join(personDir, 'image.*'))
-        if (imagePath)
+        if (imagePath.length > 0)
             personsData['image'] = path.relative(__dirname, imagePath[0]);
         else
             personsData['image'] = false;
@@ -83,18 +83,26 @@ app.get('/personsList', (req, res) => {
     res.send(listOfPersons);
 });
 
-app.get('/books/:name', (req, res) => {
-    const file = fs.readFileSync(path.join(__dirname, `data/books/${req.params.name}.json`));
-    res.send(file);
-});
+// app.get('/books/:name', (req, res) => {
+//     const baseDir = path.join(__dirname, `data/books/${req.params.name}`);
+//     const bookInfo = JSON.parse(fs.readdirSync(path.join(__dirname, ``)));
+//     res.send(file);
+// });
 
 app.get('/booksList', (req, res) => {
-    const filePaths = glob.sync(path.join(__dirname, 'data/books/*.json'));
+    const dirs = glob.sync(path.join(__dirname, 'data/books/*'));
     let listOfBooks = []
 
-    for (filePath of filePaths) {
-        const bookName = path.basename(filePath);
-        listOfBooks.push(bookName);
+    for (dir of dirs) {
+        let bookInfo = JSON.parse(fs.readFileSync(path.join(dir, 'info.json')).toString());
+        bookInfo['description'] = fs.readFileSync(path.join(dir, 'description.md')).toString();
+        const imagePath = glob.sync(path.join(dir, 'image.*'))
+        if (imagePath.length > 0)
+            bookInfo['image'] = path.relative(__dirname, imagePath[0]);
+        else
+            bookInfo['image'] = false;
+            
+        listOfBooks.push(bookInfo);
     }
 
     res.send(listOfBooks);

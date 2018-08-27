@@ -14,6 +14,7 @@ import MenuBar from './components/MenuBar/MenuBar'
 import Modal from './components/ModalLauncher/ModalLauncher';
 import ExpandableText from './components/ExpandableText/ExpandableText';
 import PersonsList from './components/PersonsList/PersonsList';
+import BooksList from './components/BooksList/BooksList';
 import styles from './AppStyles';
 
 import 'normalize.css';
@@ -45,6 +46,10 @@ class App extends React.Component {
                         }/>
                         <Route path='/persons' render={({ match }, props) => (
                                 <PersonsList />
+                            )   
+                        } />
+                        <Route path='/books' render={({ match }, props) => (
+                                <BooksList />
                             )   
                         } />
                         <Route path='/' render={props => (
