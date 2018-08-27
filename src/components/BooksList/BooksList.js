@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import injectStyles from 'react-jss';
 import path from 'path';
+import ModalLauncher from '../ModalLauncher/ModalLauncher';
 import styles from './BookListStyles';
 
 class BooksList extends Component {
@@ -48,12 +49,16 @@ class BooksList extends Component {
         if (this.state.booksList) {
             return this.state.booksList.map((book, bookId) => {
                 return (
-                    <div key={`book${bookId}`} className={classes.BookCard}>
-                        <img src={book.image ? path.join(__dirname, 'server', book.image) : ''} 
-                        className={classes.BookImage} />
-                        <h2>{book.name}</h2>
-                        <p>{book.author}</p>
-                    </div>
+                    <ModalLauncher button={
+                        <div key={`book${bookId}`} className={classes.BookCard}>
+                            <img src={book.image ? path.join(__dirname, 'server', book.image) : ''} 
+                            className={classes.BookImage} />
+                            <h2>{book.name}</h2>
+                            <p>{book.author}</p>
+                        </div>    
+                    }>
+                        {book.description}
+                    </ModalLauncher>
                 )
             })
         }

@@ -7,6 +7,7 @@ export default {
         gridTemplateColumns: 'repeat(auto-fill, 1fr)',
         alignItems: 'start',
         justifyItems: 'stretch',
+        fontFamily: '"Montserrat", sans-serif'
     },
     PersonCard: {
         maxWidth: '250px',
@@ -16,22 +17,23 @@ export default {
         textAlign: 'center',
         transition: 'all 0.2s ease-in-out',
         opacity: '0.7',
+        color: '#fff',
         '& img': {
             width: '250px',
             height: '250px',
         },
         '& h3': {
             margin: '10px 0',
-            color: '#fff',
-            font: '1.25rem sans-serif'
+            fontSize: '1.25rem'
         },
         '& p': {
-            font: '1rem sans-serif',
+            fontSize: '0.875rem',
             fontWeight: '200'
         },
         '&:hover': {
             transform: 'scale(1.05, 1.05)',
-            opacity: '1'
+            opacity: '1',
+            cursor: 'pointer'
         }
     },
 }

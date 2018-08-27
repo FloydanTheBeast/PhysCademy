@@ -16,13 +16,13 @@ class ModalLauncher extends Component {
 
         return (
             <div>
-                <button
-                    type='button'
-                    className={classes.ModalOpenBtn}
+                <div
+                    // type='button'
+                    // className={classes.ModalOpenBtn}
                     onClick={this.toggleModal.bind(this)}
                 >
-                    {this.props.buttonLabel}
-                </button>
+                    {this.props.button}
+                </div>
 
                 { this.state.modalIsOpenned &&
                     <Modal onClose={this.toggleModal.bind(this)}>

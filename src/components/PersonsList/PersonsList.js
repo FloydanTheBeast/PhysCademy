@@ -4,6 +4,7 @@ import axios from 'axios';
 import path from 'path';
 import { Link } from 'react-router-dom';
 import styles from './PersonsListStyles';
+import ModalLauncher from '../ModalLauncher/ModalLauncher';
 
 class PersonsList extends Component {
     constructor(props) {
@@ -49,8 +50,8 @@ class PersonsList extends Component {
             return Object.keys(this.state.personsList).map((person, personIndex) => {
                 const imageUrl = path.join(__dirname, 'server', this.state.personsList[person]['image']);
                 return (
-                    <div className={classes.PersonCard} key={`person${personIndex}`}>
-                        <Link to='/'>
+                    <ModalLauncher key={`person${personIndex}`} button={
+                        <div className={classes.PersonCard}>
                             {/* <div className={classes.Image} style={{backgroundImage: `url('${imageUrl}')`}}>
 
                             </div> */}
@@ -61,8 +62,10 @@ class PersonsList extends Component {
                                 -
                                 {this.state.personsList[person]['date-of-death'] || 'Дата смерти не указана'}
                             </p>
-                        </Link>
-                    </div>
+                        </div>
+                    }>
+                        {this.state.personsList[person].bio}
+                    </ModalLauncher>
                 )
             });
         }

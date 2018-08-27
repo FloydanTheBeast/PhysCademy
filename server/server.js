@@ -76,6 +76,7 @@ app.get('/personsList', (req, res) => {
 
         const pathDirs = personDir.split(path.sep);
         const personsName = pathDirs[pathDirs.length - 1];
+        personsData['bio'] = fs.readFileSync(path.join(personDir, 'bio.md')).toString();
 
         listOfPersons[personsName] = personsData;
     }
@@ -101,7 +102,7 @@ app.get('/booksList', (req, res) => {
             bookInfo['image'] = path.relative(__dirname, imagePath[0]);
         else
             bookInfo['image'] = false;
-            
+
         listOfBooks.push(bookInfo);
     }
 

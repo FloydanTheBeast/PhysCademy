@@ -50,11 +50,12 @@ export default {
     },
     '@global': {
         'body': {
-            overflowY: 'scroll', // Решение бага при котором меню становилось чуть шире из-за появившегося скроллбара
+            // overflowY: 'scroll', // Решение бага при котором меню становилось чуть шире из-за появившегося скроллбара
             backgroundColor: '#2C3A47'
         },
         'html::-webkit-scrollbar': {
-            width: '10px'
+            width: '10px',
+            position: 'relative'
         },
         'html::-webkit-scrollbar-track': {
             backgroundColor: '#2C3A47'

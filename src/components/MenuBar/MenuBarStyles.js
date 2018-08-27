@@ -16,6 +16,7 @@ export default {
         position: 'relative',
         width: '150px',
         height: '150px',
+        transition: 'background-color 0.25s ease-in-out',
         '&:hover': {
             backgroundColor: LightenDarkenColor('#2C3A47', -40),
             cursor: 'pointer'
