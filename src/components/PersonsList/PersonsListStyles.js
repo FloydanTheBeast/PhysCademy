@@ -36,4 +36,14 @@ export default {
             cursor: 'pointer'
         }
     },
+    PersonImage: {
+        width: '20rem',
+        margin: '20px auto 0',
+        
+        '& > img': {
+            width: '20rem',
+            height: '20rem',
+            borderRadius: '5px',
+        }
+    }
 }

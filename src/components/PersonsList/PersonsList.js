@@ -64,7 +64,20 @@ class PersonsList extends Component {
                             </p>
                         </div>
                     }>
-                        {this.state.personsList[person].bio}
+                        <div className={classes.PersonCardHeader}>
+                            <div className={classes.PersonImage}>
+                                <img src={imageUrl} />
+                            </div>
+                            <h2>{person}</h2>
+                            <p>
+                                {this.state.personsList[person]['date-of-birth'] || 'Дата рождения не указана'}
+                                -
+                                {this.state.personsList[person]['date-of-death'] || 'Дата смерти не указана'}
+                            </p>
+                        </div>
+                        <p>
+                            {this.state.personsList[person].bio}
+                        </p>
                     </ModalLauncher>
                 )
             });

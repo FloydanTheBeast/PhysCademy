@@ -3,7 +3,7 @@ export default {
         width: '20rem',
         border: '1px solid #111',
         borderRadius: '10px',
-        margin: '20px',
+        margin: '40px',
         color: '#fff',
         fontFamily: '"Montserrat", sans-serif',
         '& > h2, & > p': {

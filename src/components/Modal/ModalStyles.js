@@ -21,18 +21,25 @@ export default {
     },
 
     Modal: {
-        color: '#000',
-        width: '60%',
-        backgroundColor: '#fff',
+        color: '#fff',
+        fontFamily: '"Montserrat", sans-serif',
+        width: '80%',
+        maxWdith: '800px',
+        minHeight: '90vh',
+        backgroundColor: '#2C3A47',
         textAlign: 'center',
-        borderRadius: '0.5rem'
+        borderRadius: '0.5rem',
+        '& p': {
+            margin: '0',
+            padding: '20px 40px'
+        }
     },
 
     ModalCloseBtn: {
         position: 'fixed',
         top: 0,
         right: 0,
-        background: '#fff',
+        backgroundColor: '#2C3A47',
         width: '2.5rem',
         height: '2.5rem',
         padding: 0,
@@ -48,7 +55,7 @@ export default {
           left: '0.25rem',
           width: '2rem',
           height: '0.1rem',
-          backgroundColor: '#888',
+          backgroundColor: '#fff',
         },
     
         '&:before': { transform: 'rotate(45deg)' },
