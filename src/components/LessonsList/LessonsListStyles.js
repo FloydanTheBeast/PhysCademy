@@ -19,7 +19,6 @@ const LessonsListStyles = {
 export default {
     LessonsList: {
         gridArea: 'list',
-        textAlign: 'center',
         minWidth: '250px',
         maxWidth: '350px',
         width: '20vw',
@@ -32,13 +31,14 @@ export default {
         padding: '0 2.5%',
         extend: LessonsListStyles,
         '& h1': {
+            textAlign: 'center',
             fontSize: '2.25rem',
             margin: '30px 0',
         },
         '& a': {
             '& p': {
                 fontSize: '1.25rem',
-                margin: '0 auto',
+                margin: '0 0 0 5px',
                 paddingBottom: '12px'
             }
         },

@@ -1,8 +1,8 @@
 import React from 'react';
 import katex from 'katex';
 import injectStyles from 'react-jss';
-import blockMathStyles from './BlockMathStyles';
-import inlineMathStyles from './InlineMathStyles';
+import { InlineMathStyles, BlockMathStyles } from './MathStyles';
+import styles from './MathStyles';
 
 const renderTex = (raw) => {
     return {
@@ -11,6 +11,7 @@ const renderTex = (raw) => {
 }
 
 const InlineMathComponent = (props) => {
+    console.log(InlineMathStyles)
     return(
         <span className={props.classes.InlineMath} dangerouslySetInnerHTML={
             renderTex(String.raw`${props.math}`)
@@ -26,7 +27,7 @@ const BlockMathComponent = (props) => {
     );
 };
 
-const BlockMath = injectStyles(blockMathStyles)(BlockMathComponent);
-const InlineMath = injectStyles(inlineMathStyles)(InlineMathComponent);
+const BlockMath = injectStyles(BlockMathStyles)(BlockMathComponent);
+const InlineMath = injectStyles(InlineMathStyles)(InlineMathComponent);
 
 export { InlineMath, BlockMath };

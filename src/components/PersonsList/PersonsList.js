@@ -52,9 +52,6 @@ class PersonsList extends Component {
                 return (
                     <ModalLauncher key={`person${personIndex}`} button={
                         <div className={classes.PersonCard}>
-                            {/* <div className={classes.Image} style={{backgroundImage: `url('${imageUrl}')`}}>
-
-                            </div> */}
                             <img src={imageUrl} />
                             <h3>{person}</h3>
                             <p>
@@ -64,6 +61,7 @@ class PersonsList extends Component {
                             </p>
                         </div>
                     }>
+
                         <div className={classes.PersonCardHeader}>
                             <div className={classes.PersonImage}>
                                 <img src={imageUrl} />
@@ -75,6 +73,7 @@ class PersonsList extends Component {
                                 {this.state.personsList[person]['date-of-death'] || 'Дата смерти не указана'}
                             </p>
                         </div>
+
                         <p>
                             {this.state.personsList[person].bio}
                         </p>

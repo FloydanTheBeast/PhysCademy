@@ -4,7 +4,7 @@ export default {
         margin: '50px auto 0',
         gridArea: 'content',
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, 1fr)',
+        gridTemplateColumns: 'minmax(auto, max-content)',
         alignItems: 'start',
         justifyItems: 'stretch',
         fontFamily: '"Montserrat", sans-serif'
@@ -39,7 +39,6 @@ export default {
     PersonImage: {
         width: '20rem',
         margin: '20px auto 0',
-        
         '& > img': {
             width: '20rem',
             height: '20rem',

@@ -24,10 +24,9 @@ class BooksList extends Component {
 
     render() {
         const { classes } = this.props;
-        console.log()
 
         return(
-            <div className={'booksList'}>
+            <div className={classes.BooksList}>
                 {this.handleBooksList()}
             </div>
         )
@@ -49,7 +48,7 @@ class BooksList extends Component {
         if (this.state.booksList) {
             return this.state.booksList.map((book, bookId) => {
                 return (
-                    <ModalLauncher button={
+                    <ModalLauncher className={classes.BookModal} button={
                         <div key={`book${bookId}`} className={classes.BookCard}>
                             <img src={book.image ? path.join(__dirname, 'server', book.image) : ''} 
                             className={classes.BookImage} />
