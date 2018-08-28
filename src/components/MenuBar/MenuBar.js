@@ -20,7 +20,8 @@ class MenuBar extends Component {
                     </Link>
 
                     <Link className={classes.MenuBarItem} to='/persons'>
-                        Persons
+                        <InlineSVG className={classes.MenuBarIcon}
+                            src={require('../../../assets/Images/PersonsSection.svg')} />
                     </Link>
 
                     <Link className={classes.MenuBarItem} to='/books'>

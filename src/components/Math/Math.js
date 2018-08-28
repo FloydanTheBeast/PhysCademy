@@ -11,7 +11,6 @@ const renderTex = (raw) => {
 }
 
 const InlineMathComponent = (props) => {
-    console.log(InlineMathStyles)
     return(
         <span className={props.classes.InlineMath} dangerouslySetInnerHTML={
             renderTex(String.raw`${props.math}`)

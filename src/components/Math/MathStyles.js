@@ -12,9 +12,11 @@ const BlockMathStyles = {
     BlockMath: {
         transition: 'all 0.2s',
         display: 'inline-block',
-        margin: '30px 0 30px 70px',
+        textAlign: 'center',
+        width: '100%',
+        margin: '30px 0',
         '&:hover': {
-            transform: 'scale(1.2)'
+            transform: 'scale(1.2, 1.2)'
         }
     }
 }

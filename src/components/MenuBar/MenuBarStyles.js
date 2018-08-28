@@ -24,8 +24,8 @@ export default {
     },
     MenuBarIcon: {
         '& svg': {
-            width: '130px',
-            height: '130px',
+            width: '120px',
+            height: '120px',
             fill: '#fff',
             position: 'absolute',
             top: '50%',
@@ -34,7 +34,6 @@ export default {
             transform: 'translate(-50%, -50%)',
             '& line, & path': {
                 stroke: '#fff !important',
-                fill: '#fff !important'
             }
         }
     }
