@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import InlineSVG from 'svg-inline-react';
 import injectStyles from 'react-jss';
 import styles from './MenuBarStyles';
-import LightenDarkenColor from '../../utils/LightenDarkenColor'
+import LightenDarkenColor from '../../utils/LightenDarkenColor';
 
 class MenuBar extends Component {
     constructor(props) {
@@ -47,7 +47,8 @@ class MenuBar extends Component {
                     </Link>
 
                     <Link className={classes.MenuBarItem} to='/books' ref={this.booksSection} onClick={() => this.setState({currentSection: this.booksSection})}>
-                        Books
+                        <InlineSVG className={classes.MenuBarIcon}
+                        src={require('../../../assets/Images/BooksSection.svg')} />
                     </Link>
             </div>
         )
