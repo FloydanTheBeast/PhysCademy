@@ -2,7 +2,8 @@ import LightenDarkenColor from '../../utils/LightenDarkenColor'
 
 export default {
     ExpandableTextContainer: {
-        width: '60%',
+        width: '80%',
+        maxWidth: '800px',
         minWidth: '500px',
         margin: '30px 0 30px 50px',
         color: '#fff'

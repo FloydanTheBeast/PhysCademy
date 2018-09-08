@@ -27,18 +27,15 @@ export default {
         maxWdith: '800px',
         minHeight: '90vh',
         backgroundColor: '#2C3A47',
-        textAlign: 'center',
         borderRadius: '0.5rem',
-        '& p': {
-            margin: '0',
-            padding: '20px 40px'
-        }
     },
 
     ModalCloseBtn: {
         position: 'fixed',
         top: 0,
         right: 0,
+        display: 'block',
+        marginRight: '25px',
         backgroundColor: '#2C3A47',
         width: '2.5rem',
         height: '2.5rem',

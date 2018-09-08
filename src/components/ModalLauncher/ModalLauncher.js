@@ -10,10 +10,10 @@ class ModalLauncher extends Component {
             modalIsOpenned: false
         }
     };
-    
+
     render() {
         const { classes } = this.props;
-
+        
         return (
             <div>
                 <div className={this.props.className} onClick={this.toggleModal.bind(this)}>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import injectStyles from 'react-jss';
 import path from 'path';
+import Markdown from 'markdown-to-jsx';
 import ModalLauncher from '../ModalLauncher/ModalLauncher';
 import styles from './BookListStyles';
 
@@ -56,7 +57,9 @@ class BooksList extends Component {
                             <p>{book.author}</p>
                         </div>    
                     }>
-                        {book.description}
+                        <Markdown className={classes.BookDescription}>
+                            {book.description}
+                        </Markdown>
                     </ModalLauncher>
                 )
             })

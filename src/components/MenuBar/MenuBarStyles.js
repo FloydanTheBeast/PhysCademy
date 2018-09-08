@@ -9,13 +9,13 @@ export default {
         height: '100vh',
         overflowY: 'auto',
         top: '0',
-        width: '150px'
+        width: '120px',
     },
     MenuBarItem: {
         display: 'block',
         position: 'relative',
-        width: '150px',
-        height: '150px',
+        width: '120px',
+        height: '120px',
         transition: 'background-color 0.25s ease-in-out',
         '&:hover': {
             backgroundColor: LightenDarkenColor('#2C3A47', -40),
@@ -24,8 +24,8 @@ export default {
     },
     MenuBarIcon: {
         '& svg': {
-            width: '120px',
-            height: '120px',
+            width: '80px',
+            height: '80px',
             fill: '#fff',
             position: 'absolute',
             top: '50%',

@@ -16,6 +16,8 @@ export default {
         },   
     ],
     App: {
+        overflowX: 'hidden',
+        overflowY: 'hidden',
         backgroundColor: '#2C3A47',
         display: 'grid',
         gridTemplateAreas:
@@ -55,12 +57,23 @@ export default {
         },
         'html::-webkit-scrollbar': {
             width: '10px',
-            position: 'relative'
+            position: 'fixed'
         },
         'html::-webkit-scrollbar-track': {
             backgroundColor: '#2C3A47'
         },
         'html::-webkit-scrollbar-thumb': {
+            backgroundColor: '#222',
+            borderRadius: '15px'
+        },
+        'div::-webkit-scrollbar': {
+            width: '10px',
+            margin: '10px'
+        },
+        'div::-webkit-scrollbar-track': {
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+        },
+        'div::-webkit-scrollbar-thumb': {
             backgroundColor: '#222',
             borderRadius: '15px'
         }
