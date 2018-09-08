@@ -5,9 +5,7 @@ import styles from './AppLogoStyles';
 
 const Logo = ({ classes }) => {
     return (
-        // <div >
-            <InlineSVG className={classes.Logo} element='div' src={require('../../../assets/Images/Logo.svg')} />
-        // </div>
+        <InlineSVG className={classes.Logo} element='div' src={require('../../../assets/Images/Logo.svg')} />
     );
 };
 

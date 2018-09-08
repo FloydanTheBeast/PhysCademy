@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import injectStyles from 'react-jss';
 import axios from 'axios';
 import path from 'path';
-import { Link } from 'react-router-dom';
 import styles from './PersonsListStyles';
 import ModalLauncher from '../ModalLauncher/ModalLauncher';
+import Markdown from 'markdown-to-jsx';
 
 class PersonsList extends Component {
     constructor(props) {
@@ -49,6 +49,7 @@ class PersonsList extends Component {
         if (this.state.personsList) {
             return Object.keys(this.state.personsList).map((person, personIndex) => {
                 const imageUrl = path.join(__dirname, 'server', this.state.personsList[person]['image']);
+
                 return (
                     <ModalLauncher key={`person${personIndex}`} button={
                         <div className={classes.PersonCard}>
@@ -74,9 +75,11 @@ class PersonsList extends Component {
                             </p>
                         </div>
 
-                        <p>
+                        <Markdown className={classes.PersonBio} options={{
+                            forceBlock: true
+                        }}>
                             {this.state.personsList[person].bio}
-                        </p>
+                        </Markdown>
                     </ModalLauncher>
                 )
             });

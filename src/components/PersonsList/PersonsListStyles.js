@@ -4,7 +4,8 @@ export default {
         margin: '50px auto 0',
         gridArea: 'content',
         display: 'grid',
-        gridTemplateColumns: 'minmax(auto, max-content)',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(auto, 250px))',
+        gridColumnGap: '30px',
         alignItems: 'start',
         justifyItems: 'stretch',
         fontFamily: '"Montserrat", sans-serif'
@@ -18,9 +19,10 @@ export default {
         transition: 'all 0.2s ease-in-out',
         opacity: '0.7',
         color: '#fff',
+        overflow: 'hidden',
         '& img': {
-            width: '250px',
             height: '250px',
+            minWidth: '100%'
         },
         '& h3': {
             margin: '10px 0',
@@ -38,11 +40,24 @@ export default {
     },
     PersonImage: {
         width: '20rem',
+        overflow: 'hidden',
         margin: '20px auto 0',
         '& > img': {
-            width: '20rem',
             height: '20rem',
             borderRadius: '5px',
         }
+    },
+    PersonCardHeader: {
+        textAlign: 'center',
+        '& > h2': {
+            fontSize: '2rem'
+        },
+        '& > p': {
+            fontSize: '1.25rem'
+        }
+    },
+    PersonBio: {
+        width: '70%',
+        margin: '40px auto',
     }
 }

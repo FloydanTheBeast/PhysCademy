@@ -8,7 +8,7 @@ export default {
         transition: 'all 0.3s',
         '&:hover': {
             boxShadow: 'none',
-            transform: 'scale(1.05, 1.05)',
+            transform: 'scale(1.1, 1.1)',
             cursor: 'pointer',
         },
         '& .text-left, & .background-right': {
