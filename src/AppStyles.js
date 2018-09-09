@@ -16,8 +16,6 @@ export default {
         },   
     ],
     App: {
-        overflowX: 'hidden',
-        overflowY: 'hidden',
         backgroundColor: '#2C3A47',
         display: 'grid',
         gridTemplateAreas:
