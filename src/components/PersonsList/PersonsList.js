@@ -51,17 +51,17 @@ class PersonsList extends Component {
                 const imageUrl = path.join(__dirname, 'server', this.state.personsList[person]['image']);
 
                 return (
-                    <ModalLauncher key={`person${personIndex}`} button={
-                        <div className={classes.PersonCard}>
+                    <ModalLauncher className={classes.PersonCard} key={`person${personIndex}`} button={[
+                        <div className={classes.ImagePreview} key='image'>
                             <img src={imageUrl} />
-                            <h3>{person}</h3>
-                            <p>
-                                {this.state.personsList[person]['date-of-birth'] || 'Дата рождения не указана'}
-                                -
-                                {this.state.personsList[person]['date-of-death'] || 'Дата смерти не указана'}
-                            </p>
-                        </div>
-                    }>
+                        </div>,
+                        <h3 key='name'>{person}</h3>,
+                        <p key='briefInfo'>
+                            {this.state.personsList[person]['date-of-birth'] || 'Дата рождения не указана'}
+                            -
+                            {this.state.personsList[person]['date-of-death'] || 'Дата смерти не указана'}
+                        </p>
+                    ]}>
 
                         <div className={classes.PersonCardHeader}>
                             <div className={classes.PersonImage}>

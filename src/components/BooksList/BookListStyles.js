@@ -1,27 +1,28 @@
 export default {
     BooksList: {
+        width: '95%',
+        margin: '30px auto 0',
         gridArea: 'content',
-        height: '100vh',
-        minWidth: '100%',
-        display: 'flex',
-        flexFlow: 'row wrap',
-        overflowX: 'hidden',
-        overflowY: 'auto',
-        flexBasis: 'fit-content'
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(auto, 20rem))',
+        gridAutoRows: 'max-content',
+        gridColumnGap: '50px',
+        gridRowGap: '50px',
+        alignItems: 'start',
+        justifyContent: 'center',
+        fontFamily: '"Montserrat", sans-serif',
     },
     BookCard: {
-        display: 'inline-block',
         position: 'relative',
-        top: '0',
-        bottom: '0',
+        zIndex: 1,
+        height: '100%',
         width: '20rem',
         border: '1px solid #111',
-        borderRadius: '10px',
-        margin: '40px 0 0 40px',
+        borderRadius: '20px',
+        overflow: 'hidden',
         color: '#fff',
-        fontFamily: '"Montserrat", sans-serif',
         opacity: '0.7',
-        transition: 'all 0.2s 0.1s ease-in',
+        transition: 'all 0.3s 0.1s ease-in',
         '& > h2, & > p': {
             margin: '20px'
         },
@@ -29,10 +30,10 @@ export default {
             opacity: '0.7'
         },
         '&:hover': {
-            marginTop: '40px',
             opacity: '1',
             cursor: 'pointer',
-            transform: 'scale(1.05, 1.05)'
+            transform: 'rotateX(30deg)',
+            boxShadow: '25px 25px 10px #111'
         }
     },
     BookImage: {
@@ -42,6 +43,6 @@ export default {
     },
     BookDescription: {
         width: '70%',
-        margin: '0 auto'
+        margin: '0 auto '
     }
 }

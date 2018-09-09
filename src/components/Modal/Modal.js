@@ -6,17 +6,17 @@ class Modal extends Component {
     constructor(props) {
         super(props);
 
-        this.hanldleKeyUp = this.hanldleKeyUp.bind(this);
+        this.hanldleKeyDown = this.hanldleKeyDown.bind(this);
         this.handleOutsideClick = this.handleOutsideClick.bind(this);
     };
 
     componentDidMount() {
-        window.addEventListener('keyup', this.hanldleKeyUp);
+        window.addEventListener('keydown', this.hanldleKeyDown);
         document.addEventListener('mouseup', this.handleOutsideClick);
     };
 
     componentWillUnmount() {
-        window.removeEventListener('keyup', this.handleKeyUp);
+        window.removeEventListener('keydown', this.handleKeyDown);
         document.removeEventListener('click', this.handleOutsideClick);
     };
 
@@ -43,11 +43,11 @@ class Modal extends Component {
         );
     };
 
-    hanldleKeyUp(e) {
+    hanldleKeyDown(e) {
         if (e.keyCode === 27) {
             e.preventDefault();
             this.props.onClose();
-            window.removeEventListener('keyup', this.hanldleKeyUp)
+            window.removeEventListener('keydown', this.hanldleKeyDown)
         }
     };
 

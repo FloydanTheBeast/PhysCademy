@@ -49,15 +49,22 @@ class BooksList extends Component {
         if (this.state.booksList) {
             return this.state.booksList.map((book, bookId) => {
                 return (
-                    <ModalLauncher className={classes.BookModal} button={
-                        <div key={`book${bookId}`} className={classes.BookCard}>
-                            <img src={book.image ? path.join(__dirname, 'server', book.image) : ''} 
-                            className={classes.BookImage} />
-                            <h2>{book.name}</h2>
-                            <p>{book.author}</p>
-                        </div>    
-                    }>
-                        <Markdown className={classes.BookDescription}>
+                    <ModalLauncher key={`book${bookId}`} className={classes.BookCard}
+                      button={[
+                        <img key='cover' src={book.image ? path.join(__dirname, 'server', book.image) : ''} 
+                         className={classes.BookImage} />,
+                        <h2 key='name'>{book.name}</h2>,
+                        <p key='author'>{book.author}</p>
+                    ]}>
+
+                        <img src={book.image ? path.join(__dirname, 'server', book.image) : ''} 
+                        className={classes.BookImage} />
+
+                        <Markdown className={classes.BookDescription}   
+                            options={{
+                                forceBlock: true
+                            }}
+                        >
                             {book.description}
                         </Markdown>
                     </ModalLauncher>

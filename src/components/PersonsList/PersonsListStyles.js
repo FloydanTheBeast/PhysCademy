@@ -1,17 +1,23 @@
 export default {
     PersonsList: {
-        width: '90%',
-        margin: '50px auto 0',
+        width: '95%',
+        margin: '40px auto 0',
         gridArea: 'content',
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fill, minmax(auto, 250px))',
-        gridColumnGap: '30px',
+        gridAutoRows: 'max-content',
+        gridColumnGap: '40px',
+        gridRowGap: '40px',
         alignItems: 'start',
-        justifyItems: 'stretch',
-        fontFamily: '"Montserrat", sans-serif'
+        justifyContent: 'center',
+        fontFamily: '"Montserrat", sans-serif',
+    },
+    PersonCardContainer: {
+        height: '100%'
     },
     PersonCard: {
         maxWidth: '250px',
+        height: '100%',
         overflow: 'hidden',
         border: '3px solid #222',
         borderRadius: '10px',
@@ -19,7 +25,6 @@ export default {
         transition: 'all 0.2s ease-in-out',
         opacity: '0.7',
         color: '#fff',
-        overflow: 'hidden',
         '& img': {
             height: '250px',
             minWidth: '100%'
@@ -38,9 +43,16 @@ export default {
             cursor: 'pointer'
         }
     },
+    ImagePreview: {
+        '& img': {
+            position: 'relative',
+            left: '50%',
+            marginRight: '-50',
+            transform: 'translate(-50%, 0)'
+        }
+    },
     PersonImage: {
         width: '20rem',
-        overflow: 'hidden',
         margin: '20px auto 0',
         '& > img': {
             height: '20rem',
