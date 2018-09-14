@@ -1,7 +1,15 @@
+const ImageAlignment = {
+    position: 'relative',
+    left: '50%',
+    top: '50%',
+    marginRight: '50%',
+    transform: 'translate(-50%, 0)'
+}
+
 export default {
     PersonsList: {
         width: '95%',
-        margin: '40px auto 0',
+        margin: '40px auto 40px',
         gridArea: 'content',
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fill, minmax(auto, 250px))',
@@ -20,10 +28,10 @@ export default {
         height: '100%',
         overflow: 'hidden',
         border: '3px solid #222',
-        borderRadius: '10px',
+        borderRadius: '20px',
         textAlign: 'center',
         transition: 'all 0.2s ease-in-out',
-        opacity: '0.7',
+        opacity: '0.75',
         color: '#fff',
         '& img': {
             height: '250px',
@@ -45,18 +53,18 @@ export default {
     },
     ImagePreview: {
         '& img': {
-            position: 'relative',
-            left: '50%',
-            marginRight: '-50',
-            transform: 'translate(-50%, 0)'
+            extend: ImageAlignment
         }
     },
     PersonImage: {
-        width: '20rem',
+        width: '80%',
         margin: '20px auto 0',
+        overflow: 'hidden',
+        borderRadius: '20px',
         '& > img': {
+            extend: ImageAlignment,
             height: '20rem',
-            borderRadius: '5px',
+            borderRadius: '20px',
         }
     },
     PersonCardHeader: {
@@ -70,6 +78,7 @@ export default {
     },
     PersonBio: {
         width: '70%',
-        margin: '40px auto',
+        maxWidth: '900px',
+        margin: '60px auto 40px',
     }
 }

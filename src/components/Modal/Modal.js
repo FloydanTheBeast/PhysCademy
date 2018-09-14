@@ -17,7 +17,7 @@ class Modal extends Component {
 
     componentWillUnmount() {
         window.removeEventListener('keydown', this.handleKeyDown);
-        document.removeEventListener('click', this.handleOutsideClick);
+        document.removeEventListener('mouseup', this.handleOutsideClick);
     };
 
     render() {

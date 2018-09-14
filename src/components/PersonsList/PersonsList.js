@@ -48,7 +48,7 @@ class PersonsList extends Component {
 
         if (this.state.personsList) {
             return Object.keys(this.state.personsList).map((person, personIndex) => {
-                const imageUrl = path.join(__dirname, 'server', this.state.personsList[person]['image']);
+                const imageUrl = path.relative(__dirname, path.join('server', this.state.personsList[person]['image']));
 
                 return (
                     <ModalLauncher className={classes.PersonCard} key={`person${personIndex}`} button={[
@@ -57,9 +57,8 @@ class PersonsList extends Component {
                         </div>,
                         <h3 key='name'>{person}</h3>,
                         <p key='briefInfo'>
-                            {this.state.personsList[person]['date-of-birth'] || 'Дата рождения не указана'}
-                            -
-                            {this.state.personsList[person]['date-of-death'] || 'Дата смерти не указана'}
+                            {this.state.personsList[person]['date-of-birth'] ? this.state.personsList[person]['date-of-birth'] : ''}
+                            {this.state.personsList[person]['date-of-death'] ? " - " + this.state.personsList[person]['date-of-death'] : ''}
                         </p>
                     ]}>
 
@@ -69,9 +68,8 @@ class PersonsList extends Component {
                             </div>
                             <h2>{person}</h2>
                             <p>
-                                {this.state.personsList[person]['date-of-birth'] || 'Дата рождения не указана'}
-                                -
-                                {this.state.personsList[person]['date-of-death'] || 'Дата смерти не указана'}
+                                {this.state.personsList[person]['date-of-birth'] ? this.state.personsList[person]['date-of-birth'] : ''}
+                                {this.state.personsList[person]['date-of-death'] ? " - " + this.state.personsList[person]['date-of-death'] : ''}
                             </p>
                         </div>
 

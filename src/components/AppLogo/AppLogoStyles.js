@@ -10,6 +10,7 @@ export default {
             boxShadow: 'none',
             transform: 'scale(1.1, 1.1)',
             cursor: 'pointer',
+            filter: 'contrast(125%)'
         },
         '& .text-left, & .background-right': {
             fill: '#25313c !important',

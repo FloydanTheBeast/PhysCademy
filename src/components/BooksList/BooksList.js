@@ -51,16 +51,22 @@ class BooksList extends Component {
                 return (
                     <ModalLauncher key={`book${bookId}`} className={classes.BookCard}
                       button={[
-                        <img key='cover' src={book.image ? path.join(__dirname, 'server', book.image) : ''} 
-                         className={classes.BookImage} />,
+                        <img key='cover' src={book.image ? path.relative(__dirname, path.join('server', book.image)) : ''} 
+                         className={classes.BookCoverPreview} />,
                         <h2 key='name'>{book.name}</h2>,
                         <p key='author'>{book.author}</p>
                     ]}>
 
-                        <img src={book.image ? path.join(__dirname, 'server', book.image) : ''} 
-                        className={classes.BookImage} />
+                        <div className={classes.BookCardHeader}>
+                            <div className={classes.BookCover}>
+                                <img src={book.image ? path.relative(__dirname, path.join('server', book.image)) : ''} 
+                                className={classes.BookImage} />
+                            </div>
+                            <h2>{book.name}</h2>
+                            <p>{book.author}</p>
+                        </div>
 
-                        <Markdown className={classes.BookDescription}   
+                        <Markdown className={classes.BookDescription} 
                             options={{
                                 forceBlock: true
                             }}
