@@ -17,6 +17,9 @@ export default {
         width: '120px',
         height: '120px',
         transition: 'background-color 0.25s ease-in-out',
+        '&.selected': {
+            backgroundColor: LightenDarkenColor('#2C3A47', -40)
+        },
         '&:hover': {
             backgroundColor: LightenDarkenColor('#2C3A47', -40),
             cursor: 'pointer'

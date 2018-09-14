@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import InlineSVG from 'svg-inline-react';
 import injectStyles from 'react-jss';
 import styles from './MenuBarStyles';
@@ -18,38 +18,25 @@ class MenuBar extends Component {
         }
     }
 
-    // FIXME: Цвет фона должен меняться в зависимости от темы
-    componentDidMount() {
-        ReactDOM.findDOMNode(this.state.currentSection.current).style.backgroundColor = LightenDarkenColor('#2C3A47', -40)
-    }
-
-    componentWillUpdate() {
-        ReactDOM.findDOMNode(this.state.currentSection.current).style.backgroundColor = ''
-    }
-
-    componentDidUpdate() {
-        ReactDOM.findDOMNode(this.state.currentSection.current).style.backgroundColor = LightenDarkenColor('#2C3A47', -40)
-    }
-
     render() {
         const { classes } = this.props;
 
         return (
             <div className={classes.MenuBar}>
-                    <Link className={classes.MenuBarItem} to='/' ref={this.lessonsSection} onClick={() => this.setState({currentSection: this.lessonsSection})}>
+                    <NavLink exact className={classes.MenuBarItem} to='/' activeClassName='selected' onClick={() => this.setState({currentSection: this.lessonsSection})}>
                         <InlineSVG className={classes.MenuBarIcon}
                         src={require('../../../assets/Images/LessonsSection.svg')} />
-                    </Link>
+                    </NavLink>
 
-                    <Link className={classes.MenuBarItem} to='/persons' ref={this.personsSection} onClick={() => this.setState({currentSection: this.personsSection})}>
+                    <NavLink exact className={classes.MenuBarItem} to='/persons' activeClassName='selected' onClick={() => this.setState({currentSection: this.personsSection})}>
                         <InlineSVG className={classes.MenuBarIcon}
                         src={require('../../../assets/Images/PersonsSection.svg')} />
-                    </Link>
+                    </NavLink>
 
-                    <Link className={classes.MenuBarItem} to='/books' ref={this.booksSection} onClick={() => this.setState({currentSection: this.booksSection})}>
+                    <NavLink exact className={classes.MenuBarItem} to='/books' activeClassName='selected' onClick={() => this.setState({currentSection: this.booksSection})}>
                         <InlineSVG className={classes.MenuBarIcon}
                         src={require('../../../assets/Images/BooksSection.svg')} />
-                    </Link>
+                    </NavLink>
             </div>
         )
     }
