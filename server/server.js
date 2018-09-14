@@ -29,6 +29,8 @@ app.get('/lessonsList', (req, res) => {
     if (filePaths) {
         let fileStructure = {};
         for (let filePath of filePaths) {
+            filePath = path.normalize(filePath);
+
             let pathDirs = path.dirname(filePath).split(path.sep);
             let dirName = pathDirs[pathDirs.length - 1];
 
@@ -66,6 +68,8 @@ app.get('/personsList', (req, res) => {
     let listOfPersons = {};
 
     for (let personDir of personDirs) {
+        personDir = path.normalize(personDir);
+
         const personsDataPath = path.join(personDir, 'data.json');
         const personsData = JSON.parse(fs.readFileSync(personsDataPath));
         const imagePath = glob.sync(path.join(personDir, 'image.*'))
@@ -83,12 +87,6 @@ app.get('/personsList', (req, res) => {
     
     res.send(listOfPersons);
 });
-
-// app.get('/books/:name', (req, res) => {
-//     const baseDir = path.join(__dirname, `data/books/${req.params.name}`);
-//     const bookInfo = JSON.parse(fs.readdirSync(path.join(__dirname, ``)));
-//     res.send(file);
-// });
 
 app.get('/booksList', (req, res) => {
     const dirs = glob.sync(path.join(__dirname, 'data/books/*'));
@@ -151,6 +149,6 @@ const sortLessons = (fileStructure, config) => {
         }
     }
     return fileStructure;
-}
+}   
 
 app.listen(8081, () => console.log('Server is running on port 8081'));

@@ -1,6 +1,6 @@
 {
-  "name": "physcademy",
-  "version": "0.0.1",
+  "name": "PhysCademy",
+  "version": "1.0.0",
   "description": "",
   "main": "",
   "scripts": {
@@ -9,17 +9,25 @@
     "build": "webpack --mode production --progress",
     "electron": "wait-on http://localhost:8080 && electron .",
     "dev:electron": "concurrently --kill-others \"webpack-dev-server --mode development\" \"yarn electron\" ",
-    "build:electron": "electron-builder"
+    "build:electron": "electron-builder -mw",
+    "build:electron-win": "electron-builder --win"
   },
   "author": "Abdelsalam Shadi <floydanthebeast@gmail.com>",
   "homepage": "./",
   "build": {
-    "appId": "com.example.electron-cra",
+    "appId": "com.electron.physcademy",
     "files": [
       "./build/**/*",
       "./src/server.js",
       "./index.js"
-    ]
+    ],
+    "mac": {
+      "category": "public.app-category.education",
+      "icon": "assets/Icons/icon512x512.icns"
+    },
+    "win": {
+      "icon": "assets/Icons/icon256x256.ico"
+    }
   },
   "license": "ISC",
   "devDependencies": {
@@ -32,9 +40,8 @@
     "devtron": "^1.4.0",
     "electron": "^2.0.2",
     "electron-builder": "^20.28.1",
-    "electron-debug": "^2.0.0",
-    "electron-is-dev": "^0.3.0",
     "electron-react-devtools": "^0.5.3",
+    "electron-debug": "^2.0.0",
     "file-loader": "^2.0.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
@@ -48,6 +55,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "electron-is-dev": "^0.3.0",
     "express": "^4.16.3",
     "glob": "^7.1.2",
     "history": "^4.7.2",

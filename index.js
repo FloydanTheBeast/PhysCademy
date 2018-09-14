@@ -14,7 +14,7 @@ if (isDev) {
     );
     require(`${path.join(__dirname, 'server/server')}`);
 } else {
-    require(`${path.join(__dirname, 'build/server')}`);
+    require(`${path.join(__dirname, 'build/server/server')}`);
 }
 
 const indexPageURL = isDev ? `http://localhost:8080/` : `file://${path.join(__dirname, 'build/index.html')}`
