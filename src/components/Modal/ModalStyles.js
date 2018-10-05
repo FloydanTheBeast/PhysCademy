@@ -21,11 +21,12 @@ export default {
     },
 
     Modal: {
+        position: 'relative',
         color: '#fff',
+        margin: '100px 0',
         fontFamily: '"Montserrat", sans-serif',
         width: '80%',
-        maxWdith: '800px',
-        minHeight: '90vh',
+        maxWidth: '1500px',
         backgroundColor: '#2C3A47',
         borderRadius: '0.5rem',
     },

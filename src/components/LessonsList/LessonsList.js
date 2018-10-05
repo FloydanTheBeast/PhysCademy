@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 import injectStyles from 'react-jss';
 import styles from './LessonsListStyles';
@@ -50,9 +50,9 @@ class LessonsList extends Component {
                         {
                             this.state.lessonsList[section].map((lesson, lessonIndex) => {
                                 return (
-                                    <Link onClick={this.handleLinkClick} key={`lesson${lessonIndex}`} to={`/lessons/${section}/${lesson}`}>
+                                    <NavLink activeClassName='selected' onClick={this.handleLinkClick} key={`lesson${lessonIndex}`} to={`/lessons/${section}/${lesson}`}>
                                         <p>{lesson}</p>
-                                    </Link>
+                                    </NavLink>
                                 )
                             })
                         }

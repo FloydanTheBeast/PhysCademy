@@ -51,10 +51,15 @@ class App extends React.Component {
                                 <BooksList />
                             )   
                         } />
+                        <Route path='/lessons' render={props => (
+                                <div className={classes.ContentList}>
+                                    <LessonsList extended lessons={this.state.lessonsList} />
+                                </div>
+                            )
+                        } />
                         <Route path='/' render={props => (
                                 <div className={classes.ContentList}>
                                     <Logo />
-                                    <LessonsList extended lessons={this.state.lessonsList} />
                                 </div>
                             )
                         } />

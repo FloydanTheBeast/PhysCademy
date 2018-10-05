@@ -25,6 +25,9 @@ export default {
             color: '#fff',
             textDecoration: 'none'
         },
+        '& img': {
+            userSelect: 'none'
+        },
         '& .content': {
             gridArea: 'content',
         },

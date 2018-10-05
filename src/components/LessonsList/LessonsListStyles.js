@@ -3,9 +3,25 @@ import LightenDarkenColor from '../../utils/LightenDarkenColor'
 const LessonsListStyles = {
     '& h1': {
         color: '#fff',
-        fontFamily: '"Montserrat", sans-serif'
+        fontFamily: '"Montserrat", sans-serif',
+        '&:before': {
+            content: '"\\00B6"',
+            opacity: '0.2',
+            marginRight: '1rem',
+            transition: 'all 0.3s',
+        },
+        '&:hover':{
+            '&:before': {
+                content: '"\\00B6"',
+                opacity: '0.8',
+                marginRight: '1rem'
+            },
+        }
     },
     '& a': {
+        '&.selected': {
+            color: LightenDarkenColor('#ffffff', -40),
+        },
         '&:hover': {
             color: LightenDarkenColor('#ffffff', -25),
             transition: 'color 0.3s'
@@ -19,7 +35,7 @@ const LessonsListStyles = {
 export default {
     LessonsList: {
         gridArea: 'list',
-        minWidth: '250px',
+        minWidth: '300px',
         maxWidth: '350px',
         width: '20vw',
         borderRight: '2px solid #222',

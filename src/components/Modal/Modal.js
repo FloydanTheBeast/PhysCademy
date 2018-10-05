@@ -43,19 +43,23 @@ class Modal extends Component {
         );
     };
 
+    closeModal() {
+        window.removeEventListener('keydown', this.hanldleKeyDown);
+        document.removeEventListener('mouseup', this.handleOutsideClick);
+        this.props.onClose();
+    }
+
     hanldleKeyDown(e) {
         if (e.keyCode === 27) {
             e.preventDefault();
-            this.props.onClose();
-            window.removeEventListener('keydown', this.hanldleKeyDown)
+            this.closeModal();
         }
     };
 
     handleOutsideClick(e) {
         if (this.modal) {
             if (!this.modal.contains(e.target)) {
-                this.props.onClose();
-                document.removeEventListener('mouseup', this.handleOutsideClick);
+                this.closeModal();
             }
         }
     };

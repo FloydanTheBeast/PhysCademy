@@ -5,6 +5,7 @@ import injectStyles from 'react-jss';
 
 import Modal from '../ModalLauncher/ModalLauncher';
 import ExpandableText from '../ExpandableText/ExpandableText';
+import ReadingProgressBar from '../ReadingProgressBar/ReadingProgressBar';
 import { InlineMath, BlockMath } from '../Math/Math';
 import styles from './ArticleStyles';
 
@@ -30,6 +31,7 @@ class Article extends Component {
 
         return (
             <div className={classes.Article}>
+                <ReadingProgressBar />
                 <h1 className={classes.ArticleTitle}>{this.props.name}</h1>
                 <Markdown options={{
                     overrides: CustomComponents,
@@ -37,6 +39,7 @@ class Article extends Component {
                 }}>
                     {this.state.text}
                 </Markdown>
+                
             </div>
         );
     };

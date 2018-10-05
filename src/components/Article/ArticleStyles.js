@@ -6,6 +6,7 @@ export default {
         font: '1.25rem "Montserrat", sans-serif',
         gridArea: 'content',
         '& > div': {
+            marginBottom: '100px',
             '& > h2:not(:first-child)': {
                 borderTop: '1px dashed #fff',
                 margin: '0',

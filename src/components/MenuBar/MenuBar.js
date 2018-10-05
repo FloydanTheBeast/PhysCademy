@@ -23,17 +23,17 @@ class MenuBar extends Component {
 
         return (
             <div className={classes.MenuBar}>
-                    <NavLink exact className={classes.MenuBarItem} to='/' activeClassName='selected' onClick={() => this.setState({currentSection: this.lessonsSection})}>
+                    <NavLink className={classes.MenuBarItem} to='/lessons' activeClassName='selected' onClick={() => this.setState({currentSection: this.lessonsSection})}>
                         <InlineSVG className={classes.MenuBarIcon}
                         src={require('../../../assets/Images/LessonsSection.svg')} />
                     </NavLink>
 
-                    <NavLink exact className={classes.MenuBarItem} to='/persons' activeClassName='selected' onClick={() => this.setState({currentSection: this.personsSection})}>
+                    <NavLink className={classes.MenuBarItem} to='/persons' activeClassName='selected' onClick={() => this.setState({currentSection: this.personsSection})}>
                         <InlineSVG className={classes.MenuBarIcon}
                         src={require('../../../assets/Images/PersonsSection.svg')} />
                     </NavLink>
 
-                    <NavLink exact className={classes.MenuBarItem} to='/books' activeClassName='selected' onClick={() => this.setState({currentSection: this.booksSection})}>
+                    <NavLink className={classes.MenuBarItem} to='/books' activeClassName='selected' onClick={() => this.setState({currentSection: this.booksSection})}>
                         <InlineSVG className={classes.MenuBarIcon}
                         src={require('../../../assets/Images/BooksSection.svg')} />
                     </NavLink>

@@ -19,6 +19,18 @@ export default {
         alignItems: 'start',
         justifyContent: 'center',
         fontFamily: '"Montserrat", sans-serif',
+        // '&:after': {
+        //     content: '""',
+        //     position: 'fixed',
+        //     right: 0,
+        //     left: 0,
+        //     zIndex: -1,
+        //     display: 'block',
+        //     background: 'center / cover no-repeat url("../../../assets/Images/Background.jpg")',
+        //     filter: 'blur(20px)',
+        //     width: '100%',
+        //     height: '100%'
+        // }
     },
     PersonCardContainer: {
         height: '100%'
@@ -58,11 +70,10 @@ export default {
     },
     PersonImage: {
         width: '80%',
-        margin: '20px auto 0',
+        margin: '40px auto 0',
         overflow: 'hidden',
         borderRadius: '20px',
         '& > img': {
-            extend: ImageAlignment,
             height: '20rem',
             borderRadius: '20px',
         }

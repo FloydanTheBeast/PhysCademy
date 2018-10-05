@@ -13,7 +13,8 @@ class ModalLauncher extends Component {
 
     render() {
         const { classes } = this.props;
-        
+        console.log(this.state)
+
         return (
             <div className={classes.ModalLauncher}>
                 <div className={this.props.className} onClick={this.toggleModal.bind(this)}>
