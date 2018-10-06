@@ -22,27 +22,38 @@ import 'smoothscroll-for-websites';
 
 class App extends React.Component {
     constructor(props) {
-        super(props); 
-        this.axiosSource = axios.CancelToken.source();
+        super(props)
+        this.axiosSource = axios.CancelToken.source()
         this.state = {
-            modalOpened: false
-        };
+            modalOpened: false,
+            lessonsList: {}
+        }
+        this.fetchLessonsList = this.fetchLessonsList.bind(this)
     };
 
     render() {
         const { classes } = this.props;
+        const { lessonsList } = this.state
 
         return(
             <HashRouter basename='/'>
                 <div className={`${classes.App} container`}>
                     <MenuBar />
                     <Switch>
-                        <Route path='/lessons/:section/:name' render={({ match }, props) => (
-                                [
-                                    <Article key='article' section={match.params.section} name={match.params.name} />,
-                                    <LessonsList key='lessons-list' />
-                                ]
-                            )
+                        <Route path='/lessons/:section/:name' render={({ match }, props) => {
+                            const prevArticle = lessonsList[match.params.section] ? lessonsList[match.params.section][lessonsList[match.params.section].findIndex(el => el === match.params.name) - 1] : undefined
+                            const nextArticle = lessonsList[match.params.section] ? lessonsList[match.params.section][lessonsList[match.params.section].findIndex(el => el === match.params.name) + 1] : undefined
+
+                            return (
+                                <React.Fragment>
+                                    <Article
+                                        nextArticle={nextArticle ? `/lessons/${match.params.section}/${nextArticle}` : undefined}
+                                        previousArticle={prevArticle ? `/lessons/${match.params.section}/${prevArticle}` : undefined}
+                                        section={match.params.section} 
+                                        name={match.params.name} />
+                                    <LessonsList fetchLessons={this.fetchLessonsList} />
+                                </React.Fragment>
+                            )}
                         }/>
                         <Route path='/persons' render={({ match }, props) => (
                                 <PersonsList />
@@ -70,13 +81,18 @@ class App extends React.Component {
         )
     };
 
+    fetchLessonsList(lessonsList) {
+        console.log(lessonsList)
+        this.setState({ lessonsList })
+    }
+
     openModal() {
-        this.setState({modalOpened: true});
-    };
+        this.setState({ modalOpened: true })
+    }
 
     closeModal() {
-        this.setState({modalOpened: false});
-    };
+        this.setState({ modalOpened: false })
+    }
 }
 
-export default injectStyles(styles)(App);
+export default injectStyles(styles)(App)

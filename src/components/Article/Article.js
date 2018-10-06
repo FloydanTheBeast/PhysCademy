@@ -1,13 +1,14 @@
-import React, {Component, createElement} from 'react';
-import axios from 'axios';
-import Markdown from 'markdown-to-jsx';
-import injectStyles from 'react-jss';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
+import Markdown from 'markdown-to-jsx'
+import injectStyles from 'react-jss'
 
-import Modal from '../ModalLauncher/ModalLauncher';
-import ExpandableText from '../ExpandableText/ExpandableText';
-import ReadingProgressBar from '../ReadingProgressBar/ReadingProgressBar';
-import { InlineMath, BlockMath } from '../Math/Math';
-import styles from './ArticleStyles';
+import Modal from '../ModalLauncher/ModalLauncher'
+import ExpandableText from '../ExpandableText/ExpandableText'
+import ReadingProgressBar from '../ReadingProgressBar/ReadingProgressBar'
+import { InlineMath, BlockMath } from '../Math/Math'
+import styles from './ArticleStyles'
 
 const CustomComponents = {
     InlineMath,
@@ -39,7 +40,14 @@ class Article extends Component {
                 }}>
                     {this.state.text}
                 </Markdown>
-                
+                <div className={classes.NavigationButtons}>
+                    {this.props.previousArticle &&
+                        <p><Link onClick={() => window.scrollTo(0, 0)} to={this.props.previousArticle}>Предыдущий урок</Link></p>
+                    }
+                    {this.props.nextArticle &&
+                        <p><Link onClick={() => window.scrollTo(0, 0)} to={this.props.nextArticle}>Следующий урок</Link></p>
+                    }
+                </div>
             </div>
         );
     };

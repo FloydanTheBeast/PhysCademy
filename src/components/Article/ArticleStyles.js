@@ -25,5 +25,8 @@ export default {
     ArticleTitle: {
         borderLeft: '0.5rem solid #fff',
         paddingLeft: '1rem'
+    },
+    NavigationButtons: {
+        margin: 0,
     }
 }
