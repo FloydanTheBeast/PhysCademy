@@ -8,12 +8,17 @@ export default {
         transition: 'all 0.3s',
         '&:hover': {
             boxShadow: 'none',
-            transform: 'scale(1.1, 1.1)',
+            width: '600px',
             cursor: 'pointer',
             filter: 'contrast(125%)'
         },
         '& .text-left, & .background-right': {
             fill: '#25313c !important',
         },
+    },
+    Fixed: {
+        position: 'fixed',
+        left: '50%',
+        transform: 'translateX(-50%)'
     }
 };

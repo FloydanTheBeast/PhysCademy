@@ -14,6 +14,7 @@ import Modal from './components/ModalLauncher/ModalLauncher';
 import ExpandableText from './components/ExpandableText/ExpandableText';
 import PersonsList from './components/PersonsList/PersonsList';
 import BooksList from './components/BooksList/BooksList';
+import HomePage from './components/HomePage/HomePage'
 import styles from './AppStyles';
 
 import 'normalize.css';
@@ -59,7 +60,7 @@ class App extends React.Component {
                         } />
                         <Route path='/' render={props => (
                                 <div className={classes.ContentList}>
-                                    <Logo />
+                                    <HomePage />
                                 </div>
                             )
                         } />

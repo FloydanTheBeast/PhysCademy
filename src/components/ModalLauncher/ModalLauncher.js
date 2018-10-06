@@ -13,7 +13,6 @@ class ModalLauncher extends Component {
 
     render() {
         const { classes } = this.props;
-        console.log(this.state)
 
         return (
             <div className={classes.ModalLauncher}>
