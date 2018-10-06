@@ -2,7 +2,7 @@ export default {
     HomePage: {
         position: 'relative',
         top: '50%',
-        transform: 'translateY(-50%)',
+        transform: 'translateY(calc(-50% - 80px))',
         fontFamily: 'Montserrat',
         color: '#fff',
         width: '60%',

@@ -5,11 +5,13 @@ import styles from './AppLogoStyles';
 
 const Logo = (props) => {
     const { classes } = props
-    
+
     switch(props.fixed) {
         case(true):
             return (
-                <InlineSVG className={`${classes.Logo} ${classes.Fixed}`} element='div' src={require('../../../assets/Images/Logo.svg')} />
+                <div className={classes.Header}>
+                    <InlineSVG className={`${classes.Logo}`} element='div' src={require('../../../assets/Images/Logo.svg')} />
+                </div>
             )
         default:
             return (
