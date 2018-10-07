@@ -39,7 +39,7 @@ export default {
         maxWidth: '250px',
         height: '100%',
         overflow: 'hidden',
-        border: '2px solid #222',
+        border: '1px solid #222',
         borderRadius: '10px',
         textAlign: 'center',
         transition: 'all 0.2s ease-in-out',

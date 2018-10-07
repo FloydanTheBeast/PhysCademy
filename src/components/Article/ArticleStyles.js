@@ -29,9 +29,9 @@ export default {
         paddingLeft: '1rem'
     },
     NavButtons: {
-        width: '600px',
+        width: '80%',
         display: 'flex',
-        flexFlow: 'row nowrap',
+        flexFlow: 'row wrap',
         margin: '0 auto',
         justifyItems: 'stretch',
         justifyContent: 'center',
