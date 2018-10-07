@@ -18,7 +18,7 @@ export default {
         height: '100%',
         width: '20rem',
         border: '1px solid #111',
-        borderRadius: '20px',
+        borderRadius: '10px',
         overflow: 'hidden',
         color: '#fff',
         opacity: '0.75',

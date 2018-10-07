@@ -40,12 +40,12 @@ class Article extends Component {
                 }}>
                     {this.state.text}
                 </Markdown>
-                <div className={classes.NavigationButtons}>
+                <div className={classes.NavButtons}>
                     {this.props.previousArticle &&
-                        <p><Link onClick={() => window.scrollTo(0, 0)} to={this.props.previousArticle}>Предыдущий урок</Link></p>
+                        <Link className={classes.NavButtonLeft} onClick={() => window.scrollTo(0, 0)} to={this.props.previousArticle}>Предыдущий урок</Link>
                     }
                     {this.props.nextArticle &&
-                        <p><Link onClick={() => window.scrollTo(0, 0)} to={this.props.nextArticle}>Следующий урок</Link></p>
+                        <Link className={classes.NavButtonRight} onClick={() => window.scrollTo(0, 0)} to={this.props.nextArticle}>Следующий урок</Link>
                     }
                 </div>
             </div>

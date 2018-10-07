@@ -39,8 +39,8 @@ export default {
         maxWidth: '250px',
         height: '100%',
         overflow: 'hidden',
-        border: '3px solid #222',
-        borderRadius: '20px',
+        border: '2px solid #222',
+        borderRadius: '10px',
         textAlign: 'center',
         transition: 'all 0.2s ease-in-out',
         opacity: '0.75',
@@ -72,10 +72,9 @@ export default {
         width: '80%',
         margin: '40px auto 0',
         overflow: 'hidden',
-        borderRadius: '20px',
         '& > img': {
             height: '20rem',
-            borderRadius: '20px',
+            borderRadius: '10px',
         }
     },
     PersonCardHeader: {

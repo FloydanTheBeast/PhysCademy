@@ -6,7 +6,6 @@ import { Route, Link, HashRouter, Switch} from 'react-router-dom';
 import injectStyles from 'react-jss';
 
 import Logo from './components/AppLogo/AppLogo';
-import ArrowButtons from './components/ArrowButtons';
 import Article from './components/Article/Article';
 import LessonsList from './components/LessonsList/LessonsList';
 import MenuBar from './components/MenuBar/MenuBar'

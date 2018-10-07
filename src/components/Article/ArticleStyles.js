@@ -1,3 +1,5 @@
+import LightenDarkenColor from '../../utils/LightenDarkenColor'
+
 export default {
     Article: {
         width: '90%',
@@ -26,7 +28,25 @@ export default {
         borderLeft: '0.5rem solid #fff',
         paddingLeft: '1rem'
     },
-    NavigationButtons: {
-        margin: 0,
-    }
+    NavButtons: {
+        width: '600px',
+        display: 'flex',
+        flexFlow: 'row nowrap',
+        margin: '0 auto',
+        justifyItems: 'stretch',
+        justifyContent: 'center',
+        '& > a': {
+            textAlign: 'center',
+            flex: 1,
+            backgroundColor: '#2C3A47',
+            padding: '10px 20px',
+            border: '1px solid #222',
+            borderRadius: '5px',
+            margin: '20px',
+            transition: 'all 0.3s',
+            '&:hover': {
+                backgroundColor: LightenDarkenColor('#2C3A47', -20)
+            }
+        }
+    },
 }
