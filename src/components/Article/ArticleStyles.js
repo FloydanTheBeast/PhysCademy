@@ -36,6 +36,7 @@ export default {
         justifyItems: 'stretch',
         justifyContent: 'center',
         '& > a': {
+            maxWidth: '50%',
             textAlign: 'center',
             flex: 1,
             backgroundColor: '#2C3A47',
