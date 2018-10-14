@@ -9,8 +9,7 @@ export default {
         maxWidth: '800px',
         minWidth: '500px',
         margin: '30px 0 30px 50px',
-        color: '#fff',
-        // transition: 'max-height 1s ease-in-out'
+        color: '#fff'
     },
 
     ExpandableTextPreview: {    

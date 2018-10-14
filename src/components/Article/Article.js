@@ -28,8 +28,8 @@ class Article extends Component {
     };
 
     render() {
-        const { classes } = this.props;
-
+        const { classes } = this.props
+        console.log(this.props)
         return (
             <div className={classes.Article}>
                 <ReadingProgressBar />
@@ -53,13 +53,15 @@ class Article extends Component {
     };
 
     shouldComponentUpdate(nextProps, nextState) {
-        if (this.props.name == nextProps.name &&
-            this.props.section == nextProps.section) {
+        if (this.props.name === nextProps.name &&
+            this.props.section === nextProps.section &&
+            this.props.previousArticle === nextProps.previousArticle &&
+            this.props.nextArticle === nextProps.nextArticle) {
             return false;
         }
         this.fetchTextFromApi(nextProps.section, nextProps.name);
         return true;
-    };
+    }
 
     fetchTextFromApi(section, name) {
         axios.get(`http://localhost:8081/lessons/${encodeURI(section)}/${encodeURI(name)}`)
