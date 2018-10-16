@@ -1,45 +1,78 @@
+import LightenDarkenColor from '../../utils/LightenDarkenColor'
+
 export default {
     BooksList: {
         width: '95%',
         margin: '40px auto 40px',
         gridArea: 'content',
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(auto, 20rem))',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(auto, 900px))',
         gridAutoRows: 'max-content',
-        gridColumnGap: '50px',
-        gridRowGap: '50px',
+        gridColumnGap: '100px',
+        gridRowGap: '100px',
         alignItems: 'start',
         justifyContent: 'center',
         fontFamily: '"Montserrat", sans-serif',
     },
     BookCard: {
-        position: 'relative',
-        zIndex: 1,
-        height: '100%',
-        width: '20rem',
-        border: '1px solid #111',
-        borderRadius: '10px',
+        width: '900px',
+        display: 'flex',
+        flexFlow: 'row nowrap',
+        borderRadius: '6px',
         overflow: 'hidden',
-        color: '#fff',
-        opacity: '0.75',
-        transition: 'all 0.3s 0.1s ease-in',
-        '& > h2, & > p': {
-            margin: '20px'
-        },
-        '& > p': {
-            opacity: '0.7'
-        },
+        transition: 'all 0.35s 0.1s',
+        border: '5px solid #182028',
         '&:hover': {
-            opacity: '1',
+            '& img': {
+                transform: 'scale(1.05)'
+            },
             cursor: 'pointer',
-            transform: 'rotateX(30deg) rotateY(10deg)',
-            boxShadow: '25px 25px 10px #111',
+            border: '5px solid #fff',
+            transform: 'translateY(-10px)',
+            boxShadow: '15px 15px 5px #111'
         }
     },
     BookCoverPreview: {
-        display: 'block',
-        width: '20rem',
-        height: '30rem',
+        position: 'relative',
+        minWidth: '25rem',
+        padding: '5rem 0',
+        '& > img': {
+            transition: 'all 0.5s 0.1s',
+            position: 'relative',
+            display: 'block',
+            margin: '0 auto',
+            width: '15rem',
+            height: '22rem',
+        }
+    },
+    Background: {
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+        backgroundImage: "url('../../../../../assets/Images/BookBackground.jpg')",
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        filter: 'blur(0.5px)',
+        filter: 'contrast(90%)'
+    },
+    BookInfoBox: {
+        display: 'flex',
+        width: '100%',
+        color: '#fff',
+        backgroundColor: '#182028',
+        padding: '0 60px',
+    },
+    BookInfo: {
+        margin: 'auto 0',
+        '& > h1': {
+            fontSize: '2rem'
+        },
+        '& > h2': {
+            fontSize: '1.5rem',
+            opacity: '0.6'
+        }
     },
     BookCardHeader: {
         textAlign: 'center',

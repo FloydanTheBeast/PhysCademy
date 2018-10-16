@@ -50,12 +50,26 @@ class BooksList extends Component {
             return this.state.booksList.map((book, bookId) => {
                 return (
                     <ModalLauncher key={`book${bookId}`} className={classes.BookCard}
-                      button={[
-                        <img key='cover' src={book.image ? path.relative(__dirname, path.join('server', book.image)) : ''} 
-                         className={classes.BookCoverPreview} />,
-                        <h2 key='name'>{book.name}</h2>,
-                        <p key='author'>{book.author}</p>
-                    ]}>
+                        button={
+                            // [
+                            //     <img key='cover' src={book.image ? path.relative(__dirname, path.join('server', book.image)) : ''} 
+                            //     className={classes.BookCoverPreview} />,
+                            //     <h2 key='name'>{book.name}</h2>,
+                            //     <p key='author'>{book.author}</p>
+                            // ]
+                            <React.Fragment>
+                                <div className={classes.BookCoverPreview}>
+                                    <div className={classes.Background}></div>
+                                    <img src={book.image ? path.relative(__dirname, path.join('server', book.image)) : undefined}/>
+                                </div>
+                                <div className={classes.BookInfoBox}>
+                                    <div className={classes.BookInfo}>
+                                        <h1>{book.name}</h1>
+                                        <h2>{book.author}</h2>
+                                    </div>
+                                </div>
+                            </React.Fragment>
+                        }>
 
                         <div className={classes.BookCardHeader}>
                             <div className={classes.BookCover}>
