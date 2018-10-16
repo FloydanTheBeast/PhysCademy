@@ -24,16 +24,22 @@ const LessonsListStyles = {
     },
     '& a': {
         transition: 'all 0.3s',
+        '& > p': {
+            padding: '6px',
+            transition: 'all 0.5s',
+            borderRadius: '10px'
+        },
         '&.selected': {
             color: '#f5cd79',
-            '&>p': {
-                transition: 'all 0.5s',
+            '& > p': {
                 borderLeft: '6px solid #f5cd79',
                 paddingLeft: '8px'
             }
         },
         '&:hover:not(.selected)': {
-            color: LightenDarkenColor('#ffffff', -25),
+            '& > p': {
+                backgroundColor: LightenDarkenColor('#2C3A47', -40)
+            }
         },
         '& p': {
             fontFamily: '"Montserrat", sans-serif',
@@ -44,7 +50,7 @@ const LessonsListStyles = {
 export default {
     LessonsList: {
         gridArea: 'list',
-        minWidth: '300px',
+        minWidth: '320px',
         maxWidth: '350px',
         width: '20vw',
         borderRight: '2px solid #222',
@@ -64,7 +70,7 @@ export default {
             '& p': {
                 fontSize: '1.25rem',
                 margin: '0 10px 5px',
-                padding: '6px 0'
+                // padding: '6px 2px'
             }
         },
     },

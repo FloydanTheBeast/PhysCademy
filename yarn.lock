@@ -219,6 +219,12 @@ ajv@^6.5.2:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
+animakit-expander@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/animakit-expander/-/animakit-expander-2.1.4.tgz#eaf06ad271d14f247236fd744c01bbe51e16d5ea"
+  dependencies:
+    lodash.isequal "^4.5.0"
+
 ansi-align@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ansi-align/-/ansi-align-2.0.0.tgz#c36aeccba563b89ceb556f3690f0b1d9e3547f7f"
@@ -4388,6 +4394,10 @@ locate-path@^3.0.0:
 lodash.camelcase@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
+
+lodash.isequal@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
 
 lodash@^4.13.1, lodash@^4.17.10, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0, lodash@^4.5.1:
   version "4.17.10"

@@ -34,8 +34,8 @@ class LessonsList extends Component {
     getLessonsList() {
         axios.get('http://localhost:8081/lessonsList', {cancelToken: this.axiosSource.token})
             .then(res => {
-                this.props.fetchLessons(res.data)
                 this.setState({ lessonsList: res.data })
+                this.props.fetchLessons(res.data)
             })
             .catch(err => console.log('Error: ', err))
     }

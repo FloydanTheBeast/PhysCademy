@@ -6,8 +6,8 @@ export default {
     },
     ExpandableTextContainer: {
         width: '80%',
-        maxWidth: '800px',
-        minWidth: '500px',
+        maxWidth: '1000px',
+        minWidth: '600px',
         margin: '30px 0 30px 50px',
         color: '#fff'
     },
@@ -22,13 +22,15 @@ export default {
             cursor: 'pointer'
         },
         '& > h2': {
-            margin: '0'
+            margin: '0',
+            paddingRight: '10px'
         },
         '&:after': {
             transition: 'all 0.4s',
             content: '""',
-            height: '0.75rem',
-            width: '0.75rem',
+            height: 0,
+            width: 0,
+            padding: '6px',
             borderBottom: '4px solid #fff',
             borderLeft: '4px solid #fff',
             margin: 'auto 0',

@@ -28,7 +28,7 @@ class App extends React.Component {
             lessonsList: {}
         }
         this.fetchLessonsList = this.fetchLessonsList.bind(this)
-    }
+    };
 
     render() {
         const { classes } = this.props;
@@ -81,6 +81,7 @@ class App extends React.Component {
     };
 
     fetchLessonsList(lessonsList) {
+        console.log(lessonsList)
         this.setState({ lessonsList })
     }
 

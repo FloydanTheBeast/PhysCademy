@@ -25,11 +25,11 @@ class Article extends Component {
         };
         this.fetchTextFromApi = this.fetchTextFromApi.bind(this);
         this.fetchTextFromApi(props.section, props.name);
-    };
+    }
 
     render() {
         const { classes } = this.props
-        console.log(this.props)
+        
         return (
             <div className={classes.Article}>
                 <ReadingProgressBar />
