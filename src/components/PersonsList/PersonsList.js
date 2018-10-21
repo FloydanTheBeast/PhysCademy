@@ -34,11 +34,11 @@ class PersonsList extends Component {
     }
 
     getPersonsList() {
-        axios.get('http://localhost:8081/personsList', {cancelToken: this.axiosSource.token})
+        axios.get('http://localhost:8081/personsList', { cancelToken: this.axiosSource.token })
             .then(res => {
                 this.setState({
                     personsList: res.data
-                });
+                })
             })
             .catch(err => console.log('Error: ', err))
     }
@@ -51,16 +51,20 @@ class PersonsList extends Component {
                 const imageUrl = path.relative(__dirname, path.join('server', this.state.personsList[person]['image']));
 
                 return (
-                    <ModalLauncher className={classes.PersonCard} key={`person${personIndex}`} button={[
-                        <div className={classes.ImagePreview} key='image'>
-                            <img src={imageUrl} />
-                        </div>,
-                        <h3 key='name'>{person}</h3>,
-                        <p key='briefInfo'>
-                            {this.state.personsList[person]['date-of-birth'] ? this.state.personsList[person]['date-of-birth'] : ''}
-                            {this.state.personsList[person]['date-of-death'] ? " - " + this.state.personsList[person]['date-of-death'] : ''}
-                        </p>
-                    ]}>
+                    <ModalLauncher className={classes.PersonCard} key={`person${personIndex}`} button={
+                        <React.Fragment>
+                            <div className={classes.ImagePreview} key='image'>
+                                <img src={imageUrl} />
+                            </div>
+                            <div className={classes.Info}>
+                                <h2 key='name'>{person}</h2>
+                                <p key='briefInfo'>
+                                    {this.state.personsList[person]['date-of-birth'] ? this.state.personsList[person]['date-of-birth'] : ''}
+                                    {this.state.personsList[person]['date-of-death'] ? " - " + this.state.personsList[person]['date-of-death'] : ''}
+                                </p>
+                            </div>
+                        </React.Fragment>
+                    }>
 
                         <div className={classes.PersonCardHeader}>
                             <div className={classes.PersonImage}>

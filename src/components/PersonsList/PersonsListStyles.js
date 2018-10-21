@@ -1,3 +1,5 @@
+import LightenDarkenColor from "../../utils/LightenDarkenColor";
+
 const ImageAlignment = {
     position: 'relative',
     left: '50%',
@@ -10,62 +12,67 @@ export default {
     PersonsList: {
         width: '95%',
         margin: '40px auto 40px',
+        paddingTop: '10rem',
         gridArea: 'content',
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(auto, 250px))',
-        gridAutoRows: 'max-content',
-        gridColumnGap: '40px',
-        gridRowGap: '40px',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(auto, 660px))',
+        gridAutoRows: '30rem',
+        gridColumnGap: '4rem',
+        gridRowGap: '1rem',
         alignItems: 'start',
         justifyContent: 'center',
         fontFamily: '"Montserrat", sans-serif',
-        // '&:after': {
-        //     content: '""',
-        //     position: 'fixed',
-        //     right: 0,
-        //     left: 0,
-        //     zIndex: -1,
-        //     display: 'block',
-        //     background: 'center / cover no-repeat url("../../../assets/Images/Background.jpg")',
-        //     filter: 'blur(20px)',
-        //     width: '100%',
-        //     height: '100%'
-        // }
+        color: '#fff'
     },
     PersonCardContainer: {
         height: '100%'
     },
     PersonCard: {
-        maxWidth: '250px',
-        height: '100%',
-        overflow: 'hidden',
-        border: '1px solid #222',
-        borderRadius: '10px',
-        textAlign: 'center',
-        transition: 'all 0.2s ease-in-out',
-        opacity: '0.75',
-        color: '#fff',
-        '& img': {
-            height: '250px',
-            minWidth: '100%'
-        },
-        '& h3': {
-            margin: '10px 0',
-            fontSize: '1.25rem'
-        },
-        '& p': {
-            fontSize: '0.875rem',
-            fontWeight: '200'
-        },
         '&:hover': {
-            transform: 'scale(1.05, 1.05)',
-            opacity: '1',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            transform: 'translateY(-5px)',
+            boxShadow: '15px 15px 5px #111',
+            '& $ImagePreview': {
+                border: '4px solid #fff',
+                transform: 'translateY(-1rem)'
+            }
+        },
+        display: 'flex',
+        position: 'relative',
+        margin: 'auto',
+        width: '45rem',
+        height: '45%',
+        borderRadius: '5px',
+        backgroundColor: '#182028',
+        transition: 'all 0.4s'
+    },
+
+    ImagePreview: {
+        boxSizing: 'border-box',
+        border: '0px solid #182028',
+        padding: 0,
+        overflow: 'hidden',
+        height: '22rem',
+        width: '20rem',
+        margin: '-10rem 0 0 3rem',
+        transition: 'all 0.4s',
+        '& img': {
+            height: '100%',
+            minWidth: '100%',
+            position: 'relative',
+            left: '50%',
+            top: '50%',
+            transform: 'translate(-50%, -50%)'
         }
     },
-    ImagePreview: {
-        '& img': {
-            extend: ImageAlignment
+    Info: {
+        width: '40%',
+        padding: '2rem 3rem',
+        '& > h2': {
+            fontSize: '2rem'
+        },
+        '& > p': {
+            opacity: 0.7
         }
     },
     PersonImage: {
