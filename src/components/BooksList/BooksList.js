@@ -16,7 +16,7 @@ class BooksList extends Component {
     }
 
     componentDidMount() {
-        this.getBooksList();
+        setTimeout(() => this.getBooksList(), 250)
     }
 
     componentWillUnmount() {
@@ -46,17 +46,11 @@ class BooksList extends Component {
     handleBooksList() {
         const { classes } = this.props;
 
-        if (this.state.booksList) {
+        if (this.state.booksList.length) {
             return this.state.booksList.map((book, bookId) => {
                 return (
                     <ModalLauncher key={`book${bookId}`} className={classes.BookCard}
                         button={
-                            // [
-                            //     <img key='cover' src={book.image ? path.relative(__dirname, path.join('server', book.image)) : ''} 
-                            //     className={classes.BookCoverPreview} />,
-                            //     <h2 key='name'>{book.name}</h2>,
-                            //     <p key='author'>{book.author}</p>
-                            // ]
                             <React.Fragment>
                                 <div className={classes.BookCoverPreview}>
                                     <div className={classes.Background}></div>
@@ -90,7 +84,7 @@ class BooksList extends Component {
                     </ModalLauncher>
                 )
             })
-        }
+        } else return (<h1>Loading...</h1>)
     }
 }
 

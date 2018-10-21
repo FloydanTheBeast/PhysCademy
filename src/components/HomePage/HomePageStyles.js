@@ -20,7 +20,7 @@ export default {
         fontSize: '4rem',
         transition: 'all 0.3s',
         '&:hover': {
-            fontSize: '5rem',
+            // fontSize: '5rem',
             '&+span': {
                 opacity: '0.5'
             }

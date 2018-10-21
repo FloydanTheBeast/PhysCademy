@@ -16,11 +16,14 @@ export default {
         position: 'relative',
         width: '120px',
         height: '120px',
-        transition: 'background-color 0.25s ease-in-out',
+        transition: 'background-color 0.3s ease-in-out',
         '&.selected': {
-            backgroundColor: LightenDarkenColor('#2C3A47', -40)
+            backgroundColor: '#f5cd79',
+            '& svg': {
+                fill: '#222 !important',
+            }
         },
-        '&:hover': {
+        '&:not(.selected):hover': {
             backgroundColor: LightenDarkenColor('#2C3A47', -40),
             cursor: 'pointer'
         }
@@ -35,9 +38,7 @@ export default {
             left: '50%',
             marginRight: '-50%',
             transform: 'translate(-50%, -50%)',
-            '& line, & path': {
-                stroke: '#fff !important',
-            }
+            transition: 'background-color 0.25s ease-in-out'
         }
     }
 }
