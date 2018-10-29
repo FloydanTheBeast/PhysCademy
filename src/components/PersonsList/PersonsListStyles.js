@@ -1,28 +1,19 @@
 import LightenDarkenColor from "../../utils/LightenDarkenColor";
 
-const ImageAlignment = {
-    position: 'relative',
-    left: '50%',
-    top: '50%',
-    marginRight: '50%',
-    transform: 'translate(-50%, 0)'
-}
-
-export default {
+export default theme => ({
     PersonsList: {
         width: '95%',
         margin: '40px auto 40px',
         paddingTop: '10rem',
         gridArea: 'content',
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(auto, 660px))',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(auto, 45rem))',
         gridAutoRows: '30rem',
         gridColumnGap: '4rem',
         gridRowGap: '1rem',
         alignItems: 'start',
         justifyContent: 'center',
         fontFamily: '"Montserrat", sans-serif',
-        color: '#fff'
     },
     PersonCardContainer: {
         height: '100%'
@@ -31,9 +22,9 @@ export default {
         '&:hover': {
             cursor: 'pointer',
             transform: 'translateY(-5px)',
-            boxShadow: '15px 15px 5px #111',
+            boxShadow: `15px 15px 5px ${theme.shadowColor}`,
             '& $ImagePreview': {
-                border: '4px solid #fff',
+                border: `4px solid ${theme.borderColor}`,
                 transform: 'translateY(-1rem)'
             }
         },
@@ -43,13 +34,13 @@ export default {
         width: '45rem',
         height: '45%',
         borderRadius: '5px',
-        backgroundColor: '#182028',
+        backgroundColor: theme.backgroundColorDark,
         transition: 'all 0.4s'
     },
 
     ImagePreview: {
         boxSizing: 'border-box',
-        border: '0px solid #182028',
+        border: `0px solid ${theme.borderColor}`,
         padding: 0,
         overflow: 'hidden',
         height: '22rem',
@@ -98,4 +89,4 @@ export default {
         maxWidth: '900px',
         margin: '60px auto 40px',
     }
-}
+})

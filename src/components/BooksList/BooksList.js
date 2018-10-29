@@ -84,7 +84,10 @@ class BooksList extends Component {
                     </ModalLauncher>
                 )
             })
-        } else return (<h1>Loading...</h1>)
+        } else return (
+            // <h1>Loading...</h1>
+            <div></div> // TODO: Добавить элемент, отображающийся во время загрузки
+        )
     }
 }
 

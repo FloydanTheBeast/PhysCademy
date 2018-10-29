@@ -1,10 +1,10 @@
 import LightenDarkenColor from '../../utils/LightenDarkenColor'
+import themes from '../../themes';
 
-export default {
+export default theme => ({
     Article: {
         width: '90%',
         margin: '0 auto',
-        color: '#fff',
         font: '1.25rem "Montserrat", sans-serif',
         gridArea: 'content',
         '& > div': {
@@ -39,15 +39,15 @@ export default {
             maxWidth: '50%',
             textAlign: 'center',
             flex: 1,
-            backgroundColor: '#2C3A47',
+            backgroundColor: theme.backgroundColorDark,
             padding: '10px 20px',
             border: '1px solid #222',
             borderRadius: '5px',
             margin: '20px',
             transition: 'all 0.3s',
             '&:hover': {
-                backgroundColor: LightenDarkenColor('#2C3A47', -20)
+                backgroundColor: theme.backgroundColorDarkHover
             }
         }
     },
-}
+})

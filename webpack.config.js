@@ -43,7 +43,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(jpeg|png)$/,
+                test: /\.(jpg|jpeg|png)$/,
                 use: [
                     {
                         loader: 'file-loader',
@@ -57,9 +57,10 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['.js'],
+        extensions: ['.js', 'css'],
         alias: {
             Fonts: path.join(__dirname, 'assets/Fonts/'),
+            Images: path.join(__dirname, 'assets/Images/')
         }
     },
     plugins: [

@@ -1,12 +1,12 @@
 import LightenDarkenColor from '../../utils/LightenDarkenColor'
 
-export default {
+export default theme => ({
     BooksList: {
         width: '95%',
         margin: '40px auto 40px',
         gridArea: 'content',
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(auto, 900px))',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(auto, 56rem))',
         gridAutoRows: 'max-content',
         gridColumnGap: '100px',
         gridRowGap: '100px',
@@ -15,21 +15,21 @@ export default {
         fontFamily: '"Montserrat", sans-serif',
     },
     BookCard: {
-        width: '900px',
+        width: '56rem',
         display: 'flex',
         flexFlow: 'row nowrap',
         borderRadius: '6px',
         overflow: 'hidden',
         transition: 'all 0.35s 0.1s',
-        border: '5px solid #182028',
+        border: `3px solid ${theme.borderColor}`,
         '&:hover': {
             '& img': {
                 transform: 'scale(1.05)'
             },
             cursor: 'pointer',
-            border: '5px solid #fff',
+            border: `3px solid ${theme.borderColorAccent}`,
             transform: 'translateY(-10px)',
-            boxShadow: '15px 15px 5px #111'
+            boxShadow: `15px 15px 5px ${theme.shadowColor}`
         }
     },
     BookCoverPreview: {
@@ -51,7 +51,7 @@ export default {
         right: 0,
         bottom: 0,
         left: 0,
-        backgroundImage: "url('../../../../../assets/Images/BookBackground.jpg')",
+        backgroundImage: "url('assets/Images/BookBackground.jpg')",
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         filter: 'blur(0.5px)',
@@ -60,9 +60,8 @@ export default {
     BookInfoBox: {
         display: 'flex',
         width: '100%',
-        color: '#fff',
-        backgroundColor: '#182028',
-        padding: '0 60px',
+        backgroundColor: theme.backgroundColorDark,
+        padding: '0 4rem',
     },
     BookInfo: {
         margin: 'auto 0',
@@ -100,4 +99,4 @@ export default {
         maxWidth: '900px',
         margin: '60px auto 40px'
     }
-}
+})

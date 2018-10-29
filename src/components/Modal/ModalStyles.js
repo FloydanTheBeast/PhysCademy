@@ -1,4 +1,4 @@
-export default {
+export default theme => ({
     '@global': {
         'body': { overflow: 'hidden' }
     },
@@ -22,12 +22,11 @@ export default {
 
     Modal: {
         position: 'relative',
-        color: '#fff',
         margin: '100px 0',
         fontFamily: '"Montserrat", sans-serif',
         width: '80%',
         maxWidth: '1500px',
-        backgroundColor: '#2C3A47',
+        backgroundColor: theme.backgroundColorDark,
         borderRadius: '0.5rem',
     },
 
@@ -37,7 +36,7 @@ export default {
         right: 0,
         display: 'block',
         marginRight: '25px',
-        backgroundColor: '#2C3A47',
+        backgroundColor: theme.backgroundColorDark,
         width: '2.5rem',
         height: '2.5rem',
         padding: 0,
@@ -53,7 +52,7 @@ export default {
           left: '0.25rem',
           width: '2rem',
           height: '0.1rem',
-          backgroundColor: '#fff',
+          backgroundColor: theme.iconColor,
         },
     
         '&:before': { transform: 'rotate(45deg)' },
@@ -63,4 +62,4 @@ export default {
           backgroundColor: '#444',
         },
       },
-};
+})

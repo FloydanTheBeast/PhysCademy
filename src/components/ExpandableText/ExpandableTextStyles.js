@@ -1,19 +1,15 @@
 import LightenDarkenColor from '../../utils/LightenDarkenColor'
 
-export default {
-    '@keyframes': {
-        'from': ''
-    },
+export default theme => ({
     ExpandableTextContainer: {
         width: '80%',
         maxWidth: '1000px',
         minWidth: '600px',
-        margin: '30px 0 30px 50px',
-        color: '#fff'
+        margin: '30px 0 30px 50px'
     },
 
     ExpandableTextPreview: {    
-        backgroundColor: LightenDarkenColor('#2C3A47', -20),
+        backgroundColor: theme.backgroundColorDark,
         padding: '1rem 2rem 1rem 2rem',
         display: 'flex',
         flexFlow: 'row nowrap',
@@ -31,8 +27,8 @@ export default {
             height: 0,
             width: 0,
             padding: '6px',
-            borderBottom: '4px solid #fff',
-            borderLeft: '4px solid #fff',
+            borderBottom: `4px solid ${theme.iconColor}`,
+            borderLeft: `4px solid ${theme.iconColor}`,
             margin: 'auto 0',
             transform: 'rotateZ(45deg)'
         },
@@ -42,9 +38,8 @@ export default {
     },
 
     ExpandableTextContent: {
-        border: `2px solid ${LightenDarkenColor('#2C3A47', -20)}`,
-        backgroundColor: LightenDarkenColor('#2C3A47', 20),
-        color: 'inherit',
+        border: `2px solid ${theme.borderColor}`,
+        backgroundColor: theme.backgroundColorLight,
         padding: '2rem'
     }
-};
+})

@@ -4,7 +4,7 @@ export default {
         top: '50%',
         transform: 'translateY(calc(-50% - 80px))',
         fontFamily: 'Montserrat',
-        color: '#fff',
+        // color: '#fff',
         width: '60%',
         margin: '0 auto',
         fontSize: '32px',

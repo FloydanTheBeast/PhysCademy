@@ -1,10 +1,8 @@
 import LightenDarkenColor from '../../utils/LightenDarkenColor'
 
-const LessonsListStyles = {
+const LessonsListStyles = theme => ({
     '& h1': {
         display: 'block',
-        color: '#fff',
-        fontFamily: '"Montserrat", sans-serif',
         transition: 'all 0.3s',
         '&:before': {
             content: '"\\00B6"',
@@ -19,7 +17,14 @@ const LessonsListStyles = {
         }
     },
     '& a': {
+        display: 'block',
         transition: 'all 0.3s',
+        '&:focus': {
+            outline: 'none',
+            '& > p': {
+                backgroundColor: theme.backgroundColorDark
+            }
+        },
         '& > p': {
             padding: '6px',
             transition: 'all 0.5s',
@@ -35,30 +40,30 @@ const LessonsListStyles = {
         },
         '&:hover:not(.selected)': {
             '& > p': {
-                backgroundColor: LightenDarkenColor('#2C3A47', -40),
+                backgroundColor: theme.backgroundColorDarkHover
             }
         },
         '& p': {
             fontFamily: '"Montserrat", sans-serif',
         }
     }
-}
+})
 
-export default {
+export default theme => ({
     LessonsList: {
         gridArea: 'list',
         minWidth: '320px',
         maxWidth: '350px',
         width: '20vw',
-        borderRight: '2px solid #222',
-        backgroundColor: LightenDarkenColor('#2C3A47', -15),
+        borderRight: `2px solid ${theme.borderColor}`,
+        backgroundColor: theme.backgroundColorDark,
         overflowY: 'auto',
         position: 'sticky',
         top: '0',
         height: '100vh',
         padding: '0 2.5%',
         userSelect: 'none',
-        extend: LessonsListStyles,
+        extend: LessonsListStyles(theme),
         '& h1': {
             textAlign: 'center',
             fontSize: '2.25rem',
@@ -72,7 +77,7 @@ export default {
         },
     },
     ExtendedLessonsList: {
-        extend: LessonsListStyles,
+        extend: LessonsListStyles(theme),
         '& h1': {
             display: 'inline-block',
             fontSize: '3.5rem',
@@ -82,23 +87,18 @@ export default {
             '& p': {
                 margin: '0 0 0 7.5%',
                 fontSize: '1.75rem',
-                paddingBottom: '16px'
+                padding: '10px'
             }
         },
         '& $LessonsSection': {
+            borderBottom: 'none',
             '& a:last-child': {
                 borderBottom: 'none'
             }
         }
     },
     LessonsSection: {
-        '& a:last-child': {
-            display: 'block',
-            borderBottom: '2px solid #222',
-            '& p': {
-                marginBottom: '10px',
-            }
-        }
-    },
-    
-}
+        paddingBottom: '10px',
+        borderBottom: `2px solid ${theme.borderColor}`
+    }  
+})

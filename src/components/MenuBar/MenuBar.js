@@ -13,22 +13,26 @@ const MenuBar = (props) => {
         <div className={classes.MenuBar}>
                 <NavLink exact className={classes.MenuBarItem} to='/' activeClassName='selected'>
                     <InlineSVG className={classes.MenuBarIcon}
-                    src={require('../../../assets/Images/HomePage.svg')} />
+                    src={require('Images/HomePage.svg')} />
                 </NavLink>
 
                 <NavLink className={classes.MenuBarItem} to='/lessons' activeClassName='selected'>
                     <InlineSVG className={classes.MenuBarIcon}
-                    src={require('../../../assets/Images/LessonsSection.svg')} />
+                    src={require('Images/LessonsSection.svg')} />
                 </NavLink>
 
                 <NavLink className={classes.MenuBarItem} to='/persons' activeClassName='selected'>
                     <InlineSVG className={classes.MenuBarIcon}
-                    src={require('../../../assets/Images/PersonsSection.svg')} />
+                    src={require('Images/PersonsSection.svg')} />
                 </NavLink>
 
                 <NavLink className={classes.MenuBarItem} to='/books' activeClassName='selected'>
                     <InlineSVG className={classes.MenuBarIcon}
-                    src={require('../../../assets/Images/BooksSection.svg')} />
+                    src={require('Images/BooksSection.svg')} />
+                </NavLink>
+                <NavLink className={classes.MenuBarItem} to='/settings' activeClassName='selected'>
+                    <InlineSVG className={classes.MenuBarIcon}
+                    src={require('Images/SettingsSection.svg')} />
                 </NavLink>
         </div>
     )

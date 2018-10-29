@@ -1,13 +1,14 @@
 import LightenDarkenColor from '../../utils/LightenDarkenColor'
 
-export default {
+export default theme => ({
     MenuBar: {
-        backgroundColor: LightenDarkenColor('#2C3A47', -15),
+        backgroundColor: theme.backgroundColorDark,
         gridArea: 'menu',
-        borderRight: '2px solid #222',
+        borderRight: `2px solid ${theme.borderColor}`,
         position: 'sticky',
         height: '100vh',
         overflowY: 'auto',
+        overflowX: 'hidden',
         top: '0',
         width: '120px',
     },
@@ -16,15 +17,23 @@ export default {
         position: 'relative',
         width: '120px',
         height: '120px',
-        transition: 'background-color 0.3s ease-in-out',
+        transition: 'background-color, border-left 0.3s ease-in-out',
+        '&:focus': {
+            backgroundColor: '#f1bb4a',
+            outline: 'none'
+        },
         '&.selected': {
+            borderLeft: `0.75rem solid #f1bb4a`,
+            borderTop: '0.75rem solid transparent',
+            borderBottom: '0.75rem solid transparent',
+            boxSizing: 'border-box',
             backgroundColor: '#f5cd79',
             '& svg': {
                 fill: '#222 !important',
             }
         },
         '&:not(.selected):hover': {
-            backgroundColor: LightenDarkenColor('#2C3A47', -40),
+            backgroundColor: theme.backgroundColorDarkHover,
             cursor: 'pointer'
         }
     },
@@ -32,7 +41,7 @@ export default {
         '& svg': {
             width: '80px',
             height: '80px',
-            fill: '#fff',
+            fill: theme.iconColor,
             position: 'absolute',
             top: '50%',
             left: '50%',
@@ -41,4 +50,4 @@ export default {
             transition: 'background-color 0.25s ease-in-out'
         }
     }
-}
+})

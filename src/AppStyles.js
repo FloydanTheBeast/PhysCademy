@@ -1,7 +1,8 @@
 import MontserratNormal from 'Fonts/Montserrat/Montserrat-Regular.ttf';
 import MontserratBold from 'Fonts/Montserrat/Montserrat-Bold.ttf';
+import LightenDarkenColor from './utils/LightenDarkenColor';
 
-export default {
+export default theme => ({
     // Import all fonts
     '@font-face': [
         {
@@ -16,13 +17,13 @@ export default {
         },   
     ],
     App: {
-        backgroundColor: '#2C3A47',
+        // backgroundColor: '#2C3A47',
         display: 'grid',
         gridTemplateAreas:
             '"menu list content"',
         gridTemplateColumns: 'auto auto 1fr',
         '& a': {
-            color: '#fff',
+            color: 'inherit',
             textDecoration: 'none'
         },
         '& img': {
@@ -52,9 +53,18 @@ export default {
         width: '100%'
     },
     '@global': {
+        'html': {
+            fontSize: '16px'
+        },
         'body': {
             // overflowY: 'scroll', // Решение бага при котором меню становилось чуть шире из-за появившегося скроллбара
-            backgroundColor: '#2C3A47'
+            backgroundColor: theme.backgroundColor,
+            fontFamily: '"Montserrat", sans-serif',
+            color: theme.fontColor
+        },
+        '::selection': {
+            color: LightenDarkenColor('#2C3A47', 10),
+            backgroundColor: 'rgba(249, 202, 36, 0.99)'
         },
         'html::-webkit-scrollbar': {
             width: '10px',
@@ -79,4 +89,4 @@ export default {
             borderRadius: '15px'
         }
     },
-};
+})
