@@ -25,7 +25,7 @@ export default theme => ({
         }
     },
     ArticleTitle: {
-        borderLeft: '0.5rem solid #fff',
+        borderLeft: `0.5rem solid ${theme.fontColor}`,
         paddingLeft: '1rem'
     },
     NavButtons: {

@@ -28,6 +28,4 @@ class ThemedApp extends React.Component {
     }
 }
 
-ReactDOM.render(
-    <ThemedApp />
-, root);
+ReactDOM.render(<ThemedApp />, root)

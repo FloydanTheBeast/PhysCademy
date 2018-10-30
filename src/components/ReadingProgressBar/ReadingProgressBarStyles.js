@@ -1,8 +1,8 @@
-export default {
+export default theme => ({
     ReadingProgressBar: {
         position: 'sticky',
         display: 'inline-block',
-        height: '15px',
+        height: '10px',
         width: '100%',
         top: 'calc(100% - 30px)',
         zIndex: '1000',
@@ -11,7 +11,7 @@ export default {
             backgroundColor: 'transparent'
         },
         '&::-webkit-progress-value': {
-            backgroundColor: '#222',
+            backgroundColor: theme.backgroundColorAccentDark,
             borderRadius: '10px',
         }
     },
@@ -20,4 +20,4 @@ export default {
             appearance: 'none'
         }
     }
-}
+})

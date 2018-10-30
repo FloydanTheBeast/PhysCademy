@@ -15,7 +15,7 @@ const CustomComponents = {
     BlockMath,
     Modal,
     ExpandableText
-};
+}
 
 class Article extends Component {
     constructor(props) {

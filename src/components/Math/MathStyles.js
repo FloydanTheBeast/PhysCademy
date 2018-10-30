@@ -11,10 +11,10 @@ const InlineMathStyles = {
 const BlockMathStyles = {
     BlockMath: {
         transition: 'all 0.2s',
-        display: 'inline-block',
+        display: 'block',
         textAlign: 'center',
-        width: '100%',
-        margin: '30px 0',
+        width: '80%',
+        margin: '30px auto',
         '&:hover': {
             transform: 'scale(1.2, 1.2)'
         }

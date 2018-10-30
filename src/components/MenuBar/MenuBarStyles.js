@@ -2,6 +2,7 @@ import LightenDarkenColor from '../../utils/LightenDarkenColor'
 
 export default theme => ({
     MenuBar: {
+        transition: 'all 0.3s ease-in-out',
         backgroundColor: theme.backgroundColorDark,
         gridArea: 'menu',
         borderRight: `2px solid ${theme.borderColor}`,
@@ -17,19 +18,19 @@ export default theme => ({
         position: 'relative',
         width: '120px',
         height: '120px',
-        transition: 'background-color, border-left 0.3s ease-in-out',
+        transition: 'background-color 0.3s ease-in-out, border-left 0.3s ease-in-out',
         '&:focus': {
             backgroundColor: '#f1bb4a',
             outline: 'none'
         },
         '&.selected': {
-            borderLeft: `0.75rem solid #f1bb4a`,
+            borderLeft: `0.75rem solid ${theme.backgroundColorAccentDark}`,
             borderTop: '0.75rem solid transparent',
             borderBottom: '0.75rem solid transparent',
             boxSizing: 'border-box',
-            backgroundColor: '#f5cd79',
+            backgroundColor: theme.backgroundColorAccent,
             '& svg': {
-                fill: '#222 !important',
+                fill: `${theme.iconColorSelected} !important`,
             }
         },
         '&:not(.selected):hover': {
@@ -47,7 +48,7 @@ export default theme => ({
             left: '50%',
             marginRight: '-50%',
             transform: 'translate(-50%, -50%)',
-            transition: 'background-color 0.25s ease-in-out'
+            transition: 'all 0.3s ease-in-out'
         }
     }
 })

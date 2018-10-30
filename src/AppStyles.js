@@ -1,6 +1,8 @@
-import MontserratNormal from 'Fonts/Montserrat/Montserrat-Regular.ttf';
-import MontserratBold from 'Fonts/Montserrat/Montserrat-Bold.ttf';
-import LightenDarkenColor from './utils/LightenDarkenColor';
+import MontserratNormal from 'Fonts/Montserrat/Montserrat-Regular.ttf'
+import MontserratBold from 'Fonts/Montserrat/Montserrat-Bold.ttf'
+import MontserratExtraBold from 'Fonts/Montserrat/Montserrat-ExtraBold.ttf'
+import MontserratBlack from 'Fonts/Montserrat/Montserrat-Black.ttf'
+import LightenDarkenColor from './utils/LightenDarkenColor'
 
 export default theme => ({
     // Import all fonts
@@ -14,10 +16,19 @@ export default theme => ({
             fontFamily: 'Montserrat',
             src: `url(${MontserratNormal})`,
             fontWeight: 'normal'
-        },   
+        },
+        {
+            fontFamily: 'Montserrat',
+            src: `url(${MontserratExtraBold})`,
+            fontWeight: '800'
+        },
+        {
+            fontFamily: 'Montserrat',
+            src: `url(${MontserratBlack})`,
+            fontWeight: '900'
+        }  
     ],
     App: {
-        // backgroundColor: '#2C3A47',
         display: 'grid',
         gridTemplateAreas:
             '"menu list content"',
@@ -32,18 +43,18 @@ export default theme => ({
         '& .content': {
             gridArea: 'content',
         },
-        '& > div': {
-            '&::-webkit-scrollbar': {
-                width: '10px'
-            },
-            '&::-webkit-scrollbar-track': {
-                backgroundColor: '#2C3A47'
-            },
-            '&::-webkit-scrollbar-thumb': {
-                backgroundColor: '#222',
-                borderRadius: '15px'
-            }
-        }
+        // '& > div': {
+        //     '&::-webkit-scrollbar': {
+        //         width: '10px'
+        //     },
+        //     '&::-webkit-scrollbar-track': {
+        //         backgroundColor: '#2C3A47'
+        //     },
+        //     '&::-webkit-scrollbar-thumb': {
+        //         backgroundColor: '#222',
+        //         borderRadius: '15px'
+        //     }
+        // }
     },
     LessonsPage: {
         gridArea: 'content',
@@ -58,23 +69,27 @@ export default theme => ({
         },
         'body': {
             // overflowY: 'scroll', // Решение бага при котором меню становилось чуть шире из-за появившегося скроллбара
+            transition: 'background-color 0.3s ease-in-out',
             backgroundColor: theme.backgroundColor,
             fontFamily: '"Montserrat", sans-serif',
             color: theme.fontColor
         },
+        'h1, h2': {
+            fontWeight: 900
+        },
         '::selection': {
-            color: LightenDarkenColor('#2C3A47', 10),
-            backgroundColor: 'rgba(249, 202, 36, 0.99)'
+            color: theme.backgroundColor,
+            backgroundColor: theme.selectionColor
         },
         'html::-webkit-scrollbar': {
             width: '10px',
             position: 'fixed'
         },
         'html::-webkit-scrollbar-track': {
-            backgroundColor: '#2C3A47'
+            backgroundColor: theme.backgroundColor
         },
         'html::-webkit-scrollbar-thumb': {
-            backgroundColor: '#222',
+            backgroundColor: theme.scrollbarColor,
             borderRadius: '15px'
         },
         'div::-webkit-scrollbar': {
@@ -82,10 +97,10 @@ export default theme => ({
             margin: '10px'
         },
         'div::-webkit-scrollbar-track': {
-            backgroundColor: 'rgba(0, 0, 0, 0)',
+            backgroundColor: theme.backgroundColor,
         },
         'div::-webkit-scrollbar-thumb': {
-            backgroundColor: '#222',
+            backgroundColor: theme.scrollbarColor,
             borderRadius: '15px'
         }
     },

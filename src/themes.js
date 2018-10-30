@@ -1,26 +1,72 @@
 import LightenDarkenColor from './utils/LightenDarkenColor'
 
 export default {
-    light: {
-        fontColor: '#444',
-        backgroundColor: '#fff',
-        backgroundColorDark: LightenDarkenColor('#ffffff', -5),
-        backgroundColorDarkHover: LightenDarkenColor('#ffffff', -15),
-        backgroundColorLight: '#fff',
-        iconColor: '#222',
-        borderColor: '#888',
-        borderColorAccent: '#444',
-        shadowColor: '#555'
-    },
     dark: {
+        name: 'Тёмная',
         fontColor: '#fff',
         backgroundColor: '#2C3A47',
         backgroundColorDark: LightenDarkenColor('#2C3A47', -15),
         backgroundColorDarkHover: LightenDarkenColor('#2C3A47', -30),
         backgroundColorLight: LightenDarkenColor('#2C3A47', 20),
+        backgroundColorAccent: '#f5cd79',
+        backgroundColorAccentDark: '#f1bb4a',
         iconColor: '#fff',
+        iconColorSelected: '#222',
         borderColor: '#222',
         borderColorAccent: '#fff',
-        shadowColor: '#111'
+        shadowColor: '#111',
+        scrollbarColor: '#222',
+        selectionColor: 'rgba(245, 205, 121, 0.99)'
+    },
+    light: {
+        name: 'Светлая',
+        fontColor: '#444',
+        backgroundColor: '#fff',
+        backgroundColorDark: LightenDarkenColor('#ffffff', -5),
+        backgroundColorDarkHover: LightenDarkenColor('#ffffff', -15),
+        backgroundColorLight: '#fff',
+        backgroundColorAccent: '#54a0ff',
+        backgroundColorAccentDark: '#1e90ff',
+        iconColor: '#222',
+        iconColorSelected: '#111',
+        borderColor: '#888',
+        borderColorAccent: '#444',
+        shadowColor: '#555',
+        scrollbarColor: '#666',
+        selectionColor: 'rgba(84, 160, 255, 0.99)'
+    },
+    space: {
+        name: 'Космос',
+        fontColor: '#fff',
+        backgroundColor: '#2F374E',
+        backgroundColorDark: LightenDarkenColor('#2F374E', -15),
+        backgroundColorDarkHover: LightenDarkenColor('#2F374E', -30),
+        backgroundColorLight: LightenDarkenColor('#2F374E', 20),
+        backgroundColorAccent: '#ff6b81',
+        backgroundColorAccentDark: '#ff4757',
+        iconColor: '#fff',
+        iconColorSelected: '#eee',
+        borderColor: '#222',
+        borderColorAccent: '#fff',
+        shadowColor: '#000',
+        scrollbarColor: '#111',
+        selectionColor: 'rgba(255, 107, 129, 0.99)'
+    },
+    paper: {
+        name: 'Бумажная',
+        fontColor: '#222f3e',
+        backgroundColor: '#FCF3D9',
+        backgroundColorDark: LightenDarkenColor('#FCF3D9', -5),
+        backgroundColorDarkHover: LightenDarkenColor('#FCF3D9', -20),
+        backgroundColorLight: LightenDarkenColor('#FCF3D9', 20),
+        backgroundColorAccent: '#fd9644',
+        backgroundColorAccentDark: '#fa8231',
+        iconColor: '#333',
+        iconColorSelected: '#111',
+        borderColor: '#888',
+        borderColorAccent: '#222',
+        shadowColor: '#333',
+        scrollbarColor: '#222',
+        selectionColor: 'rgba(255, 127, 80, 0.99)'
     }
 }

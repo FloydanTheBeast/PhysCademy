@@ -31,9 +31,9 @@ const LessonsListStyles = theme => ({
             borderRadius: '10px' 
         },
         '&.selected': {
-            color: '#f5cd79',
+            color: theme.backgroundColorAccentDark,
             '& > p': {
-                borderLeft: '6px solid #f5cd79',
+                borderLeft: `6px solid ${theme.backgroundColorAccentDark}`,
                 paddingLeft: '8px',
                 borderRadius: 0
             }
