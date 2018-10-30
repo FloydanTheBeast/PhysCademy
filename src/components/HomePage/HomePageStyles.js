@@ -2,16 +2,15 @@ export default {
     HomePage: {
         position: 'relative',
         top: '50%',
-        transform: 'translateY(calc(-50% - 80px))',
+        transform: 'translateY(-50%)',
         fontFamily: 'Montserrat',
-        // color: '#fff',
-        width: '60%',
+        width: '70%',
         margin: '0 auto',
         fontSize: '32px',
         lineHeight: '150%',
         '& span': {
             transition: 'all 0.3s',
-            opacity: '0.8'
+            opacity: '0.9'
         }
     },
     AppName: {
@@ -20,9 +19,8 @@ export default {
         fontSize: '4rem',
         transition: 'all 0.3s',
         '&:hover': {
-            // fontSize: '5rem',
             '&+span': {
-                opacity: '0.5'
+                opacity: '0.3'
             }
         }
     }

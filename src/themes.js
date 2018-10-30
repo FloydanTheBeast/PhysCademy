@@ -45,7 +45,7 @@ export default {
         backgroundColorAccent: '#ff6b81',
         backgroundColorAccentDark: '#ff4757',
         iconColor: '#fff',
-        iconColorSelected: '#eee',
+        iconColorSelected: '#fff',
         borderColor: '#222',
         borderColorAccent: '#fff',
         shadowColor: '#000',
@@ -53,7 +53,7 @@ export default {
         selectionColor: 'rgba(255, 107, 129, 0.99)'
     },
     paper: {
-        name: 'Бумажная',
+        name: 'Бумага',
         fontColor: '#222f3e',
         backgroundColor: '#FCF3D9',
         backgroundColorDark: LightenDarkenColor('#FCF3D9', -5),

@@ -1,21 +1,26 @@
 import LightenDarkenColor from '../../utils/LightenDarkenColor'
 
 export default theme => ({
-    BooksList: {
-        width: '95%',
-        margin: '40px auto 40px',
+    BooksContainer: {
         gridArea: 'content',
+        width: '100%',
+        '& h1': {
+            textAlign: 'center',
+            fontSize: '3.5rem'
+        }
+    },
+    BooksList: {
+        margin: '40px auto',
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(auto, 56rem))',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(auto, 33rem))',
         gridAutoRows: 'max-content',
-        gridColumnGap: '100px',
-        gridRowGap: '100px',
+        gridColumnGap: '2rem',
+        gridRowGap: '3rem',
         alignItems: 'start',
-        justifyContent: 'center',
-        fontFamily: '"Montserrat", sans-serif',
+        justifyContent: 'center'
     },
     BookCard: {
-        width: '56rem',
+        width: '33rem',
         display: 'flex',
         flexFlow: 'row nowrap',
         borderRadius: '6px',
@@ -34,15 +39,15 @@ export default theme => ({
     },
     BookCoverPreview: {
         position: 'relative',
-        minWidth: '25rem',
-        padding: '5rem 0',
+        minWidth: '15rem',
+        padding: '3rem 0',
         '& > img': {
             transition: 'all 0.5s 0.1s',
             position: 'relative',
             display: 'block',
             margin: '0 auto',
-            width: '15rem',
-            height: '22rem',
+            width: '10rem',
+            height: '14rem',
         }
     },
     Background: {
@@ -61,15 +66,15 @@ export default theme => ({
         display: 'flex',
         width: '100%',
         backgroundColor: theme.backgroundColorDark,
-        padding: '0 4rem',
+        padding: '0 1.5rem',
     },
     BookInfo: {
         margin: 'auto 0',
         '& > h1': {
-            fontSize: '2rem'
+            fontSize: '1.5rem'
         },
         '& > h2': {
-            fontSize: '1.5rem',
+            fontSize: '1.125rem',
             opacity: '0.6'
         }
     },

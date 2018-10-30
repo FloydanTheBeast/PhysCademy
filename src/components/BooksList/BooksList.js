@@ -27,8 +27,11 @@ class BooksList extends Component {
         const { classes } = this.props;
 
         return(
-            <div className={classes.BooksList}>
-                {this.handleBooksList()}
+            <div className={classes.BooksContainer}>
+                <h1>Книги</h1>
+                <div className={classes.BooksList}>
+                    {this.handleBooksList()}
+                </div>
             </div>
         )
     }

@@ -36,9 +36,9 @@ export default theme => ({
         display: 'flex',
         position: 'relative',
         margin: 'auto',
+        paddingBottom: '2rem',
         width: '32rem',
-        height: '100%',
-        borderRadius: '5px',
+        borderRadius: '10px',
         backgroundColor: theme.backgroundColorDark,
         transition: 'all 0.4s'
     },
@@ -50,7 +50,7 @@ export default theme => ({
         overflow: 'hidden',
         height: '14rem',
         width: '12rem',
-        margin: '-2rem 0 0 1.5rem',
+        margin: '-2rem 0 auto 1.5rem',
         transition: 'all 0.4s',
         '& img': {
             height: '100%',
