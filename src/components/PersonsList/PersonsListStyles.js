@@ -1,16 +1,21 @@
 import LightenDarkenColor from "../../utils/LightenDarkenColor";
 
 export default theme => ({
-    PersonsList: {
-        width: '95%',
-        margin: '40px auto 40px',
-        paddingTop: '10rem',
+    PersonsContainer: {
+        width: '100%',
         gridArea: 'content',
+        '& > h1': {
+            textAlign: 'center',
+            fontSize: '3.5rem'
+        }
+    },
+    PersonsList: {
+        margin: '6rem auto 40px',
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(auto, 45rem))',
-        gridAutoRows: '30rem',
-        gridColumnGap: '4rem',
-        gridRowGap: '1rem',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(auto, 32rem))',
+        gridAutoRows: 'max-content',
+        gridColumnGap: '3rem',
+        gridRowGap: '6rem',
         alignItems: 'start',
         justifyContent: 'center',
         fontFamily: '"Montserrat", sans-serif',
@@ -31,8 +36,8 @@ export default theme => ({
         display: 'flex',
         position: 'relative',
         margin: 'auto',
-        width: '45rem',
-        height: '45%',
+        width: '32rem',
+        height: '100%',
         borderRadius: '5px',
         backgroundColor: theme.backgroundColorDark,
         transition: 'all 0.4s'
@@ -43,9 +48,9 @@ export default theme => ({
         border: `0px solid ${theme.borderColor}`,
         padding: 0,
         overflow: 'hidden',
-        height: '22rem',
-        width: '20rem',
-        margin: '-10rem 0 0 3rem',
+        height: '14rem',
+        width: '12rem',
+        margin: '-2rem 0 0 1.5rem',
         transition: 'all 0.4s',
         '& img': {
             height: '100%',
@@ -57,10 +62,10 @@ export default theme => ({
         }
     },
     Info: {
-        width: '40%',
-        padding: '2rem 3rem',
+        width: '50%',
+        padding: '2rem 1.25rem',
         '& > h2': {
-            fontSize: '2rem'
+            fontSize: '1.5rem'
         },
         '& > p': {
             opacity: 0.7

@@ -27,8 +27,11 @@ class PersonsList extends Component {
         const { classes } = this.props;
 
         return(
-            <div className={classes.PersonsList}>
-                {this.handlePersonsList()}
+            <div className={classes.PersonsContainer}>
+                <h1>Великие деятели науки</h1>
+                <div className={classes.PersonsList}>
+                    {this.handlePersonsList()}
+                </div>
             </div>
         )
     }
