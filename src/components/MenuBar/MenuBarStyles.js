@@ -48,7 +48,10 @@ export default theme => ({
             left: '50%',
             marginRight: '-50%',
             transform: 'translate(-50%, -50%)',
-            transition: 'all 0.3s ease-in-out'
+            transition: 'all 0.3s ease-in-out',
+            '& path': {
+                fill: `${theme.iconColor} !important`
+            }
         }
     }
 })

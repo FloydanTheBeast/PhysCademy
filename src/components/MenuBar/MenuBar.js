@@ -30,6 +30,12 @@ const MenuBar = (props) => {
                     <InlineSVG className={classes.MenuBarIcon}
                     src={require('Images/BooksSection.svg')} />
                 </NavLink>
+
+                <NavLink className={classes.MenuBarItem} to='/tests' activeClassName='selected'>
+                    <InlineSVG className={classes.MenuBarIcon}
+                    src={require('Images/TestsSection.svg')} />
+                </NavLink>
+
                 <NavLink className={classes.MenuBarItem} to='/settings' activeClassName='selected'>
                     <InlineSVG className={classes.MenuBarIcon}
                     src={require('Images/SettingsSection.svg')} />

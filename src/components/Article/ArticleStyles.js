@@ -10,7 +10,7 @@ export default theme => ({
         '& > div': {
             marginBottom: '100px',
             '& > h2:not(:first-child)': {
-                borderTop: '1px dashed #fff',
+                borderTop: `1px dashed ${theme.borderColor}`,
                 margin: '0',
                 padding: '30px 0',
                 marginTop: '30px'

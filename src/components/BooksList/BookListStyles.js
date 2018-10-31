@@ -4,7 +4,7 @@ export default theme => ({
     BooksContainer: {
         gridArea: 'content',
         width: '100%',
-        '& h1': {
+        '& > h1': {
             textAlign: 'center',
             fontSize: '3.5rem'
         }
@@ -59,7 +59,7 @@ export default theme => ({
         backgroundImage: "url('assets/Images/BookBackground.jpg')",
         backgroundPosition: 'center',
         backgroundSize: 'cover',
-        filter: 'blur(0.5px)',
+        // filter: 'blur(1px)',
         filter: 'contrast(90%)'
     },
     BookInfoBox: {

@@ -66,11 +66,11 @@ class Article extends Component {
     fetchTextFromApi(section, name) {
         axios.get(`http://localhost:8081/lessons/${encodeURI(section)}/${encodeURI(name)}`)
             .then(res => {
-                    this.setState({text: res.data});
-                    this.forceUpdate();
+                    this.setState({ text: res.data })
+                    this.forceUpdate()
                 }
             )
-            .catch(err => console.error(err.response.data));
+            .catch(err => console.error(err.response.data))
     };
 };
 

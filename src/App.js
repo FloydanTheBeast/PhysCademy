@@ -1,22 +1,23 @@
-import 'katex/dist/katex.css';
+import 'katex/dist/katex.css'
 
-import React from 'react';
-import axios from 'axios';
-import { Route, HashRouter, Switch} from 'react-router-dom';
-import injectStyles, { ThemeProvider } from 'react-jss';
+import React from 'react'
+import axios from 'axios'
+import { Route, HashRouter, Switch} from 'react-router-dom'
+import injectStyles, { ThemeProvider } from 'react-jss'
 
-import Article from './components/Article/Article';
-import LessonsList from './components/LessonsList/LessonsList';
+import Article from './components/Article/Article'
+import LessonsList from './components/LessonsList/LessonsList'
 import MenuBar from './components/MenuBar/MenuBar'
-import PersonsList from './components/PersonsList/PersonsList';
-import BooksList from './components/BooksList/BooksList';
+import PersonsList from './components/PersonsList/PersonsList'
+import BooksList from './components/BooksList/BooksList'
 import HomePage from './components/HomePage/HomePage'
+import TestsList from './components/TestsList/TestsList'
 import SettingsMenu from './components/SettingsMenu/SettingsMenu'
-import styles from './AppStyles';
+import styles from './AppStyles'
 import themes from './themes'
 
-import 'normalize.css';
-import 'smoothscroll-for-websites';
+import 'normalize.css'
+import 'smoothscroll-for-websites'
 
 class App extends React.Component {
     constructor(props) {
@@ -63,6 +64,10 @@ class App extends React.Component {
                             } />
                             <Route path='/books' render={({ match }, props) => (
                                     <BooksList />
+                                )   
+                            } />
+                            <Route path='/tests' render={({ match }, props) => (
+                                    <TestsList />
                                 )   
                             } />
                             <Route path='/settings' render={() => (
