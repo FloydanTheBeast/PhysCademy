@@ -88,6 +88,12 @@ app.get('/personsList', (req, res) => {
     res.send(listOfPersons);
 });
 
+app.get('/tests', (req, res) => {
+    res.send(
+        fs.readFileSync(path.join(__dirname, '/data/tests.json'))
+    )
+})
+
 app.get('/booksList', (req, res) => {
     const dirs = glob.sync(path.join(__dirname, 'data/books/*'));
     let listOfBooks = []
