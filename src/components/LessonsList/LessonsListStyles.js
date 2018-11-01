@@ -7,7 +7,7 @@ const LessonsListStyles = theme => ({
         '&:before': {
             content: '"\\00B6"',
             opacity: '0.2',
-            marginRight: '1rem',
+            marginRight: '0.75rem',
             transition: 'all 0.3s',
         },
         '&:hover':{
@@ -26,7 +26,7 @@ const LessonsListStyles = theme => ({
             }
         },
         '& > p': {
-            padding: '6px',
+            padding: '0.5rem',
             transition: 'all 0.5s',
             borderRadius: '10px' 
         },
@@ -52,8 +52,7 @@ const LessonsListStyles = theme => ({
 export default theme => ({
     LessonsList: {
         gridArea: 'list',
-        minWidth: '320px',
-        maxWidth: '350px',
+        minWidth: '21rem',
         width: '20vw',
         borderRight: `2px solid ${theme.borderColor}`,
         backgroundColor: theme.backgroundColorDark,
@@ -65,14 +64,16 @@ export default theme => ({
         userSelect: 'none',
         extend: LessonsListStyles(theme),
         '& h1': {
+            padding: '0 1rem',
+            wordBreak: 'break-all',
             textAlign: 'center',
-            fontSize: '2.25rem',
-            margin: '30px auto',
+            fontSize: '2rem',
+            margin: '1rem auto 2rem',
         },
         '& a': {
             '& p': {
-                fontSize: '1.25rem',
-                margin: '0 10px 5px'
+                fontSize: '1.5rem',
+                margin: '0 0.75rem 0.5rem'
             }
         },
     },
@@ -81,13 +82,13 @@ export default theme => ({
         '& h1': {
             display: 'inline-block',
             fontSize: '3.5rem',
-            marginLeft: '5%'
+            marginLeft: '3rem'
         },
         '& a': {
             '& p': {
-                margin: '0 0 0 7.5%',
+                margin: '0 0 0 7rem',
                 fontSize: '1.75rem',
-                padding: '10px'
+                padding: '0.75rem'
             }
         },
         '& $LessonsSection': {
@@ -98,7 +99,10 @@ export default theme => ({
         }
     },
     LessonsSection: {
-        paddingBottom: '10px',
-        borderBottom: `2px solid ${theme.borderColor}`
+        padding: '1.5rem 0',
+        borderBottom: `2px solid ${theme.borderColor}`,
+        '&:last-child': {
+            borderBottom: 'none'
+        }
     }  
 })

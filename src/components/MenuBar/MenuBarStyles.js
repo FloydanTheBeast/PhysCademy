@@ -11,13 +11,13 @@ export default theme => ({
         overflowY: 'auto',
         overflowX: 'hidden',
         top: '0',
-        width: '120px',
+        width: '7.5rem',
     },
     MenuBarItem: {
         display: 'block',
         position: 'relative',
-        width: '120px',
-        height: '120px',
+        width: '7.5rem',
+        height: '7.5rem',
         transition: 'background-color 0.3s ease-in-out, border-left 0.3s ease-in-out',
         '&:focus': {
             backgroundColor: '#f1bb4a',
@@ -40,8 +40,8 @@ export default theme => ({
     },
     MenuBarIcon: {
         '& svg': {
-            width: '80px',
-            height: '80px',
+            width: '5rem',
+            height: '5rem',
             fill: theme.iconColor,
             position: 'absolute',
             top: '50%',

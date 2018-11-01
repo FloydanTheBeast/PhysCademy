@@ -3,9 +3,9 @@ import LightenDarkenColor from '../../utils/LightenDarkenColor'
 export default theme => ({
     ExpandableTextContainer: {
         width: '80%',
-        maxWidth: '1000px',
-        minWidth: '600px',
-        margin: '30px 0 30px 50px'
+        maxWidth: '60rem',
+        minWidth: '20rem',
+        margin: '2rem 0'
     },
 
     ExpandableTextPreview: {    

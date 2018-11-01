@@ -63,10 +63,28 @@ export default theme => ({
         gridArea: 'content',
         width: '100%'
     },
+    '@media (min-width: 1440px)': {
+        '@global': {
+            'html': {
+                fontSize: '20px'
+            }
+        }
+    },
+    '@media (max-width: 1440px)': {
+        '@global': {
+            'html': {
+                fontSize: '16px'
+            }
+        }
+    },
+    '@media (max-width: 1024px)': {
+        '@global': {
+            'html': {
+                fontSize: '12px'
+            }
+        }
+    },
     '@global': {
-        'html': {
-            fontSize: '16px'
-        },
         'body': {
             // overflowY: 'scroll', // Решение бага при котором меню становилось чуть шире из-за появившегося скроллбара
             transition: 'background-color 0.3s ease-in-out',
