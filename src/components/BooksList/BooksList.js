@@ -56,7 +56,6 @@ class BooksList extends Component {
                         button={
                             <React.Fragment>
                                 <div className={classes.BookCoverPreview}>
-                                    <div className={classes.Background}></div>
                                     <img src={book.image ? path.relative(__dirname, path.join('server', book.image)) : undefined}/>
                                 </div>
                                 <div className={classes.BookInfoBox}>

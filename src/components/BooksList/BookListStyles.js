@@ -20,29 +20,36 @@ export default theme => ({
         justifyContent: 'center'
     },
     BookCard: {
-        width: '33rem',
+        color: '#fff',
+        width: '31rem',
         display: 'flex',
         flexFlow: 'row nowrap',
         borderRadius: '6px',
         overflow: 'hidden',
-        transition: 'all 0.35s 0.1s',
-        border: `3px solid ${theme.borderColor}`,
+        transition: 'all 0.5s',
+        backgroundImage: "url('assets/Images/BookBackground.jpg')",
+        backgroundPosition: 'center',
+        backgroundSize: '115%',
+        padding: '1rem',
         '&:hover': {
+            backgroundSize: '100%',
             '& img': {
                 transform: 'scale(1.05)'
             },
+            '& $BookInfoBox': {
+                paddingBottom: '2rem',
+            },
             cursor: 'pointer',
-            border: `3px solid ${theme.borderColorAccent}`,
             transform: 'translateY(-10px)',
             boxShadow: `15px 15px 5px ${theme.shadowColor}`
         }
     },
     BookCoverPreview: {
         position: 'relative',
-        minWidth: '15rem',
-        padding: '3rem 0',
+        minWidth: '10rem',
+        padding: '2rem 0 3rem 1rem',
         '& > img': {
-            transition: 'all 0.5s 0.1s',
+            transition: 'all 0.6s 0.1s',
             position: 'relative',
             display: 'block',
             margin: '0 auto',
@@ -50,23 +57,11 @@ export default theme => ({
             height: '14rem',
         }
     },
-    Background: {
-        position: 'absolute',
-        top: 0,
-        right: 0,
-        bottom: 0,
-        left: 0,
-        backgroundImage: "url('assets/Images/BookBackground.jpg')",
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        // filter: 'blur(1px)',
-        filter: 'contrast(90%)'
-    },
     BookInfoBox: {
+        transition: 'all 0.5s',
         display: 'flex',
         width: '100%',
-        backgroundColor: theme.backgroundColorDark,
-        padding: '0 1.5rem',
+        padding: '0 0 0 1.5rem',
     },
     BookInfo: {
         margin: 'auto 0',
@@ -75,7 +70,7 @@ export default theme => ({
         },
         '& > h2': {
             fontSize: '1.125rem',
-            opacity: '0.6'
+            opacity: '0.7'
         }
     },
     BookCardHeader: {
