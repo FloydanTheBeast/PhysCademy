@@ -90,7 +90,7 @@ app.get('/personsList', (req, res) => {
 
 app.get('/tests', (req, res) => {
     res.send(
-        fs.readFileSync(path.join(__dirname, '/data/tests.json'))
+        require('./data/tests')
     )
 })
 

@@ -51,7 +51,7 @@ class PersonsList extends Component {
 
         if (this.state.personsList) {
             return Object.keys(this.state.personsList).map((person, personIndex) => {
-                const imageUrl = path.relative(__dirname, path.join('server', this.state.personsList[person]['image']));
+                const imageUrl = path.relative(process.cwd(), path.join('server', this.state.personsList[person]['image']))
 
                 return (
                     <ModalLauncher className={classes.PersonCard} key={`person${personIndex}`} button={

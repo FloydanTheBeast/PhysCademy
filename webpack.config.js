@@ -4,9 +4,10 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
+    target: 'electron-main',
     output: {
         path: path.join(__dirname, '/build'),
-        // publicPath: '/',
+        publicPath: '/',
         filename: 'bundle.js',
     },
     module: {
@@ -46,7 +47,7 @@ module.exports = {
                 test: /\.(jpg|jpeg|png)$/,
                 use: [
                     {
-                        loader: 'file-loader',
+                        loader: 'url-loader'
                     }
                 ]
             },
@@ -75,4 +76,4 @@ module.exports = {
       }),
     new webpack.HotModuleReplacementPlugin()
     ]
-};
+}

@@ -56,7 +56,7 @@ class BooksList extends Component {
                         button={
                             <React.Fragment>
                                 <div className={classes.BookCoverPreview}>
-                                    <img src={book.image ? path.relative(__dirname, path.join('server', book.image)) : undefined}/>
+                                    <img src={book.image ? path.relative(process.cwd(), path.join('server', book.image)) : undefined}/>
                                 </div>
                                 <div className={classes.BookInfoBox}>
                                     <div className={classes.BookInfo}>
@@ -69,7 +69,7 @@ class BooksList extends Component {
 
                         <div className={classes.BookCardHeader}>
                             <div className={classes.BookCover}>
-                                <img src={book.image ? path.relative(__dirname, path.join('server', book.image)) : ''} 
+                                <img src={book.image ? path.relative(process.cwd(), path.join('server', book.image)) : ''} 
                                 className={classes.BookImage} />
                             </div>
                             <h2>{book.name}</h2>
