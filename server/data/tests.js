@@ -3,13 +3,59 @@ module.exports = [
         name: 'Нахождение мгновенной скорости',
         task: 'Закон движения точки по прямой задается уравнением <InlineMath math="x(t)=2t^2-5t+1">. \
          Найдите мгновенную скорость точки через 10 секунд после начала движения',
-        options: ['<InlineMath math="35\\frac{\\text м}{\\text с}">',
-                '<InlineMath math="151\\frac{\\text м}{\\text с}">',
-                '<InlineMath math="40\\frac{\\text м}{\\text с}">',
-                '<InlineMath math="36\\frac{\\text м}{\\text с}">'],
+        options: [
+            '<InlineMath math="35\\frac{\\text м}{\\text с}">',
+            '<InlineMath math="151\\frac{\\text м}{\\text с}">',
+            '<InlineMath math="40\\frac{\\text м}{\\text с}">',
+            '<InlineMath math="36\\frac{\\text м}{\\text с}">'
+        ],
         answer: 0,
         solution: 'Мгновенная скорость равна производной радиус-вектора по времени. \
                     <BlockMath math="v_\\text{мгн}(t)=x\'(t)=4t-5">\
                     тогда <InlineMath math="v_\\text{мгн}(10)=35\\frac{\\text м}{\\text с}">'
-    }
+    },
+    {
+        name: 'Движение по окружности',
+        task: 'Колесо велосипедиста имеет радиус 40 см. С какой скоростью едет велосипедист, если колесо делает 4 оборота в секунду?',
+        options: [
+            '<InlineMath math="5\\frac{\\text м}{\\text с}">',
+            '<InlineMath math="1\\frac{\\text м}{\\text с}">',
+            '<InlineMath math="10\\frac{\\text м}{\\text с}">',
+            '<InlineMath math=" 30\\frac{\\text м}{\\text с}">'
+        ],
+        answer: 2,
+        solution: '<InlineMath math="v=\\frac{2\\pi R}{V}=2\\pi R\\nu"> откуда <InlineMath math="v=2\\cdot 3,14 \\cdot 0,4\\text{м} \\cdot 4\\frac{1}{\\text с}">'
+    },
+    {
+        name: 'Накопление заряда проводником',
+        task: 'Где накапливается заряд проводника?',
+        options: [
+            'Внутри проводника',
+            'На поверхности проводника'
+        ],
+        answer: 1,
+        solution: 'Запомните, что заряд проводника всегда накапливается на его поверхности, при этом <InlineMath math="\\vec E">\
+        направлена перпендикулярно этой поверхности'
+    },
+    {
+        name: 'Знак заряда',
+        task: 'Какая из элементарных частиц имеет отрицательный заряд?',
+        options: [
+            'Электрон',
+            'Протон'
+        ],
+        answer: 0,
+        solution: 'Протон имеет положительный заряд, а электрон - отрицательный'
+    },
+    {
+        name: 'Определение вида теплопередачи',
+        task: 'При помощи какого вида теплопередачи энергия от Солнца передаётся на Землю?',
+        options: [
+            'Конвекция',
+            'Теплопроводность',
+            'Излучение'
+        ],
+        answer: 2,
+        solution: 'Излучение - единственный вид теплопередачи возможный в вакууме'
+    },
 ]
