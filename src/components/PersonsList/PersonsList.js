@@ -9,23 +9,23 @@ import { InlineMath, BlockMath } from '../Math/Math'
 
 class PersonsList extends Component {
     constructor(props) {
-        super(props);
-        this.axiosSource = axios.CancelToken.source();
+        super(props)
+        this.axiosSource = axios.CancelToken.source()
         this.state = {
             personsList: {}
         }
     }
 
     componentDidMount() {
-        this.getPersonsList();
+        this.getPersonsList()
     }
 
     componentWillUnmount() {
-        this.axiosSource.cancel('Operation canceled due to component being unmounted.');
+        this.axiosSource.cancel('Operation canceled due to component being unmounted.')
     }
 
     render() {
-        const { classes } = this.props;
+        const { classes } = this.props
 
         return(
             <div className={classes.PersonsContainer}>
@@ -48,7 +48,7 @@ class PersonsList extends Component {
     }
 
     handlePersonsList() {
-        const { classes } = this.props;
+        const { classes } = this.props
 
         if (this.state.personsList) {
             return Object.keys(this.state.personsList).map((person, personIndex) => {
@@ -92,9 +92,9 @@ class PersonsList extends Component {
                         </Markdown>
                     </ModalLauncher>
                 )
-            });
+            })
         }
     }
 }
 
-export default injectStyles(styles)(PersonsList);
+export default injectStyles(styles)(PersonsList)

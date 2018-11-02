@@ -1,24 +1,24 @@
-import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
-import axios from 'axios';
-import injectStyles from 'react-jss';
-import styles from './LessonsListStyles';
+import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
+import axios from 'axios'
+import injectStyles from 'react-jss'
+import styles from './LessonsListStyles'
 
 class LessonsList extends Component {
     constructor(props) {
-        super(props);
-        this.axiosSource = axios.CancelToken.source();
+        super(props)
+        this.axiosSource = axios.CancelToken.source()
         this.state = {
             lessonsList: {}
         }
-    };
+    }
 
     componentDidMount() {
         this.getLessonsList()
     }
 
     componentWillUnmount() {
-        this.axiosSource.cancel('Operation canceled due to component being unmounted.');
+        this.axiosSource.cancel('Operation canceled due to component being unmounted.')
     }
 
     render() {
@@ -59,14 +59,14 @@ class LessonsList extends Component {
                         }
                     </div>
                 )
-            });
+            })
         }
-    };
+    }
 
     handleLinkClick() {
         // Скролл вверх документа при обновлении контента
-        document.documentElement.scrollTop = 0;
-    };
-};
+        document.documentElement.scrollTop = 0
+    }
+}
 
-export default injectStyles(styles)(LessonsList);
+export default injectStyles(styles)(LessonsList)

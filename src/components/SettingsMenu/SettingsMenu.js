@@ -29,8 +29,9 @@ export default injectStyles(styles)((props) => {
             <div>
                 <h2>Размер интерфейса</h2>
                 <div className={classes.InterfaceSizesList}>
-                    {Object.keys(interfaceSizes).map(size => (
-                        <div 
+                    {Object.keys(interfaceSizes).map((size, index) => (
+                        <div
+                            key={index}
                             onClick={() => props.setIntefaceSize(interfaceSizes[size])}>
                             {size}
                         </div>

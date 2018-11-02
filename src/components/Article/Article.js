@@ -19,12 +19,12 @@ const CustomComponents = {
 
 class Article extends Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
             text: ''
-        };
-        this.fetchTextFromApi = this.fetchTextFromApi.bind(this);
-        this.fetchTextFromApi(props.section, props.name);
+        }
+        this.fetchTextFromApi = this.fetchTextFromApi.bind(this)
+        this.fetchTextFromApi(props.section, props.name)
     }
 
     render() {
@@ -49,18 +49,18 @@ class Article extends Component {
                     }
                 </div>
             </div>
-        );
-    };
+        )
+    }
 
     shouldComponentUpdate(nextProps, nextState) {
         if (this.props.name === nextProps.name &&
             this.props.section === nextProps.section &&
             this.props.previousArticle === nextProps.previousArticle &&
             this.props.nextArticle === nextProps.nextArticle) {
-            return false;
+            return false
         }
-        this.fetchTextFromApi(nextProps.section, nextProps.name);
-        return true;
+        this.fetchTextFromApi(nextProps.section, nextProps.name)
+        return true
     }
 
     fetchTextFromApi(section, name) {
@@ -71,7 +71,7 @@ class Article extends Component {
                 }
             )
             .catch(err => console.error(err.response.data))
-    };
-};
+    }
+}
 
-export default injectStyles(styles)(Article);
+export default injectStyles(styles)(Article)

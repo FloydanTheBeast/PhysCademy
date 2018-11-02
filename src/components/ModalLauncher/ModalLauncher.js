@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
-import Modal from '../Modal/Modal';
-import injectStyles from 'react-jss';
-import styles from './ModalLauncherStyles';
+import React, { Component } from 'react'
+import Modal from '../Modal/Modal'
+import injectStyles from 'react-jss'
+import styles from './ModalLauncherStyles'
 
 class ModalLauncher extends Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
             modalIsOpenned: false
         }
-    };
+    }
 
     render() {
-        const { classes } = this.props;
+        const { classes } = this.props
 
         return (
             <div className={classes.ModalLauncher}>
@@ -26,14 +26,14 @@ class ModalLauncher extends Component {
                     </Modal>
                 }
             </div>
-        );
-    };
+        )
+    }
 
     toggleModal() {
         this.setState(
             { modalIsOpenned: !this.state.modalIsOpenned }
-        );
+        )
     }
-};
+}
 
-export default injectStyles(styles)(ModalLauncher);
+export default injectStyles(styles)(ModalLauncher)

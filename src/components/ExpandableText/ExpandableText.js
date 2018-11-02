@@ -34,8 +34,8 @@ class ExpandableText extends Component {
                     </div>}
                 </Expander>
             </div>
-        );
-    };
+        )
+    }
 
     toggleExtension() {
         this.setState({
@@ -55,6 +55,6 @@ class ExpandableText extends Component {
         //     div.style.height = `${this.height}px`
         // }
     }
-};
+}
 
-export default injectStyles(styles)(ExpandableText);
+export default injectStyles(styles)(ExpandableText)

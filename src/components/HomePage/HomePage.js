@@ -1,7 +1,6 @@
 import React from 'react'
 import injectStyles from 'react-jss'
 import styles from './HomePageStyles'
-import AppLogo from '../AppLogo/AppLogo';
 
 const HomePage = (props) => {
     const { classes } = props

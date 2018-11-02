@@ -29,10 +29,17 @@ app.on('ready', () => {
         {
             width: 1024,
             height: 768,
-            // titleBarStyle: 'hidden'
+            minWidth: 920,
+            minHeight: 600,
+            show: false
         }
     )
+    mainWindow.once('ready-to-show', () => mainWindow.show())
     mainWindow.loadURL(indexPageURL)
+
+    mainWindow.on('closed', () => {
+        win = null
+    })
 })
 
 ipcMain.on('settings:save', (event, settings) => {

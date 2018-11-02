@@ -29,10 +29,10 @@ class App extends React.Component {
             theme: 'dark'
         }
         this.fetchLessonsList = this.fetchLessonsList.bind(this)
-    };
+    }
 
     render() {
-        const { classes } = this.props;
+        const { classes } = this.props
         const { lessonsList } = this.state
 
         return(

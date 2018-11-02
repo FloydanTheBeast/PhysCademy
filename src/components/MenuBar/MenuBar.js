@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
-import InlineSVG from 'svg-inline-react';
-import injectStyles from 'react-jss';
-import styles from './MenuBarStyles';
-import LightenDarkenColor from '../../utils/LightenDarkenColor';
+import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
+import InlineSVG from 'svg-inline-react'
+import injectStyles from 'react-jss'
+import styles from './MenuBarStyles'
+import LightenDarkenColor from '../../utils/LightenDarkenColor'
 
 const MenuBar = (props) => {
-    const { classes } = props;
+    const { classes } = props
 
     return (
         <div className={classes.MenuBar}>
@@ -43,4 +43,4 @@ const MenuBar = (props) => {
     )
 }
 
-export default injectStyles(styles)(MenuBar);
+export default injectStyles(styles)(MenuBar)

@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import injectStyles from 'react-jss';
-import path from 'path';
-import Markdown from 'markdown-to-jsx';
-import ModalLauncher from '../ModalLauncher/ModalLauncher';
-import styles from './BookListStyles';
+import React, { Component } from 'react'
+import axios from 'axios'
+import injectStyles from 'react-jss'
+import path from 'path'
+import Markdown from 'markdown-to-jsx'
+import ModalLauncher from '../ModalLauncher/ModalLauncher'
+import styles from './BookListStyles'
 
 class BooksList extends Component {
     constructor(props) {
-        super(props);
-        this.axiosSource = axios.CancelToken.source();
+        super(props)
+        this.axiosSource = axios.CancelToken.source()
         this.state = {
             booksList: []
         }
@@ -20,11 +20,11 @@ class BooksList extends Component {
     }
 
     componentWillUnmount() {
-        this.axiosSource.cancel('Operation canceled due to component being unmounted.');
+        this.axiosSource.cancel('Operation canceled due to component being unmounted.')
     }
 
     render() {
-        const { classes } = this.props;
+        const { classes } = this.props
 
         return(
             <div className={classes.BooksContainer}>
@@ -41,13 +41,13 @@ class BooksList extends Component {
             .then(res => {
                 this.setState({
                     booksList: res.data
-                });
+                })
             })
             .catch(err => console.log('Error: ', err))
     }
 
     handleBooksList() {
-        const { classes } = this.props;
+        const { classes } = this.props
 
         if (this.state.booksList.length) {
             return this.state.booksList.map((book, bookId) => {
@@ -93,4 +93,4 @@ class BooksList extends Component {
     }
 }
 
-export default injectStyles(styles)(BooksList);
+export default injectStyles(styles)(BooksList)
