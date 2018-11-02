@@ -1,25 +1,26 @@
 import LightenDarkenColor from '../../utils/LightenDarkenColor'
-import themes from '../../themes';
 
 export default theme => ({
     Article: {
-        width: '90%',
+        width: '100%',
         margin: '0 auto',
-        font: '1.25rem "Montserrat", sans-serif',
+        padding: '0 3rem',
+        boxSizing: 'border-box',
+        fontSize: '1.25rem',
         gridArea: 'content',
         '& > div': {
-            marginBottom: '100px',
+            marginBottom: '6rem',
             '& > h2:not(:first-child)': {
                 borderTop: `1px dashed ${theme.borderColor}`,
                 margin: '0',
-                padding: '30px 0',
-                marginTop: '30px'
+                padding: '2rem 0',
+                marginTop: '2rem'
             },
             '& > p': {
-                margin: '10px 30px'
+                margin: '0.75rem 0'
             },
             '& > ol, & > ul': {
-                marginLeft: '50px',
+                marginLeft: '1rem',
                 padding: '0'
             }
         }

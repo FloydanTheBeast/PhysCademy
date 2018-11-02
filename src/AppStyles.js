@@ -42,19 +42,7 @@ export default theme => ({
         },
         '& .content': {
             gridArea: 'content',
-        },
-        // '& > div': {
-        //     '&::-webkit-scrollbar': {
-        //         width: '10px'
-        //     },
-        //     '&::-webkit-scrollbar-track': {
-        //         backgroundColor: '#2C3A47'
-        //     },
-        //     '&::-webkit-scrollbar-thumb': {
-        //         backgroundColor: '#222',
-        //         borderRadius: '15px'
-        //     }
-        // }
+        }
     },
     LessonsPage: {
         gridArea: 'content',
@@ -66,21 +54,21 @@ export default theme => ({
     '@media (min-width: 1440px)': {
         '@global': {
             'html': {
-                fontSize: '20px'
+                fontSize: `calc(20px * ${theme.interfaceSize})`
             }
         }
     },
     '@media (max-width: 1440px)': {
         '@global': {
             'html': {
-                fontSize: '16px'
+                fontSize: `calc(16px * ${theme.interfaceSize})`
             }
         }
     },
     '@media (max-width: 1024px)': {
         '@global': {
             'html': {
-                fontSize: '12px'
+                fontSize: `calc(12px * ${theme.interfaceSize})`
             }
         }
     },

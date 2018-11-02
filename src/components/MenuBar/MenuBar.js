@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import { NavLink } from 'react-router-dom';
 import InlineSVG from 'svg-inline-react';
 import injectStyles from 'react-jss';

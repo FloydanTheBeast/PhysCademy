@@ -57,6 +57,7 @@
     "animakit-expander": "^2.1.4",
     "axios": "^0.18.0",
     "electron-is-dev": "^0.3.0",
+    "electron-store": "^2.0.0",
     "express": "^4.16.3",
     "glob": "^7.1.2",
     "history": "^4.7.2",

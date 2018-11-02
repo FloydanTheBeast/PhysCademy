@@ -37,64 +37,58 @@ class App extends React.Component {
 
         return(
             <HashRouter basename='/'>
-                {/* <ThemeProvider theme={themes[this.state.theme]}> */}
-                    <div className={`${classes.App} container`}>
-                        <MenuBar />
-                        <Switch>
-                            <Route path='/lessons/:section/:name' render={({ match }, props) => {
-                                const prevArticle = lessonsList[match.params.section] ? 
-                                    lessonsList[match.params.section][lessonsList[match.params.section].findIndex(el => el === match.params.name) - 1] : undefined
-                                const nextArticle = lessonsList[match.params.section] ? 
-                                    lessonsList[match.params.section][lessonsList[match.params.section].findIndex(el => el === match.params.name) + 1] : undefined
+                <div className={`${classes.App} container`}>
+                    <MenuBar />
+                    <Switch>
+                        <Route path='/lessons/:section/:name' render={({ match }, props) => {
+                            const prevArticle = lessonsList[match.params.section] ? 
+                                lessonsList[match.params.section][lessonsList[match.params.section].findIndex(el => el === match.params.name) - 1] : undefined
+                            const nextArticle = lessonsList[match.params.section] ? 
+                                lessonsList[match.params.section][lessonsList[match.params.section].findIndex(el => el === match.params.name) + 1] : undefined
 
-                                return (
-                                    <React.Fragment>
-                                        <LessonsList fetchLessons={this.fetchLessonsList} />
-                                        <Article
-                                            nextArticle={nextArticle ? `/lessons/${match.params.section}/${nextArticle}` : undefined}
-                                            previousArticle={prevArticle ? `/lessons/${match.params.section}/${prevArticle}` : undefined}
-                                            section={match.params.section} 
-                                            name={match.params.name} />
-                                    </React.Fragment>
-                                )}
-                            }/>
-                            <Route path='/persons' render={({ match }, props) => (
-                                    <PersonsList />
-                                )   
-                            } />
-                            <Route path='/books' render={({ match }, props) => (
-                                    <BooksList />
-                                )   
-                            } />
-                            <Route path='/tests' render={({ match }, props) => (
-                                    <TestsList />
-                                )   
-                            } />
-                            <Route path='/settings' render={() => (
-                                    <SettingsMenu onThemeChange={this.props.changeTheme} />
-                                )
-                            } />
-                            <Route path='/lessons' render={props => (
-                                    <div className={classes.ContentList}>
-                                        <LessonsList extended lessons={this.state.lessonsList} />
-                                    </div>
-                                )
-                            } />
-                            <Route path='/' render={props => (
-                                    <div className={classes.ContentList}>
-                                        <HomePage />
-                                    </div>
-                                )
-                            } />
-                        </Switch>
-                    </div>
-                {/* </ThemeProvider> */}
+                            return (
+                                <React.Fragment>
+                                    <LessonsList fetchLessons={this.fetchLessonsList} />
+                                    <Article
+                                        nextArticle={nextArticle ? `/lessons/${match.params.section}/${nextArticle}` : undefined}
+                                        previousArticle={prevArticle ? `/lessons/${match.params.section}/${prevArticle}` : undefined}
+                                        section={match.params.section} 
+                                        name={match.params.name} />
+                                </React.Fragment>
+                            )}
+                        }/>
+                        <Route path='/persons' render={({ match }, props) => (
+                                <PersonsList />
+                            )   
+                        } />
+                        <Route path='/books' render={({ match }, props) => (
+                                <BooksList />
+                            )   
+                        } />
+                        <Route path='/tests' render={({ match }, props) => (
+                                <TestsList />
+                            )   
+                        } />
+                        <Route path='/settings' render={() => (
+                                <SettingsMenu setIntefaceSize={this.props.setIntefaceSize} onThemeChange={this.props.changeTheme} />
+                            )
+                        } />
+                        <Route path='/lessons' render={props => (
+                                <div className={classes.ContentList}>
+                                    <LessonsList extended lessons={this.state.lessonsList} />
+                                </div>
+                            )
+                        } />
+                        <Route path='/' render={props => (
+                                <div className={classes.ContentList}>
+                                    <HomePage />
+                                </div>
+                            )
+                        } />
+                    </Switch>
+                </div>
             </HashRouter>
         )
-    }
-
-    onThemeChange(theme) {
-        this.setState({ theme })
     }
 
     fetchLessonsList(lessonsList) {

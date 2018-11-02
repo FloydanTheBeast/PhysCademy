@@ -65,7 +65,7 @@ export default theme => ({
         extend: LessonsListStyles(theme),
         '& h1': {
             padding: '0 1rem',
-            wordBreak: 'break-all',
+            wordBreak: 'break-word',
             textAlign: 'center',
             fontSize: '2rem',
             margin: '1rem auto 2rem',
