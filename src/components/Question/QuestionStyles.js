@@ -16,8 +16,8 @@ export default theme => ({
         },
         boxSizing: 'border-box',
         transition: 'all 0.3s ease-in-out',
-        width: '80%',
-        margin: '0 auto',
+        width: '90%',
+        margin: '0 auto 4rem',
         padding: '2rem 4rem',
         border: `2px solid ${theme.borderColor}`,
         borderRadius: '20px'
@@ -25,6 +25,6 @@ export default theme => ({
     OptionsBox: {
         display: 'flex',
         flexFlow: 'row wrap',
-        justifyContent: 'space-around',
+        justifyContent: 'space-around'
     },
 })

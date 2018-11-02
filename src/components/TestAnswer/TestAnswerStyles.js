@@ -9,12 +9,15 @@ export default theme => ({
         borderRadius: '10px',
         backgroundColor: theme.backgroundColor,
         transition: 'all 0.3s',
+        '& > p': {
+            margin: '0.25rem 0'
+        },
         '&:hover': {
             cursor: 'pointer',
             backgroundColor: theme.backgroundColorDark,
             borderRadius: 0
         },
-        '& > *:hover': {
+        '& > span:hover': {
             transform: 'none',
             fontSize: '1rem',
             margin: '1rem 0',

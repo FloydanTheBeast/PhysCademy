@@ -13,7 +13,7 @@ export default theme => ({
         },
         '& > div': {
             margin: '0 0 2rem 0',
-            padding: '2rem 0 2rem 5rem',
+            padding: '2rem 2.5rem 2rem 2.5rem',
             border: `1px dashed ${theme.borderColorAccent}`,
             borderRadius: '20px'
         }
@@ -49,7 +49,7 @@ export default theme => ({
             fontWeight: '800',
             fontSize: '1.25rem',
             lineHeight: '4rem',
-            margin: '0 2rem 0 0',
+            margin: '0 2rem 2rem 0',
             transition: 'all 0.3s',
             '&:hover': {
                 backgroundColor: theme.backgroundColorDarkHover,

@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
-import injectStyles from 'react-jss';
-import axios from 'axios';
-import path from 'path';
-import styles from './PersonsListStyles';
-import ModalLauncher from '../ModalLauncher/ModalLauncher';
-import Markdown from 'markdown-to-jsx';
+import React, { Component } from 'react'
+import injectStyles from 'react-jss'
+import axios from 'axios'
+import path from 'path'
+import styles from './PersonsListStyles'
+import ModalLauncher from '../ModalLauncher/ModalLauncher'
+import Markdown from 'markdown-to-jsx'
+import { InlineMath, BlockMath } from '../Math/Math'
 
 class PersonsList extends Component {
     constructor(props) {
@@ -81,7 +82,11 @@ class PersonsList extends Component {
                         </div>
 
                         <Markdown className={classes.PersonBio} options={{
-                            forceBlock: true
+                            forceBlock: true,
+                            overrides: {
+                                InlineMath,
+                                BlockMath
+                            }
                         }}>
                             {this.state.personsList[person].bio}
                         </Markdown>

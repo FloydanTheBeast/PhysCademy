@@ -5,9 +5,9 @@ import styles from './SettingsMenuStyles'
 import themes from '../../themes'
 
 const interfaceSizes = {
-    'Большой': 1.25,
+    'Большой': 1.2,
     'Обычный': 1,
-    'Маленький': 0.75
+    'Маленький': 0.8
 }
 
 export default injectStyles(styles)((props) => {

@@ -20,8 +20,8 @@ class TestsList extends React.Component {
             <div className={classes.TestsContainer}>
                 <h1>Проверка знаний</h1>
                 <ul className={classes.TestsList}>
-                    {this.state.testsList.map(question => (
-                        <Question {...question} />
+                    {this.state.testsList.map((question, index) => (
+                        <Question key={index} {...question} />
                     ))}
                 </ul>
             </div>

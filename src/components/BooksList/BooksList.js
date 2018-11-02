@@ -16,7 +16,7 @@ class BooksList extends Component {
     }
 
     componentDidMount() {
-        setTimeout(() => this.getBooksList(), 250)
+        setTimeout(() => this.getBooksList(), 250) // Задержка для плавной загрузки
     }
 
     componentWillUnmount() {

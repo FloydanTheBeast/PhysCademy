@@ -4,7 +4,7 @@ export default theme => ({
     Article: {
         width: '100%',
         margin: '0 auto',
-        padding: '0 3rem',
+        padding: '0 4rem',
         boxSizing: 'border-box',
         fontSize: '1.25rem',
         gridArea: 'content',

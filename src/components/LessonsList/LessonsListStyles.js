@@ -21,8 +21,10 @@ const LessonsListStyles = theme => ({
         transition: 'all 0.3s',
         '&:focus': {
             outline: 'none',
-            '& > p': {
-                backgroundColor: theme.backgroundColorDark
+            '&:not(.selected)': {
+                '& > p': {
+                    backgroundColor: theme.backgroundColorDarkHover
+                }
             }
         },
         '& > p': {

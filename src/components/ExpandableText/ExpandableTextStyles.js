@@ -4,7 +4,7 @@ export default theme => ({
     ExpandableTextContainer: {
         width: '80%',
         maxWidth: '60rem',
-        minWidth: '20rem',
+        minWidth: '25rem',
         margin: '2rem 0'
     },
 

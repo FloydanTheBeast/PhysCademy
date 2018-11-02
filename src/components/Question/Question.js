@@ -37,7 +37,8 @@ class Question extends React.Component {
                 <div className={classes.OptionsBox}>
                     {this.props.options.map((option, index) => {
                         return (
-                        <TestAnswer 
+                        <TestAnswer
+                            key={index}
                             handleClick={this.handleChoice.bind(this)}
                             correct={parseInt(this.props.answer) === index ? 1 : null}>
                             {option}
@@ -58,7 +59,6 @@ class Question extends React.Component {
                         </Markdown>
                     </ExpandableText>
                 )}
-
             </div>
         )
     }

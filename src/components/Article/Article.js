@@ -42,10 +42,10 @@ class Article extends Component {
                 </Markdown>
                 <div className={classes.NavButtons}>
                     {this.props.previousArticle &&
-                        <Link className={classes.NavButtonLeft} onClick={() => window.scrollTo(0, 0)} to={this.props.previousArticle}>Предыдущий урок</Link>
+                        <Link className={classes.NavButtonLeft} onClick={() => window.scrollTo(0, 0)} to={this.props.previousArticle}>Назад</Link>
                     }
                     {this.props.nextArticle &&
-                        <Link className={classes.NavButtonRight} onClick={() => window.scrollTo(0, 0)} to={this.props.nextArticle}>Следующий урок</Link>
+                        <Link className={classes.NavButtonRight} onClick={() => window.scrollTo(0, 0)} to={this.props.nextArticle}>Далее</Link>
                     }
                 </div>
             </div>

@@ -3,7 +3,6 @@ import injectStyles from 'react-jss'
 import styles from './ThemePreviewStyles'
 
 const ThemePreview = props => {
-    console.log(props.theme)
     return (
         <div
             className={props.classes.ThemePreview}

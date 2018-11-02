@@ -12,15 +12,22 @@ export default theme => ({
         overflowX: 'hidden',
         top: '0',
         width: '7.5rem',
+        '&::-webkit-scrollbar': {
+            display: 'none'
+        }
     },
     MenuBarItem: {
         display: 'block',
         position: 'relative',
         width: '7.5rem',
         height: '7.5rem',
-        transition: 'background-color 0.3s ease-in-out, border-left 0.3s ease-in-out',
+        borderLeft: `0 solid ${theme.backgroundColorAccentDark}`,
+        borderTop: '0 solid transparent',
+        borderBottom: '0 solid transparent',
+        transition: 'background-color 0.3s ease-in-out, border 0.5s ease-in-out',
+        boxSizing: 'border-box',
         '&:focus': {
-            backgroundColor: '#f1bb4a',
+            backgroundColor: theme.backgroundColorAccentDark,
             outline: 'none'
         },
         '&.selected': {

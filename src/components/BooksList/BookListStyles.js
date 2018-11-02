@@ -15,7 +15,7 @@ export default theme => ({
         gridTemplateColumns: 'repeat(auto-fill, minmax(auto, 33rem))',
         gridAutoRows: 'max-content',
         gridColumnGap: '2rem',
-        gridRowGap: '3rem',
+        gridRowGap: '4rem',
         alignItems: 'start',
         justifyContent: 'center'
     },
@@ -90,7 +90,8 @@ export default theme => ({
             left: '50%',
             margin: '40px -50% 40px 0',
             transform: 'translate(-50%, 0)',
-            width: '20rem',
+            minWidth: '20rem',
+            maxWidth: '22rem',
             height: '30rem',
         }
     },

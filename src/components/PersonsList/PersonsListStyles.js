@@ -29,7 +29,6 @@ export default theme => ({
             transform: 'translateY(-5px)',
             boxShadow: `15px 15px 5px ${theme.shadowColor}`,
             '& $ImagePreview': {
-                border: `4px solid ${theme.borderColor}`,
                 transform: 'translateY(-1rem)'
             }
         },
@@ -45,7 +44,6 @@ export default theme => ({
 
     ImagePreview: {
         boxSizing: 'border-box',
-        border: `0px solid ${theme.borderColor}`,
         padding: 0,
         overflow: 'hidden',
         height: '14rem',
