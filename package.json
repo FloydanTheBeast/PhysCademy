@@ -63,7 +63,7 @@
     "history": "^4.7.2",
     "jss-global": "^3.0.0",
     "katex": "^0.10.0-beta",
-    "markdown-to-jsx": "^6.7.0",
+    "markdown-to-jsx": "^6.11.4",
     "normalize.css": "^8.0.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
