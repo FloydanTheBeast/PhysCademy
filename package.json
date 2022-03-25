@@ -38,7 +38,7 @@
     "concurrently": "^3.6.0",
     "css-loader": "^1.0.0",
     "devtron": "^1.4.0",
-    "electron": "^2.0.2",
+    "electron": "^13.6.6",
     "electron-builder": "^20.28.1",
     "electron-debug": "^2.0.0",
     "electron-react-devtools": "^0.5.3",
